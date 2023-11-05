@@ -1,0 +1,12 @@
+.small-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+    color: black;
+}
