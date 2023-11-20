@@ -21,6 +21,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CarrouselFilterComponent } from './components/carrousel-filter/carrousel-filter.component';
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
+import { MapComponent } from './components/map/map.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
+    MapComponent,
 
   ],
   imports: [
