@@ -1,1 +1,17 @@
-<p>home-header works!</p>
+<div class="header-container" >
+  <div class="left-section">
+    <span>{{ nombre }}</span>
+  </div>
+  <div class="right-section">
+    <button (click)="inscribirme()">Inscribirme</button>
+  </div>
+</div>
+
+<div *ngIf="mostrarPopup">
+  <div class="popup-container">
+
+    <button class="boton-opcion">Alumno</button>
+    <button class="boton-opcion">Profesor</button>
+    <button class="boton-opcion">Ya soy miembro</button>
+  </div>
+</div>
