@@ -24,6 +24,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CarrouselFilterComponent } from './components/carrousel-filter/carrousel-filter.component';
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
+import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
 
 
 
@@ -49,7 +50,8 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     CarrouselComponent,
     CarrouselFilterComponent,
     CarrouselMapComponent,
-    CarrouselBestRatingComponent
+    CarrouselBestRatingComponent,
+    TutorPersonalInfoComponent
 
   ],
   imports: [
