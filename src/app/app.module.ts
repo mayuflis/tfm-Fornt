@@ -28,6 +28,7 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,7 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     CarrouselComponent,
     CarrouselFilterComponent,
     CarrouselMapComponent,
-    CarrouselBestRatingComponent,
+    CarrouselBestRatingComponent
 
   ],
   imports: [
