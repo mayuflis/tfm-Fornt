@@ -22,6 +22,7 @@ import { CarrouselFilterComponent } from './components/carrousel-filter/carrouse
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
 import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { MapComponent } from './components/map/map.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
