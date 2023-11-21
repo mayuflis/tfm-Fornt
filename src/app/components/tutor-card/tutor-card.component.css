@@ -1,0 +1,33 @@
+.card {
+    padding: 20px;
+}
+
+.nombre {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rate {
+    display: flex;
+    justify-content: center;
+    color: grey;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.text {
+    margin: 0;
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(141, 184, 141);
+    border-color: transparent;
+}
