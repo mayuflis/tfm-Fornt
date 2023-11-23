@@ -27,6 +27,7 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
 import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
 import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
+import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
 
 
 
@@ -55,7 +56,8 @@ import { TableSubjectPriceComponent } from './components/table-subject-price/tab
     CarrouselBestRatingComponent,
     TutorPersonalInfoComponent,
     TutorMenuComponent,
-    TableSubjectPriceComponent
+    TableSubjectPriceComponent,
+    StudentInfoPageComponent
 
   ],
   imports: [
