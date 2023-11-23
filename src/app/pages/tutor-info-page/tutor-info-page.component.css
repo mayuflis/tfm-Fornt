@@ -5,3 +5,11 @@
     margin-right: 80px;
     gap: 60px;
 }
+
+.margin{
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
