@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
@@ -44,11 +44,12 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
