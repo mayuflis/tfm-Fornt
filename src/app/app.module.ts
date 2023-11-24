@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,6 +58,8 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
+    NgbModule,NgbPaginationModule,
+    NgbAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]
