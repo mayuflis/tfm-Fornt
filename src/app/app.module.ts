@@ -30,6 +30,7 @@ import { TableSubjectPriceComponent } from './components/table-subject-price/tab
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
 import { StudentMenuComponent } from './components/student-menu/student-menu.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
+import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 
 
 
@@ -61,7 +62,8 @@ import { StudentPersonalInfoComponent } from './components/student-personal-info
     TableSubjectPriceComponent,
     StudentInfoPageComponent,
     StudentMenuComponent,
-    StudentPersonalInfoComponent
+    StudentPersonalInfoComponent,
+    TutorProfilePageComponent
 
   ],
   imports: [
