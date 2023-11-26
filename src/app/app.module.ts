@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
@@ -32,8 +32,7 @@ import { StudentMenuComponent } from './components/student-menu/student-menu.com
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor-profile-form.component';
-
-
+import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
 
 
 
@@ -66,7 +65,7 @@ import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor
     StudentPersonalInfoComponent,
     TutorProfilePageComponent,
     TutorProfileFormComponent
-
+    FilterProfessorsComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +73,7 @@ import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
