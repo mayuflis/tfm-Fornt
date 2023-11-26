@@ -1,31 +1,64 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { Provinces } from 'src/app/interfaces/auth';
+import { AuthService } from 'src/app/services/auth.service';
+import Swa1 from 'sweetalert2';
 @Component({
   selector: 'app-auth-form',
   templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.css']
+  styleUrls: ['./auth-form.component.css'],
 })
 export class AuthFormComponent implements OnInit {
   authForm!: FormGroup;
   isTeacher: boolean = false;
   availableTags: string[] = ['Matemáticas', 'Física', 'Química']; // Ejemplo de tags disponibles. CAMBIAR --> Recibir de base de datos
   selectedTags: string[] = []; // Tags seleccionadas
+  provinces!: Provinces[];
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit() {
-    this.authForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(2)]],
-      apellidos: ['', [Validators.required, Validators.minLength(2)]],
-      fechaNacimiento: ['', Validators.required],
-      ciudad: ['', Validators.required],
-      telefono: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-      rol: ['', Validators.required]
-    }, { validator: this.checkPasswords });
+  constructor(private fb: FormBuilder) {
+    this.authForm = this.fb.group(
+      {
+        nombre: ['', [Validators.required, Validators.minLength(2)]],
+        apellidos: ['', [Validators.required, Validators.minLength(2)]],
+        fechaNacimiento: ['', Validators.required],
+        provincia: ['', Validators.required],
+        telefono: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern('^[0-9]+$'),
+            Validators.minLength(9),
+            Validators.maxLength(15),
+          ],
+        ],
+        email: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(
+              /^[^<>()\[\]\.,;:\s@'"]+@(([^<>()\[\]\.,;:\s@'"]+\.)+[^<>()\[\]\.,;:\s@'"]{2,}|(\[([0-9]{1,3}\.){3}[0-9]{1,3}\]))$/
+            ),
+          ],
+        ],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', Validators.required],
+        rol: ['', Validators.required],
+        longitude: [],
+        latitude: [],
+      },
+      { validator: this.checkPasswords }
+    );
+  }
+  async ngOnInit() {
+    try {
+      this.provinces = await this.authService.getAllProvinces();
+      this.obtenerUbicacion();
+    } catch (error: any) {
+      console.log(error.fatal);
+    }
   }
 
   checkPasswords(group: FormGroup) {
@@ -34,9 +67,45 @@ export class AuthFormComponent implements OnInit {
     return pass === confirmPass ? null : { notSame: true };
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.authForm.valid) {
-      console.log(this.authForm.value);
+      const result = await this.authService.registerUser(this.authForm.value);
+      if (result) {
+        this.router.navigate(['/login']);
+      }
+    } else {
+      this.mostrarAlert();
     }
+  }
+  obtenerUbicacion() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          // Obtener la longitud y latitud
+          const longitud = position.coords.longitude;
+          const latitud = position.coords.latitude;
+
+          // Actualizar los valores en el formulario
+          this.authForm.patchValue({
+            longitude: longitud,
+            latitude: latitud,
+          });
+        },
+        (error) => {
+          console.error('Error al obtener la ubicación:', error);
+        }
+      );
+    } else {
+      console.error('Geolocalización no es compatible en este navegador');
+    }
+  }
+
+  mostrarAlert() {
+    Swa1.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: '¡Algo salió mal!',
+      footer: 'El formulario posee campos incorrectos',
+    });
   }
 }

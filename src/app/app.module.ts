@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,9 +26,6 @@ import { CarrouselFilterComponent } from './components/carrousel-filter/carrouse
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +47,6 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -57,8 +54,9 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
