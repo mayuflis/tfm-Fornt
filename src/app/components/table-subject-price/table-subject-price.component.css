@@ -1,0 +1,13 @@
+.text{
+    padding-bottom: 20px;
+}
+
+.table{
+    font-size: 0.9rem;
+}
+
+th{
+    background-color: rgb(48, 77, 48);
+    color: white;
+}
+

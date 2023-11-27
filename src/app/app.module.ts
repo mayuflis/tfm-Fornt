@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
@@ -25,6 +24,11 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CarrouselFilterComponent } from './components/carrousel-filter/carrousel-filter.component';
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
+import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
+import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
+import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor-profile-form.component';
+import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
+import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,11 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
+    TutorMenuComponent,
+    TutorProfilePageComponent,
+    TutorProfileFormComponent,
+    TutorPersonalInfoComponent,
+    TableSubjectPriceComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +64,7 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
