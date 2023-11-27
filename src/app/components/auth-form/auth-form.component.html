@@ -1,53 +1,121 @@
-<!--
-<section class="mt-5 container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h5 class="card-title mb-4">Nuevo Usuario</h5>
-                    <form [formGroup]="userForm" (ngSubmit)="submitUserForm()">
-                        <div class="form-group mb-4">
-                            <label for="firstName">Nombre</label>
-                            <input type="text" id="firstName" class="form-control" formControlName="firstName">
-                            <span class="text-danger" *ngIf="userForm.controls['firstName'].hasError('minlength') && userForm.controls['firstName'].touched">El nombre debe tener al menos dos caracteres</span>
-                            <span class="text-danger" *ngIf="userForm.controls['firstName'].hasError('pattern') && userForm.controls['firstName'].touched">Nombre no válido</span>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="lastName">Apellidos</label>
-                            <input type="text" id="lastName" class="form-control" formControlName="lastName">
-                            <span class="text-danger" *ngIf="userForm.controls['lastName'].hasError('minlength') && userForm.controls['firstName'].touched">El apellido debe tener al menos dos caracteres</span>
-                            <span class="text-danger" *ngIf="userForm.controls['lastName'].hasError('pattern') && userForm.controls['firstName'].touched">Apellido no válido</span>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" formControlName="email">
-                            <span class="text-danger" *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched">El email no es válido</span>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="password">Contraseña</label>
-                            <input type="password" id="password" class="form-control" formControlName="password">
-                            <ul class="list-unstyled" *ngIf="userForm.controls['password'].invalid && userForm.controls['password'].touched">
-                                <li class="text-danger">La contraseña debe tener al menos 8 caracteres</li>
-                                <li class="text-danger">La contraseña debe tener al menos 1 letra</li>
-                                <li class="text-danger">La contraseña debe tener al menos 1 caracter especial</li>
-                                <li class="text-danger">La contraseña debe tener al menos 1 número</li>
-                            </ul>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="image">Imagen</label>
-                            <input type="text" id="image" class="form-control" formControlName="image">
-                            <span class="text-danger" *ngIf="userForm.controls['image'].invalid && userForm.controls['image'].touched">El formato de la imagen no es valido</span>
-                        </div>
-                        <button type="submit" class="btn btn-hover-color mt-2">Guardar</button>
-                    </form>
+<div class="card form-translucido">
+    <div class="card-body">
+        <h2 class="text-center mb-4">Registro de Usuario</h2>
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+
+            <!-- Campo para el nombre -->
+            <div class="mb-3">
+                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+                <div
+                    *ngIf="authForm.get('nombre')?.invalid && (authForm.get('nombre')?.touched || authForm.get('nombre')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('nombre')?.errors?.['required']">Nombre es
+                        requerido.</small>
+                    <small class="text-danger" *ngIf="authForm.get('nombre')?.errors?.['minlength']">Nombre debe tener
+                        al
+                        menos 2 caracteres.</small>
                 </div>
             </div>
-        </div>
+
+            <!-- Campo para los apellidos -->
+            <div class="mb-3">
+                <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+                <div
+                    *ngIf="authForm.get('apellidos')?.invalid && (authForm.get('apellidos')?.touched || authForm.get('apellidos')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('apellidos')?.errors?.['required']">Apellido es
+                        requerido.</small>
+                    <small class="text-danger" *ngIf="authForm.get('apellidos')?.errors?.['minlength']">Apellido debe
+                        tener
+                        al
+                        menos 2 caracteres.</small>
+                </div>
+            </div>
+
+
+            <!-- Campo para la fecha de nacimiento -->
+            <div class="mb-3">
+                <input type="date" class="form-control" formControlName="fechaNacimiento"
+                    placeholder="Fecha de Nacimiento">
+                <div
+                    *ngIf="authForm.get('fechaNacimiento')?.invalid && (authForm.get('fechaNacimiento')?.touched || authForm.get('fechaNacimiento')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('fechaNacimiento')?.errors?.['required']">La fecha de
+                        nacimiento es requerida.</small>
+                </div>
+            </div>
+
+            <!-- Campo para la ciudad -->
+            <div class="mb-3">
+                <input type="text" class="form-control" formControlName="ciudad" placeholder="Ciudad">
+                <div
+                    *ngIf="authForm.get('ciudad')?.invalid && (authForm.get('ciudad')?.touched || authForm.get('ciudad')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('ciudad')?.errors?.['required']">La ciudad es
+                        requerida.</small>
+                </div>
+            </div>
+
+            <!-- Campo para el número de teléfono -->
+            <div class="mb-3">
+                <input type="tel" class="form-control" formControlName="telefono" placeholder="Número de Teléfono">
+                <div
+                    *ngIf="authForm.get('telefono')?.invalid && (authForm.get('telefono')?.touched || authForm.get('telefono')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('telefono')?.errors?.['required']">El número de
+                        teléfono es requerido.</small>
+                    <small class="text-danger" *ngIf="authForm.get('telefono')?.errors?.['pattern']">Formato de teléfono
+                        inválido.</small>
+                </div>
+            </div>
+
+            <!-- Campo para el email -->
+            <div class="mb-3">
+                <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                <div
+                    *ngIf="authForm.get('email')?.invalid && (authForm.get('email')?.touched || authForm.get('email')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('email')?.errors?.['required']">El email es
+                        requerido.</small>
+                    <small class="text-danger" *ngIf="authForm.get('email')?.errors?.['email']">Formato de email
+                        inválido.</small>
+                </div>
+            </div>
+
+            <!-- Campo para la contraseña -->
+            <div class="mb-3">
+                <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
+                <div
+                    *ngIf="authForm.get('password')?.invalid && (authForm.get('password')?.touched || authForm.get('password')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('password')?.errors?.['required']">La contraseña es
+                        requerida.</small>
+                    <small class="text-danger" *ngIf="authForm.get('password')?.errors?.['minlength']">
+                        La contraseña debe tener al menos {{
+                        authForm.get('password')?.errors?.['minlength'].requiredLength }} caracteres. Actualmente tiene
+                        {{ authForm.get('password')?.errors?.['minlength'].actualLength }}.
+                    </small>
+                </div>
+            </div>
+
+            <!-- Campo para repetir la contraseña -->
+            <div class="mb-3">
+                <input type="password" class="form-control" formControlName="confirmPassword"
+                    placeholder="Repita la Contraseña">
+                <div
+                    *ngIf="authForm.get('confirmPassword')?.invalid && (authForm.get('confirmPassword')?.touched || authForm.get('confirmPassword')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('confirmPassword')?.errors?.['required']">Debe
+                        repetir la contraseña.</small>
+                </div>
+                <!-- Mensaje de error para la confirmación de contraseña si no coincide -->
+                <div *ngIf="authForm.errors?.['notSame'] && authForm.get('confirmPassword')?.touched">
+                    <p class="text-danger">Las contraseñas no coinciden.</p>
+                </div>
+            </div>
+
+            <!-- Selector de rol (Alumno/Profesor) -->
+            <div class="mb-3">
+                <label class="form-label">¿Cuál es tu rol?</label>
+                <select formControlName="rol" class="form-select">
+                    <option value="Alumn">Alumno</option>
+                    <option value="Professor">Profesor</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </form>
     </div>
-</section>
-
--->
-
-
-
-
+</div>

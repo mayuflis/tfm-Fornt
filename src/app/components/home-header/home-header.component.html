@@ -1,1 +1,28 @@
-<p>home-header works!</p>
+<div class="header-container" >
+  <div class="left-section">
+    <span>{{ nombre }}</span>
+  </div>
+  <div class="right-section">
+    <button type="button" class="btn btn-primary">Inicio</button>
+    <button type="button" class="btn btn-primary">Registro</button>
+    <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+      <button
+        type="button"
+        class="btn btn-outline-primary me-2"
+        id="dropdownManual"
+        ngbDropdownAnchor
+        (focus)="myDrop.open()"
+        (click)="inscribirme()"
+      >
+      Inscribirme
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownManual">
+        <button ngbDropdownItem>Alumno</button>
+        <button ngbDropdownItem>Profesor</button>
+        <button ngbDropdownItem>Ya soy miembro</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
