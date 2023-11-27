@@ -41,6 +41,9 @@ import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-op
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
 import { StudentTutorsPageComponent } from './pages/student-tutors-page/student-tutors-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
+import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 
 @NgModule({
@@ -80,7 +83,9 @@ import { StudentNotificationsPageComponent } from './pages/student-notifications
     TutorOpinionsPageComponent,
     StudentClassesPageComponent,
     StudentTutorsPageComponent,
-    StudentNotificationsPageComponent
+    StudentNotificationsPageComponent,
+    MapComponent
+
   ],
   imports: [
     BrowserModule,
@@ -89,6 +94,7 @@ import { StudentNotificationsPageComponent } from './pages/student-notifications
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
