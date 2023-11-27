@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule } from '@angular/forms';
+
 import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +28,17 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CarrouselFilterComponent } from './components/carrousel-filter/carrousel-filter.component';
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
+import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
+import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
+import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
+import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
+import { StudentMenuComponent } from './components/student-menu/student-menu.component';
+import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
+import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
+import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor-profile-form.component';
+import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
+import { TutorSubjectsComponent } from './components/tutor-subjects/tutor-subjects.component';
+
 
 
 
@@ -50,6 +64,16 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
+    TutorPersonalInfoComponent,
+    TutorMenuComponent,
+    TableSubjectPriceComponent,
+    StudentInfoPageComponent,
+    StudentMenuComponent,
+    StudentPersonalInfoComponent,
+    TutorProfilePageComponent,
+    TutorProfileFormComponent,
+    ProfilePictureComponent,
+    TutorSubjectsComponent
 
   ],
   imports: [
@@ -58,8 +82,12 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
+
+    FormsModule,
+
     NgbModule,NgbPaginationModule,
     NgbAlertModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
