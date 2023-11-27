@@ -33,6 +33,8 @@ import { StudentPersonalInfoComponent } from './components/student-personal-info
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor-profile-form.component';
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
+import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -66,6 +68,7 @@ import { FilterProfessorsComponent } from './components/filter-professors/filter
     TutorProfilePageComponent,
     TutorProfileFormComponent
     FilterProfessorsComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +77,7 @@ import { FilterProfessorsComponent } from './components/filter-professors/filter
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
