@@ -115,7 +115,11 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-success">Registrar</button>
+            <button type="submit" class="btn btn-success">Registrar</button>  
+            <div
+                *ngIf="successRegister">
+                <label class="text-success form-label">Registro exitoso. Por favor, revisa tu email para confirmar tu cuenta.</label>
+            </div>
         </form>
     </div>
 </div>

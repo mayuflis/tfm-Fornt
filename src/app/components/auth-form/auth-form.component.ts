@@ -9,8 +9,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 export class AuthFormComponent implements OnInit {
   authForm!: FormGroup;
   isTeacher: boolean = false;
-  availableTags: string[] = ['Matemáticas', 'Física', 'Química']; // Ejemplo de tags disponibles. CAMBIAR --> Recibir de base de datos
-  selectedTags: string[] = []; // Tags seleccionadas
+  successRegister: boolean = false;
 
   constructor(private fb: FormBuilder) {}
 
@@ -37,6 +36,7 @@ export class AuthFormComponent implements OnInit {
   onSubmit() {
     if (this.authForm.valid) {
       console.log(this.authForm.value);
+      this.successRegister = true;
     }
   }
 }
