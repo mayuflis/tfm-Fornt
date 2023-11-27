@@ -32,6 +32,8 @@ import { StudentMenuComponent } from './components/student-menu/student-menu.com
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor-profile-form.component';
+import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
+import { TutorSubjectsComponent } from './components/tutor-subjects/tutor-subjects.component';
 
 
 
@@ -65,7 +67,9 @@ import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor
     StudentMenuComponent,
     StudentPersonalInfoComponent,
     TutorProfilePageComponent,
-    TutorProfileFormComponent
+    TutorProfileFormComponent,
+    ProfilePictureComponent,
+    TutorSubjectsComponent
 
   ],
   imports: [
