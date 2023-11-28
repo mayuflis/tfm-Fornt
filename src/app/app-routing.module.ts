@@ -12,6 +12,14 @@ const routes: Routes = [
   { path: 'tutor-info/:idTutor', component: TutorInfoPageComponent },
   { path: 'student-info/:idStudent', component: StudentInfoPageComponent },
   {path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent}
+
+import { HomePageComponent } from './pages/home-page/home-page.component';
+
+const routes: Routes = [
+  {path: 'login', component: LoginPageComponent},
+  {path: 'registro', component: RegisterPageComponent},
+  {path: 'home', component: HomePageComponent},
+
 ];
 
 @NgModule({
