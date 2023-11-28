@@ -39,6 +39,8 @@ import { TutorSubjectsComponent } from './components/tutor-subjects/tutor-subjec
 import { MyStudentsComponent } from './components/my-students/my-students.component';
 import { TutorMyStudentsPageComponent } from './pages/tutor-my-students-page/tutor-my-students-page.component';
 import { TutorMystudentCardComponent } from './components/tutor-mystudent-card/tutor-mystudent-card.component';
+import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tutor-my-subjects-page.component';
+import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-card/tutor-my-subjects-card.component';
 
 
 
@@ -77,7 +79,9 @@ import { TutorMystudentCardComponent } from './components/tutor-mystudent-card/t
     TutorSubjectsComponent,
     MyStudentsComponent,
     TutorMyStudentsPageComponent,
-    TutorMystudentCardComponent
+    TutorMystudentCardComponent,
+    TutorMySubjectsPageComponent,
+    TutorMySubjectsCardComponent
 
   ],
   imports: [
