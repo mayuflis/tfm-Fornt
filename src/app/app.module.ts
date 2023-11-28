@@ -3,9 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { FormsModule } from '@angular/forms';
-
 import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +36,9 @@ import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-prof
 import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor-profile-form.component';
 import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
 import { TutorSubjectsComponent } from './components/tutor-subjects/tutor-subjects.component';
+import { MyStudentsComponent } from './components/my-students/my-students.component';
+import { TutorMyStudentsPageComponent } from './pages/tutor-my-students-page/tutor-my-students-page.component';
+import { TutorMystudentCardComponent } from './components/tutor-mystudent-card/tutor-mystudent-card.component';
 
 
 
@@ -73,7 +74,10 @@ import { TutorSubjectsComponent } from './components/tutor-subjects/tutor-subjec
     TutorProfilePageComponent,
     TutorProfileFormComponent,
     ProfilePictureComponent,
-    TutorSubjectsComponent
+    TutorSubjectsComponent,
+    MyStudentsComponent,
+    TutorMyStudentsPageComponent,
+    TutorMystudentCardComponent
 
   ],
   imports: [
@@ -82,10 +86,10 @@ import { TutorSubjectsComponent } from './components/tutor-subjects/tutor-subjec
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
-
     FormsModule,
 
-    NgbModule,NgbPaginationModule,
+    NgbModule,
+    NgbPaginationModule,
     NgbAlertModule
 
   ],
