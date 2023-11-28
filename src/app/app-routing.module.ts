@@ -7,6 +7,7 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TutorMyStudentsPageComponent } from './pages/tutor-my-students-page/tutor-my-students-page.component';
+import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tutor-my-subjects-page.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'tutor-info/:idTutor', component: TutorInfoPageComponent },
   { path: 'student-info/:idStudent', component: StudentInfoPageComponent },
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
-  {path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent}
+  { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
+  {path: 'tutor/:idTutor/subjects', component: TutorMySubjectsPageComponent}
 ];
 
 @NgModule({
