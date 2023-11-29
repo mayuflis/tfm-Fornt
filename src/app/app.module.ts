@@ -37,6 +37,8 @@ import { StudentClassesPageComponent } from './pages/student-classes-page/studen
 import { StudentTutorsPageComponent } from './pages/student-tutors-page/student-tutors-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { MapComponent } from './components/map/map.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 import { StudentMenuComponent } from './components/student-menu/student-menu.component';
 import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
@@ -69,6 +71,8 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     TutorProfilePageComponent,
     TutorProfileFormComponent,
     FilterProfessorsComponent,
+    MapComponent,
+    DetailPageComponent,
     StudentProfilePageComponent,
     TutorClassesPageComponent,
     TutorStudentsPageComponent,
@@ -95,6 +99,7 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     HttpClientModule,
     FormsModule,
     GoogleMapsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

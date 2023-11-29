@@ -4,7 +4,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { TutorInfoPageComponent } from './pages/tutor-info-page/tutor-info-page.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
-import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { TutorClassesPageComponent } from './pages/tutor-classes-page/tutor-classes-page.component';
 import { TutorStudentsPageComponent } from './pages/tutor-students-page/tutor-students-page.component';
@@ -14,6 +13,7 @@ import { StudentClassesPageComponent } from './pages/student-classes-page/studen
 import { StudentTutorsPageComponent } from './pages/student-tutors-page/student-tutors-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
@@ -48,4 +48,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+
+export class AppRoutingModule { }
