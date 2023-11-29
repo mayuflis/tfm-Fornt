@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
 import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,9 +37,8 @@ import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-car
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { StudentLearningComponent } from './components/student-learning/student-learning.component';
 import { StudentMyTeachersPageComponent } from './pages/student-my-teachers-page/student-my-teachers-page.component';
-import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor-profile-form.component';
+import { TutorSubjectsNewComponent } from './components/tutor-subjects-new/tutor-subjects-new.component';
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
-import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { TutorClassesPageComponent } from './pages/tutor-classes-page/tutor-classes-page.component';
 import { TutorStudentsPageComponent } from './pages/tutor-students-page/tutor-students-page.component';
 import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
@@ -57,6 +55,7 @@ import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tut
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
+
 
 @NgModule({
   declarations: [
@@ -91,7 +90,8 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     StudentProfilePageComponent,
     StudentLearningComponent,
     StudentMyTeachersPageComponent,
-    TutorProfileFormComponent,
+    TutorSubjectsNewComponent,
+    ProfileFormComponent,
     FilterProfessorsComponent,
     MapComponent,
     DetailPageComponent,
@@ -122,7 +122,7 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     FormsModule,
     NgbModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
     GoogleMapsModule,
     NgxPaginationModule
   ],
