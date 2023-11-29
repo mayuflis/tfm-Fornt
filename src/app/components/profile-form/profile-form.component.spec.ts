@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TutorProfileFormComponent } from './tutor-profile-form.component';
+import { TutorProfileFormComponent } from './profile-form.component';
 
 describe('TutorProfileFormComponent', () => {
   let component: TutorProfileFormComponent;

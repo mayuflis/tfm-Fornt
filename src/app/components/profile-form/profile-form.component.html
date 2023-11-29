@@ -1,0 +1,60 @@
+<h5>Datos personales</h5>
+<form class="prueba">
+
+    <!-- Campo para el nombre -->
+    <div class="mb-3">
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+        <div>
+            <small class="text-danger">Nombre es requerido. </small>
+            <small class="text-danger">Nombre debe tener almenos 2 caracteres.</small>
+        </div>
+    </div>
+
+    <!-- Campo para los apellidos -->
+    <div class="mb-3">
+        <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+        <div>
+            <small class="text-danger">Apellido es requerido. </small>
+            <small class="text-danger">Apellido debe tener al menos 2 caracteres.</small>
+        </div>
+    </div>
+
+
+    <!-- Campo para la fecha de nacimiento -->
+    <div class="mb-3">
+        <input type="date" class="form-control" formControlName="fechaNacimiento" placeholder="Fecha de Nacimiento">
+        <div>
+            <small class="text-danger">La fecha de nacimiento es requerida. </small>
+        </div>
+    </div>
+
+    <!-- Campo para la ciudad -->
+    <div class="mb-3">
+        <input type="text" class="form-control" formControlName="ciudad" placeholder="Ciudad">
+        <div>
+            <small class="text-danger">La ciudad es requerida. </small>
+        </div>
+    </div>
+
+    <!-- Campo para el número de teléfono -->
+    <div class="mb-3">
+        <input type="tel" class="form-control" formControlName="telefono" placeholder="Número de Teléfono">
+        <div>
+            <small class="text-danger">El número de teléfono es requerido. </small>
+            <small class="text-danger">Formato de teléfono inválido.</small>
+        </div>
+    </div>
+
+
+    <!-- Campo para el género -->
+    <div class="mb-3">
+        <label class="form-label">Género</label>
+        <select formControlName="rol" class="form-select">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select>
+    </div>
+
+
+</form>
+

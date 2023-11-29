@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+  nombre = 'nombre'
   //TODO: Configure Pagination
   pagination: number = 5
   // TODO: Connect with service

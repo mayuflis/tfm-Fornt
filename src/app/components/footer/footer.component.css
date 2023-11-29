@@ -1,0 +1,10 @@
+.footer-container {
+    background-color: transparent;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: -10px;
+    width: 100%;
+    border-top: 1px solid #ccc; /* Borde superior delgado y gris */
+  }
