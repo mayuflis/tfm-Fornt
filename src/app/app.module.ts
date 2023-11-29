@@ -35,6 +35,8 @@ import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
 import { MapComponent } from './components/map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 
 
 
@@ -66,9 +68,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
     StudentMenuComponent,
     StudentPersonalInfoComponent,
     TutorProfilePageComponent,
-    TutorProfileFormComponent
+    TutorProfileFormComponent,
     FilterProfessorsComponent,
-    MapComponent
+    MapComponent,
+    DetailPageComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
