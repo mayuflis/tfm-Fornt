@@ -6,11 +6,13 @@ import { TutorInfoPageComponent } from './pages/tutor-info-page/tutor-info-page.
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: "", pathMatch: "full", component: HomePageComponent },
   { path: 'registro', component: RegisterPageComponent },
+  { path: 'details/:idTutor', component: DetailPageComponent },
   { path: 'tutor-info/:idTutor', component: TutorInfoPageComponent },
   { path: 'student-info/:idStudent', component: StudentInfoPageComponent },
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent }
