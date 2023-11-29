@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
   nombre = 'nombre'
+  //TODO: Configure Pagination
+  pagination: number = 5
+  // TODO: Connect with service
+  // TODO: GetAllUsers
+  // TODO: TopRatedUsers
+
 }
