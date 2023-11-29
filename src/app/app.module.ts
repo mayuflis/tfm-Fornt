@@ -33,7 +33,7 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
 import { StudentMenuComponent } from './components/student-menu/student-menu.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
-import { TutorProfileFormComponent } from './components/tutor-profile-form/tutor-profile-form.component';
+import { TutorProfileFormComponent } from './components/profile-form/profile-form.component';
 import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
 import { TutorSubjectsComponent } from './components/tutor-subjects/tutor-subjects.component';
 import { MyStudentsComponent } from './components/my-students/my-students.component';
@@ -41,6 +41,8 @@ import { TutorMyStudentsPageComponent } from './pages/tutor-my-students-page/tut
 import { TutorMystudentCardComponent } from './components/tutor-mystudent-card/tutor-mystudent-card.component';
 import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tutor-my-subjects-page.component';
 import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-card/tutor-my-subjects-card.component';
+import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
+import { StudentLearningComponent } from './components/student-learning/student-learning.component';
 
 
 
@@ -81,7 +83,9 @@ import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-car
     TutorMyStudentsPageComponent,
     TutorMystudentCardComponent,
     TutorMySubjectsPageComponent,
-    TutorMySubjectsCardComponent
+    TutorMySubjectsCardComponent,
+    StudentProfilePageComponent,
+    StudentLearningComponent
 
   ],
   imports: [
