@@ -13,12 +13,14 @@ import { StudentClassesPageComponent } from './pages/student-classes-page/studen
 import { StudentTutorsPageComponent } from './pages/student-tutors-page/student-tutors-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'registro', component: RegisterPageComponent },
+  { path: 'details/:idTutor', component: DetailPageComponent },
   { path: 'tutor-info/:idTutor', component: TutorInfoPageComponent },
   { path: 'student-info/:idStudent', component: StudentInfoPageComponent },
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
