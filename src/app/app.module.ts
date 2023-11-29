@@ -43,6 +43,7 @@ import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-car
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { StudentLearningComponent } from './components/student-learning/student-learning.component';
 import { StudentMyTeachersPageComponent } from './pages/student-my-teachers-page/student-my-teachers-page.component';
+import { TutorSubjectsNewComponent } from './components/tutor-subjects-new/tutor-subjects-new.component';
 
 
 
@@ -85,7 +86,8 @@ import { StudentMyTeachersPageComponent } from './pages/student-my-teachers-page
     TutorMySubjectsCardComponent,
     StudentProfilePageComponent,
     StudentLearningComponent,
-    StudentMyTeachersPageComponent
+    StudentMyTeachersPageComponent,
+    TutorSubjectsNewComponent
 
   ],
   imports: [
