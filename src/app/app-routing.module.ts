@@ -9,6 +9,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TutorMyStudentsPageComponent } from './pages/tutor-my-students-page/tutor-my-students-page.component';
 import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tutor-my-subjects-page.component';
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
+import { StudentMyTeachersPageComponent } from './pages/student-my-teachers-page/student-my-teachers-page.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
   { path: 'tutor/:idTutor/subjects', component: TutorMySubjectsPageComponent },
-  {path:'student-profile/:idStudent', component: StudentProfilePageComponent}
+  { path: 'student-profile/:idStudent', component: StudentProfilePageComponent },
+  { path: 'student/:idStudent/teachers', component: StudentMyTeachersPageComponent}
 ];
 
 @NgModule({
