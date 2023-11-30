@@ -1,5 +1,8 @@
+
+
 <app-home-header [nombre] = nombre></app-home-header>
 
+<app-filter-professors (sendTeachers)="getFilterTeachers($event)"></app-filter-professors>
 
 <app-footer></app-footer>
 
@@ -36,4 +39,5 @@
 
 <app-footer class="m-4"></app-footer>
 <app-filter-professors></app-filter-professors>
+
 
