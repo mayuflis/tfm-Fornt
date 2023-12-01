@@ -20,6 +20,8 @@ h5 {
     height: 30px;
     border-radius: 50%;
     text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .plus{
@@ -39,6 +41,12 @@ h5 {
 
 .form-control{
     width: 25%;
+}
+
+.form-check{
+    width: 35%;
+    margin: 0;
+    padding-top: 6px;
 }
 
 .link{
