@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -115,6 +116,7 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
@@ -125,6 +127,7 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     NgbAlertModule,
     GoogleMapsModule,
     NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

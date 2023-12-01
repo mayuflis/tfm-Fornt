@@ -1,0 +1,17 @@
+.star {
+    display: inline-block;
+    width: 20px; /* ajusta el tamaño según sea necesario */
+    height: 20px;
+    background-color: rgb(255, 255, 255); /* color de estrella blanco */
+    margin-right: 2px; /* espacio entre estrellas */
+  }
+  svg {
+    color : "red";
+}
+  .gold {
+    fill: #ECBA18;
+  }
+  .white {
+    fill: rgb(255, 255, 255);
+  }
+  
