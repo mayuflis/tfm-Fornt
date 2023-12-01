@@ -5,6 +5,8 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -86,7 +88,7 @@ import { StudentLearningComponent } from './components/student-learning/student-
     TutorMySubjectsCardComponent,
     StudentProfilePageComponent,
     StudentLearningComponent
-
+    
   ],
   imports: [
     BrowserModule,
@@ -95,10 +97,11 @@ import { StudentLearningComponent } from './components/student-learning/student-
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
-
+    FontAwesomeModule,
     NgbModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    FontAwesomeModule
 
   ],
   providers: [],

@@ -1,10 +1,12 @@
 <div class="header-container" >
   <div class="left-section">
-    <span>{{ nombre }}</span>
+    <a class="navbar-brand text-white" href="#">
+      <img src="assets/icons/app_icon_2.png" alt="Icon" class="img-fluid icon-image rounded-circle small-icon"/>
+      <p>Tutoring</p>
+    </a>
   </div>
   <div class="right-section">
     <button type="button" class="btn btn-primary">Inicio</button>
-    <button type="button" class="btn btn-primary">Registro</button>
     <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
       <button
         type="button"
@@ -22,7 +24,9 @@
         <button ngbDropdownItem>Ya soy miembro</button>
       </div>
     </div>
+    <button type="button" class="btn btn-primary">Mi cuenta</button>
   </div>
 </div>
+
 
 
