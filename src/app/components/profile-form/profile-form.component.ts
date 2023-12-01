@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './profile-form.component.html',
   styleUrls: ['./profile-form.component.css']
 })
-export class TutorProfileFormComponent {
+export class ProfileFormComponent {
 
 }
