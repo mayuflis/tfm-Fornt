@@ -1,0 +1,43 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+
+}
+
+button {
+  background-color:#ffffff;
+  color:  rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color:  #eedfdf;
+  color:  #000000;
+}
+
+button:active {
+  background-color: #eedfdf !important;; /* Puedes ajustar este color según tus preferencias */
+  color: rgb(0, 0, 0) !important;;
+}
+
+/* Estilos para el texto del atributo 'nombre' */
+.left-section span {
+  font-weight: bold;
+  font-size: 1.6em; /* Puedes ajustar el tamaño según tus preferencias */
+}

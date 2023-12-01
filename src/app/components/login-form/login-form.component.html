@@ -1,1 +1,39 @@
-<p>login-form works!</p>
+<div class="card form-translucido">
+    <div class="card-body">
+        <h2 class="text-center mb-4">Iniciar sesión</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <!-- Campo para el email -->
+            <div class="mb-3">
+                <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                <div
+                    *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
+                    <small class="text-danger" *ngIf="loginForm.get('email')?.errors?.['required']">El email es
+                        requerido.</small>
+                    <small class="text-danger" *ngIf="loginForm.get('email')?.errors?.['pattern']">Formato de email
+                        inválido.</small>
+                </div>
+            </div>
+
+            <!-- Campo para la contraseña -->
+            <div class="mb-3">
+                <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
+                <div
+                    *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+                    <small class="text-danger" *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es
+                        requerida.</small>
+                    <small class="text-danger" *ngIf="loginForm.get('password')?.errors?.['minlength']">La contraseña
+                        debe tener al menos seis caracteres.</small>
+                </div>
+
+                <div class="mt-1" *ngIf="getState()">
+                    <small class="text-danger">{{getMessageError()}} </small>
+
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
+        </form>
+    </div>
+</div>
