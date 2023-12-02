@@ -8,10 +8,6 @@
     margin: auto;
 }
 
-.rate{
-    margin-top: 3px !important;
-    padding-left: 10px;
-}
 
 .name {
     display: flex;
@@ -23,9 +19,12 @@
 .rate {
     display: flex;
     justify-content: center;
-    color: grey;
+    color: rgb(0, 0, 0);
     margin-top: 15px;
     margin-bottom: 30px;
+    margin-top: 3px !important;
+    padding-left: 1px;
+    font-weight: bold;
 }
 
 .text {

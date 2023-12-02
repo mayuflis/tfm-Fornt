@@ -10,6 +10,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TutorStarsComponent implements OnInit {
   @Input() starsCount: number = 0;
+  @Input() rate: number = 0;
+  @Input() votes: number = 0;
 
   // Creamos un array con 5 elementos, inicializados a 0
   starsArray: number[] = Array(5).fill(0);

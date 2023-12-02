@@ -15,3 +15,23 @@
     fill: rgb(255, 255, 255);
   }
   
+  .opinions{
+    color:gray
+  }
+
+  .review{
+    display:flex;
+    position: relative;
+    margin: auto;
+}
+
+.rate {
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  margin-top: 15px;
+  margin-bottom: 0px;
+  margin-top: 3px !important;
+  padding-left: 1px;
+  font-weight: bold;
+}
