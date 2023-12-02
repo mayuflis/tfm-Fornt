@@ -21,7 +21,11 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CarrouselFilterComponent } from './components/carrousel-filter/carrousel-filter.component';
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
-
+import { TutorStarsComponent } from './components/tutor-stars/tutor-stars.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { NgbModule }  from '@ng-bootstrap/ng-bootstrap'; 
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,12 +48,18 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
+    CommentComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TutorStarsComponent,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
