@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -28,6 +28,12 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CarrouselFilterComponent } from './components/carrousel-filter/carrousel-filter.component';
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
+
+import { TutorStarsComponent } from './components/tutor-stars/tutor-stars.component';
+import { CommentComponent } from './components/comment/comment.component';
+
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
@@ -60,6 +66,7 @@ import { StudentPersonalInfoComponent } from './components/student-personal-info
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +88,9 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
+
+    CommentComponent,
+
     TutorMenuComponent,
     TutorProfilePageComponent,
     ProfileFormComponent,
@@ -113,12 +123,16 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     TableSubjectPriceComponent,
     StudentPersonalInfoComponent,
     StudentInfoPageComponent,
+
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+
+    ReactiveFormsModule,
+
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
@@ -129,7 +143,8 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     NgbAlertModule,
     NgbPaginationModule,
     GoogleMapsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TutorStarsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
