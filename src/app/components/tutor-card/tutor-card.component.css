@@ -2,6 +2,17 @@
     padding: 20px;
 }
 
+.review{
+    display:flex;
+    position: relative;
+    margin: auto;
+}
+
+.rate{
+    margin-top: 3px !important;
+    padding-left: 10px;
+}
+
 .name {
     display: flex;
     justify-content: center;

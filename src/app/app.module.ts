@@ -58,7 +58,7 @@ import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tut
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
-
+import { TutorStarsComponent } from './components/tutor-stars/tutor-stars.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +129,8 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     NgbAlertModule,
     NgbPaginationModule,
     GoogleMapsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TutorStarsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
