@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +28,12 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CarrouselFilterComponent } from './components/carrousel-filter/carrousel-filter.component';
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
+
+import { TutorStarsComponent } from './components/tutor-stars/tutor-stars.component';
+import { CommentComponent } from './components/comment/comment.component';
+
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
@@ -57,6 +66,7 @@ import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.comp
 import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +88,9 @@ import { StudentMytutorCardComponent } from './components/student-mytutor-card/s
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
+
+    CommentComponent,
+
     TutorMenuComponent,
     TutorProfilePageComponent,
     ProfileFormComponent,
@@ -110,21 +123,28 @@ import { StudentMytutorCardComponent } from './components/student-mytutor-card/s
     TutorAdsComponent,
     TutorNewAdComponent,
     StudentMytutorCardComponent,
+
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
+
+    ReactiveFormsModule,
+
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    FontAwesomeModule,
     NgbModule,
-    NgbPaginationModule,
     NgbAlertModule,
+    NgbPaginationModule,
     GoogleMapsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TutorStarsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
