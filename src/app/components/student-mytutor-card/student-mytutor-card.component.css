@@ -1,4 +1,4 @@
-.flex{
+.flex {
     margin-top: 70px;
     margin-left: 220px;
     margin-right: 220px;
@@ -11,15 +11,15 @@
     gap: 35px;
 }
 
-.item{
+.item {
     width: 20%;
 }
 
-.text{
+.text {
     font-weight: bold;
 }
 
-button{
+button {
     width: 80px;
     background-color: green;
     color: white;
