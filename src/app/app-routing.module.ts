@@ -15,6 +15,7 @@ import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-op
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -29,13 +30,14 @@ const routes: Routes = [
   { path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent },
   { path: 'tutor/:idTutor/opinions', component: TutorOpinionsPageComponent },
   { path: 'tutor/:idTutor/profile', component: TutorProfilePageComponent },
+  { path: 'tutor/:idTutor/contact-tutor', component: ContactTutorPageComponent},
 
 
   { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
   { path: 'student/:idStudent/classes', component: StudentClassesPageComponent },
   { path: 'student/:idStudent/tutors', component: StudentMyTutorsPageComponent},
   { path: 'student/:idStudent/notifications', component: StudentNotificationsPageComponent },
-  { path: 'student/:idStudent//profile', component: StudentProfilePageComponent }
+  { path: 'student/:idStudent/profile', component: StudentProfilePageComponent }
   
 ];
 

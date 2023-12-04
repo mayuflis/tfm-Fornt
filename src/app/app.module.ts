@@ -55,6 +55,8 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
 import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
 import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
 import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
+import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
+import { ContactTutorFormComponent } from './components/contact-tutor-form/contact-tutor-form.component';
 
 
 @NgModule({
@@ -110,6 +112,8 @@ import { StudentMytutorCardComponent } from './components/student-mytutor-card/s
     TutorAdsComponent,
     TutorNewAdComponent,
     StudentMytutorCardComponent,
+    ContactTutorPageComponent,
+    ContactTutorFormComponent,
   ],
 
   imports: [
