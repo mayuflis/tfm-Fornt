@@ -17,5 +17,9 @@ export interface TeachersWebPublic {
 export interface Subjects {
   idsubjects: number;
   name: string;
+<<<<<<< HEAD
   NumberOfStudents: number;
+=======
+  NumberOfStudents?: number | any;
+>>>>>>> 5a970c69b3f9d3a3aac08717e81c78c71a99855e
 }
