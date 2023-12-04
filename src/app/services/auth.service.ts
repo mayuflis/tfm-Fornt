@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+
 import { lastValueFrom } from 'rxjs';
 import { DataToke, Provinces } from '../interfaces/auth';
+
 
 type formRegister = {
   nombre: string;
@@ -22,13 +24,14 @@ export type LoginFormResponse = {
   token: string;
   fatal: string;
 };
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private baseUrl: string = 'http://localhost:3100/api/users/';
   private httpClient = inject(HttpClient);
-
+  private dataToken!: DataToke;
   constructor() {}
 
   //Realiza el registro  de USUARIO
@@ -54,6 +57,7 @@ export class AuthService {
       )
     );
   }
+
 
   //Recibe la validación del token
   validaToken(token: any) {

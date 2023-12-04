@@ -16,14 +16,18 @@ import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-op
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+
 import { authRoleTeachersGuard } from './guards/auth-role-teachers.guard';
 import { authRoleStudentsGuard } from './guards/auth-roleStudents.guard';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'registro', component: RegisterPageComponent },
+
+
   { path: 'details/:idTutor', component: DetailPageComponent },
 
   { path: 'tutor/:idTutor/info', component: TutorInfoPageComponent },
@@ -37,6 +41,7 @@ const routes: Routes = [
   { path: 'tutor/:idTutor/profile', component: TutorProfilePageComponent },
 
   { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
+
   {
     path: 'student/classes',
     component: StudentClassesPageComponent,
@@ -53,6 +58,8 @@ const routes: Routes = [
     path: 'student/:idStudent//profile',
     component: StudentProfilePageComponent,
   },
+
+
 ];
 
 @NgModule({
