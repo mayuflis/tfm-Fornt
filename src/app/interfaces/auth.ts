@@ -20,3 +20,10 @@ export interface Provinces {
   idprovince: number;
   name_province: string;
 }
+
+export interface DataToke {
+  user_id: number;
+  user_role: string;
+  exp: number;
+  iat: number;
+}
