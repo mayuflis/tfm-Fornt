@@ -22,13 +22,14 @@ export type LoginFormResponse = {
   token: string;
   fatal: string;
 };
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private baseUrl: string = 'http://localhost:3100/api/users/';
   private httpClient = inject(HttpClient);
-
+  private dataToken!: DataToke;
   constructor() {}
 
   //Realiza el registro  de USUARIO
