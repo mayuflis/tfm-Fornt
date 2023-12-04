@@ -49,7 +49,6 @@ import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tut
 import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-card/tutor-my-subjects-card.component';
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { StudentLearningComponent } from './components/student-learning/student-learning.component';
-
 import { TutorSubjectsNewComponent } from './components/tutor-subjects-new/tutor-subjects-new.component';
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
 import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
@@ -123,10 +122,9 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TableSubjectPriceComponent,
     StudentPersonalInfoComponent,
     StudentInfoPageComponent,
-    StudentMyTutorsPageComponent,
-    StudentMytutorCardComponent,
-    TutorNewAdComponent,
     TutorAdsComponent,
+    TutorNewAdComponent,
+    StudentMytutorCardComponent,
   ],
 
   imports: [
