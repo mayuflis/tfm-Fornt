@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'details/:idTutor', component: DetailPageComponent },
 
   { path: 'tutor/:idTutor/info', component: TutorInfoPageComponent },
-  { path: 'tutor/:idTutor/subjects', component: TutorMySubjectsPageComponent },
+  { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
   {
     path: 'tutor/:idTutor/notifications',
@@ -38,7 +38,7 @@ const routes: Routes = [
 
   { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
   {
-    path: 'student/:idStudent/classes',
+    path: 'student/classes',
     component: StudentClassesPageComponent,
   },
   {

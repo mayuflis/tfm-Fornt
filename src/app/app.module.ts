@@ -11,7 +11,9 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { UserInterceptor } from './interceptors/user.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
@@ -90,9 +92,7 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
-
     CommentComponent,
-
     TutorMenuComponent,
     TutorProfilePageComponent,
     ProfileFormComponent,
@@ -131,9 +131,7 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-
     ReactiveFormsModule,
-
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
@@ -147,7 +145,9 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     NgxPaginationModule,
     TutorStarsComponent,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: UserInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
