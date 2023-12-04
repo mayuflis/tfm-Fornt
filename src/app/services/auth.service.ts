@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
-import { DataToke, Provinces } from '../interfaces/auth';
+import { Auth, Provinces } from '../interfaces/auth';
 
 type formRegister = {
   nombre: string;
@@ -31,34 +31,23 @@ export class AuthService {
 
   constructor() {}
 
-  //Realiza el registro  de USUARIO
   registerUser(formRegisterValue: formRegister) {
     return lastValueFrom(
       this.httpClient.post(`${this.baseUrl}register`, formRegisterValue)
     );
   }
 
-  //Obtiene todas la sprovincias
   getAllProvinces(): Promise<Provinces[]> {
     return lastValueFrom(
       this.httpClient.get<Provinces[]>(`${this.baseUrl}province`)
     );
   }
-
-  //Realiza el login
   loginUser(formLoginValue: loginForm): Promise<LoginFormResponse> {
     return lastValueFrom(
       this.httpClient.post<LoginFormResponse>(
         `${this.baseUrl}login`,
         formLoginValue
       )
-    );
-  }
-
-  //Recibe la validación del token
-  validaToken(token: any) {
-    return lastValueFrom(
-      this.httpClient.post<DataToke>(`${this.baseUrl}validateToken`, { token })
     );
   }
 }
