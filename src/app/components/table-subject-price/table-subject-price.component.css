@@ -2,8 +2,14 @@
     padding-bottom: 20px;
 }
 
+.prueba{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 .table{
     font-size: 0.9rem;
+    text-align: center;
 }
 
 th{
