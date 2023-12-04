@@ -16,6 +16,8 @@ import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-op
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { authRoleTeachersGuard } from './guards/auth-role-teachers.guard';
+import { authRoleStudentsGuard } from './guards/auth-roleStudents.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -25,24 +27,36 @@ const routes: Routes = [
   { path: 'details/:idTutor', component: DetailPageComponent },
 
   { path: 'tutor/:idTutor/info', component: TutorInfoPageComponent },
-  { path: 'tutor/:idTutor/subjects', component: TutorMySubjectsPageComponent },
+  { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
-  { path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent },
+  {
+    path: 'tutor/:idTutor/notifications',
+    component: TutorNotificationsPageComponent,
+  },
   { path: 'tutor/:idTutor/opinions', component: TutorOpinionsPageComponent },
   { path: 'tutor/:idTutor/profile', component: TutorProfilePageComponent },
 
-
   { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
-  { path: 'student/:idStudent/classes', component: StudentClassesPageComponent },
-  { path: 'student/:idStudent/tutors', component: StudentMyTutorsPageComponent},
-  { path: 'student/:idStudent/notifications', component: StudentNotificationsPageComponent },
-  { path: 'student/:idStudent//profile', component: StudentProfilePageComponent }
-  
+  {
+    path: 'student/classes',
+    component: StudentClassesPageComponent,
+  },
+  {
+    path: 'student/:idStudent/tutors',
+    component: StudentMyTutorsPageComponent,
+  },
+  {
+    path: 'student/:idStudent/notifications',
+    component: StudentNotificationsPageComponent,
+  },
+  {
+    path: 'student/:idStudent//profile',
+    component: StudentProfilePageComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}

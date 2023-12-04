@@ -4,10 +4,16 @@ import { CommonModule } from '@angular/common';
 
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbPaginationModule,
+  NgbAlertModule,
+  NgbModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { UserInterceptor } from './interceptors/user.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
@@ -32,7 +38,7 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
 import { TutorStarsComponent } from './components/tutor-stars/tutor-stars.component';
 import { CommentComponent } from './components/comment/comment.component';
 
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
@@ -45,7 +51,6 @@ import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tut
 import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-card/tutor-my-subjects-card.component';
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { StudentLearningComponent } from './components/student-learning/student-learning.component';
-import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
 import { TutorSubjectsNewComponent } from './components/tutor-subjects-new/tutor-subjects-new.component';
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
 import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
@@ -61,11 +66,10 @@ import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tut
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
-import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
-import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
+import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
 import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
-
-
+import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
+import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
 
 @NgModule({
   declarations: [
@@ -88,9 +92,7 @@ import { StudentMytutorCardComponent } from './components/student-mytutor-card/s
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
-
     CommentComponent,
-
     TutorMenuComponent,
     TutorProfilePageComponent,
     ProfileFormComponent,
@@ -123,16 +125,13 @@ import { StudentMytutorCardComponent } from './components/student-mytutor-card/s
     TutorAdsComponent,
     TutorNewAdComponent,
     StudentMytutorCardComponent,
-
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-
     ReactiveFormsModule,
-
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
@@ -144,9 +143,11 @@ import { StudentMytutorCardComponent } from './components/student-mytutor-card/s
     NgbPaginationModule,
     GoogleMapsModule,
     NgxPaginationModule,
-    TutorStarsComponent
+    TutorStarsComponent,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: UserInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
