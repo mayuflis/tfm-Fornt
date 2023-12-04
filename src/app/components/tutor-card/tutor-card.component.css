@@ -2,8 +2,8 @@
     padding: 20px;
 }
 
-.review{
-    display:flex;
+.review {
+    display: flex;
     position: relative;
     margin: auto;
 }
@@ -16,6 +16,11 @@
     margin-bottom: 10px;
 }
 
+.bold {
+    font-weight: bold;
+    color: rgb(131, 182, 131);
+}
+
 .rate {
     display: flex;
     justify-content: center;
@@ -25,6 +30,11 @@
     margin-top: 3px !important;
     padding-left: 1px;
     font-weight: bold;
+}
+
+.tags {
+    background-color: rgb(97, 132, 97);
+    font-size: 14px;
 }
 
 .text {

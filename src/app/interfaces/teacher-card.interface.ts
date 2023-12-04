@@ -1,6 +1,7 @@
 export interface TeacherCard {
     idusers: number;
     name: string;
+    last_name: string;
     email: string;
     role: string;
     latitude: number;

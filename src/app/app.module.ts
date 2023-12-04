@@ -64,6 +64,7 @@ import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tut
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
+import { MapDetailsComponent } from './components/map-details/map-details.component';
 
 
 
@@ -123,6 +124,7 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     TableSubjectPriceComponent,
     StudentPersonalInfoComponent,
     StudentInfoPageComponent,
+    MapDetailsComponent,
 
   ],
 
