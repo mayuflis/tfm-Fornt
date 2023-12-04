@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
-import { Auth, Provinces } from '../interfaces/auth';
+import { DataToke, Provinces } from '../interfaces/auth';
 
 type formRegister = {
   nombre: string;
@@ -48,6 +48,11 @@ export class AuthService {
         `${this.baseUrl}login`,
         formLoginValue
       )
+    );
+  }
+  validaToken(token: any) {
+    return lastValueFrom(
+      this.httpClient.post<DataToke>(`${this.baseUrl}validateToken`, { token })
     );
   }
 }

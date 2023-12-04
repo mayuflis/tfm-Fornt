@@ -4,7 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbPaginationModule,
+  NgbAlertModule,
+  NgbModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,7 +36,7 @@ import { CarrouselBestRatingComponent } from './components/carrousel-best-rating
 import { TutorStarsComponent } from './components/tutor-stars/tutor-stars.component';
 import { CommentComponent } from './components/comment/comment.component';
 
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
@@ -45,15 +49,12 @@ import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tut
 import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-card/tutor-my-subjects-card.component';
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { StudentLearningComponent } from './components/student-learning/student-learning.component';
-import { StudentMyTeachersPageComponent } from './pages/student-my-teachers-page/student-my-teachers-page.component';
+
 import { TutorSubjectsNewComponent } from './components/tutor-subjects-new/tutor-subjects-new.component';
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
-import { TutorClassesPageComponent } from './pages/tutor-classes-page/tutor-classes-page.component';
-import { TutorStudentsPageComponent } from './pages/tutor-students-page/tutor-students-page.component';
 import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
 import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-opinions-page.component';
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
-import { StudentTutorsPageComponent } from './pages/student-tutors-page/student-tutors-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { MapComponent } from './components/map/map.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -64,8 +65,10 @@ import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tut
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
-
-
+import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
+import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
+import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
+import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
 
 @NgModule({
   declarations: [
@@ -102,19 +105,16 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     TutorMySubjectsCardComponent,
     StudentProfilePageComponent,
     StudentLearningComponent,
-    StudentMyTeachersPageComponent,
+    StudentMyTutorsPageComponent,
     TutorSubjectsNewComponent,
     ProfileFormComponent,
     FilterProfessorsComponent,
     MapComponent,
     DetailPageComponent,
     StudentProfilePageComponent,
-    TutorClassesPageComponent,
-    TutorStudentsPageComponent,
     TutorNotificationsPageComponent,
     TutorOpinionsPageComponent,
     StudentClassesPageComponent,
-    StudentTutorsPageComponent,
     StudentNotificationsPageComponent,
     MapComponent,
     HomePageComponent,
@@ -123,7 +123,10 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     TableSubjectPriceComponent,
     StudentPersonalInfoComponent,
     StudentInfoPageComponent,
-
+    StudentMyTutorsPageComponent,
+    StudentMytutorCardComponent,
+    TutorNewAdComponent,
+    TutorAdsComponent,
   ],
 
   imports: [
@@ -144,7 +147,7 @@ import { StudentInfoPageComponent } from './pages/student-info-page/student-info
     NgbPaginationModule,
     GoogleMapsModule,
     NgxPaginationModule,
-    TutorStarsComponent
+    TutorStarsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
