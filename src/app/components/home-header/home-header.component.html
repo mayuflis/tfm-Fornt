@@ -1,22 +1,16 @@
-<div class="header-container" >
+<div class="header-container">
   <div class="left-section">
     <a class="navbar-brand text-white" href="#">
-      <img src="assets/icons/app_icon_2.png" alt="Icon" class="img-fluid icon-image rounded-circle small-icon"/>
+      <img src="assets/icons/app_icon_2.png" alt="Icon" class="img-fluid icon-image rounded-circle small-icon" />
       <p>Tutoring</p>
     </a>
   </div>
   <div class="right-section">
     <button type="button" class="btn btn-primary">Inicio</button>
     <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
-      <button
-        type="button"
-        class="btn btn-outline-primary me-2"
-        id="dropdownManual"
-        ngbDropdownAnchor
-        (focus)="myDrop.open()"
-        (click)="inscribirme()"
-      >
-      Inscribirme
+      <button type="button" class="btn btn-outline-primary me-2" id="dropdownManual" ngbDropdownAnchor
+        (focus)="myDrop.open()" (click)="inscribirme()">
+        Inscribirme
       </button>
       <div ngbDropdownMenu aria-labelledby="dropdownManual">
         <button ngbDropdownItem>Alumno</button>
@@ -27,6 +21,3 @@
     <button type="button" class="btn btn-primary">Mi cuenta</button>
   </div>
 </div>
-
-
-

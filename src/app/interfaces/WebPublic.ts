@@ -20,6 +20,7 @@ export interface Subjects {
 
 
 
+
   NumberOfStudents?: number | any;
 
 }
