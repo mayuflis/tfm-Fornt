@@ -55,7 +55,6 @@ export class AuthFormComponent implements OnInit {
   async ngOnInit() {
     try {
       this.provinces = await this.authService.getAllProvinces();
-      this.obtenerUbicacion();
     } catch (error: any) {
       console.log(error.fatal);
     }
@@ -68,13 +67,39 @@ export class AuthFormComponent implements OnInit {
   }
 
   async onSubmit() {
-    if (this.authForm.valid) {
-      const result = await this.authService.registerUser(this.authForm.value);
-      if (result) {
-        this.router.navigate(['/login']);
+    try {
+      this.obtenerUbicacion();
+      if (this.authForm.valid) {
+        const result = await this.authService.registerUser(this.authForm.value);
+        if (result) {
+          this.router.navigate(['/login']);
+        }
+      } else {
+        this.mostrarAlert();
       }
-    } else {
-      this.mostrarAlert();
+    } catch (error: any) {
+      if (
+        error.error.fatal ===
+        "Duplicate entry 'mayitavista@gmail.com' for key 'users.email_UNIQUE'"
+      ) {
+        Swa1.fire({
+          title: 'Email duplicado',
+          showClass: {
+            popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `,
+          },
+          hideClass: {
+            popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `,
+          },
+        });
+      }
     }
   }
   obtenerUbicacion() {
@@ -105,7 +130,7 @@ export class AuthFormComponent implements OnInit {
       icon: 'error',
       title: 'Oops...',
       text: '¡Algo salió mal!',
-      footer: 'El formulario posee campos incorrectos',
+      footer: 'El formulario posee campos incompletos',
     });
   }
 }
