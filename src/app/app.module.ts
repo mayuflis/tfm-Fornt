@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbPaginationModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +28,12 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { CarrouselFilterComponent } from './components/carrousel-filter/carrousel-filter.component';
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
+
+import { TutorStarsComponent } from './components/tutor-stars/tutor-stars.component';
+import { CommentComponent } from './components/comment/comment.component';
+
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
@@ -60,6 +69,7 @@ import { TutorClassCardComponent } from './components/tutor-class-card/tutor-cla
 import { StudentAboutMeProfileComponent } from './components/student-about-me-profile/student-about-me-profile.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +91,9 @@ import { StudentAboutMeProfileComponent } from './components/student-about-me-pr
     CarrouselFilterComponent,
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
+
+    CommentComponent,
+
     TutorMenuComponent,
     TutorProfilePageComponent,
     ProfileFormComponent,
@@ -111,26 +124,36 @@ import { StudentAboutMeProfileComponent } from './components/student-about-me-pr
     StudentInfoPageComponent,
     TutorAboutMeProfileComponent,
     StudentMytutorCardComponent,
+<<<<<<< HEAD
     ContactTutorPageComponent,
     ContactTutorFormComponent,
     TutorMyClassesPageComponent,
     TutorClassCardComponent,
     StudentAboutMeProfileComponent,
+=======
+
+>>>>>>> 80735d42685f9986a5b0d7cde391c7c01ace3642
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
+
+    ReactiveFormsModule,
+
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    FontAwesomeModule,
     NgbModule,
-    NgbPaginationModule,
     NgbAlertModule,
+    NgbPaginationModule,
     GoogleMapsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TutorStarsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

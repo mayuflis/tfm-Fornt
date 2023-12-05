@@ -1,0 +1,7 @@
+.cuerpo{
+    display: flex;
+    background-color: rgb(132, 35, 35);
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+  }
