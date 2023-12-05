@@ -66,6 +66,7 @@ import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tut
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
+import { MapDetailsComponent } from './components/map-details/map-details.component';
 import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
 import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
 import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
@@ -122,6 +123,7 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TableSubjectPriceComponent,
     StudentPersonalInfoComponent,
     StudentInfoPageComponent,
+    MapDetailsComponent,
     TutorAdsComponent,
     TutorNewAdComponent,
     StudentMytutorCardComponent,
