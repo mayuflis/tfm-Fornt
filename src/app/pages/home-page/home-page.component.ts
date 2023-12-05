@@ -7,7 +7,15 @@ import { TeachersWebPublic } from 'src/app/interfaces/WebPublic';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent {
+
   filterOfTeachers!: TeachersWebPublic;
+  nombre = 'nombre'
+  //TODO: Configure Pagination
+  pagination: number = 5
+  // TODO: Connect with service
+  // TODO: GetAllUsers
+  // TODO: TopRatedUsers
+
 
   //Función que obtiene los valores filtrado del componente FilterProfessosrs
   getFilterTeachers($event: TeachersWebPublic) {
