@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   {
     path: 'login',
-    canActivate: [notLoginGuard],
+
     component: LoginPageComponent,
   },
   { path: 'registro', component: RegisterPageComponent },
