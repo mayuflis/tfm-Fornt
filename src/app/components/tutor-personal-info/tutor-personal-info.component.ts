@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TeacherCard } from 'src/app/interfaces/teacher-card.interface';
 
 @Component({
   selector: 'app-tutor-personal-info',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tutor-personal-info.component.css']
 })
 export class TutorPersonalInfoComponent {
+  @Input() myTeacher: TeacherCard | any;
+
 
 }

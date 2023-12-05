@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'registro', component: RegisterPageComponent },
-  { path: 'tutor-info/:idTutor', component: TutorInfoPageComponent },
+  { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
   { path: 'student-info/:idStudent', component: StudentInfoPageComponent },
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
