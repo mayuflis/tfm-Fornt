@@ -31,7 +31,7 @@ export class HomePageComponent {
   //Función que obtiene los valores filtrado del componente FilterProfessosrs
   getFilterTeachers($event: TeachersWebPublic) {
     this.filterOfTeachers = $event;
-    if (!$event.name) {
+    if (this.filterOfTeachers.idusers === 0) {
       console.log('No se han encontrado profesores con los filtros aplicados');
     }
     console.log(this.filterOfTeachers);

@@ -27,7 +27,7 @@ export type LoginFormResponse = {
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl: string = 'http://localhost:3100/api/users/';
+  private baseUrl: string = 'http://localhost:3000/api/users/';
   private httpClient = inject(HttpClient);
   private dataToken!: DataToke;
   constructor() {}
