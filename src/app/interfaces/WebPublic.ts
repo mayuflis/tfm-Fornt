@@ -1,4 +1,5 @@
 export interface TeachersWebPublic {
+  idusers: number;
   name: string;
   last_name: string;
   image: string;
