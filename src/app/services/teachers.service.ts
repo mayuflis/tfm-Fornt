@@ -8,11 +8,11 @@ import { Subjects } from '../interfaces/WebPublic';
   providedIn: 'root',
 })
 export class TeachersService {
-  private httClient = inject(HttpClient);
+  private httpClient = inject(HttpClient);
   private baseUrl: string = 'http://localhost:3100/api/teachers';
-  
-  constructor() {}
-  
+
+  constructor() { }
+
   //Gets the necessary info for Teachers Card and Map Component  
   getTeachersInfo(): Promise<TeacherCard[]> {
     return lastValueFrom(
@@ -29,13 +29,13 @@ export class TeachersService {
   //Obtiene la cantidad de alumnos por asignatura
   getAmountStudents(idSubject: number): Promise<Subjects> {
     return lastValueFrom(
-      this.httClient.get<Subjects>(`${this.baseUrl}/menu/countStudents/${idSubject}`)
+      this.httpClient.get<Subjects>(`${this.baseUrl}/menu/countStudents/${idSubject}`)
     );
   }
   //Obtiene las asignatura que imparte
   getSubjects(): Promise<Subjects[]> {
     return lastValueFrom(
-      this.httClient.get<Subjects[]>(`${this.baseUrl}/subjects`)
+      this.httpClient.get<Subjects[]>(`${this.baseUrl}/subjects`)
     );
   }
 }

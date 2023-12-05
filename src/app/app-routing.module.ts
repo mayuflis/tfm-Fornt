@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { ActivatedRoute } from '@angular/router';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { TutorInfoPageComponent } from './pages/tutor-info-page/tutor-info-page.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
@@ -16,8 +15,6 @@ import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-op
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
-import { authRoleTeachersGuard } from './guards/auth-role-teachers.guard';
-import { authRoleStudentsGuard } from './guards/auth-roleStudents.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -30,26 +27,26 @@ const routes: Routes = [
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
   { path: 'tutor/:idTutor/subjects', component: TutorMySubjectsPageComponent },
   { path: 'student-profile/:idStudent', component: StudentProfilePageComponent },
-  { path: 'student/:idStudent/teachers', component: StudentMyTeachersPageComponent },
   { path: 'details/:idTutor', component: DetailPageComponent },
   { path: 'tutor-info/:idTutor', component: TutorInfoPageComponent },
-  { path: 'tutor-students/:idTutor', component: TutorStudentsPageComponent },
-  { path: 'tutor-classes/:idTutor', component: TutorClassesPageComponent },
+  // { path: 'student/:idStudent/teachers', component: StudentMyTeachersPageComponent },
+  // { path: 'tutor-students/:idTutor', component: TutorStudentsPageComponent },
+  // { path: 'tutor-classes/:idTutor', component: TutorClassesPageComponent },
   { path: 'tutor-notifications/:idTutor', component: TutorNotificationsPageComponent },
   { path: 'student-classes/:idStudent', component: StudentClassesPageComponent },
   { path: 'tutor-opinions/:idTutor', component: TutorOpinionsPageComponent },
-  { path: 'student-tutors/:idStudent', component: StudentTutorsPageComponent },
+  { path: 'student-tutors/:idStudent', component: StudentMyTutorsPageComponent },
   { path: 'student-notifications/:idStudent', component: StudentNotificationsPageComponent },
   { path: 'details/:idTutor', component: DetailPageComponent },
   { path: 'tutor/:idTutor/info', component: TutorInfoPageComponent },
   { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
-  {path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent,},
+  { path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent, },
   { path: 'tutor/:idTutor/opinions', component: TutorOpinionsPageComponent },
   { path: 'tutor/:idTutor/profile', component: TutorProfilePageComponent },
   { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
   { path: 'student/:idStudent/classes', component: StudentClassesPageComponent },
-  { path: 'student/:idStudent/tutors', component: StudentMyTutorsPageComponent},
+  { path: 'student/:idStudent/tutors', component: StudentMyTutorsPageComponent },
   { path: 'student/:idStudent/notifications', component: StudentNotificationsPageComponent },
   { path: 'student/:idStudent//profile', component: StudentProfilePageComponent }
 ];
@@ -58,4 +55,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
