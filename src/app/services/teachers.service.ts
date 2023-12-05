@@ -7,9 +7,16 @@ import { Subjects } from '../interfaces/WebPublic';
 @Injectable({
   providedIn: 'root',
 })
+
+export class TeachersTsService {
+  private httClient = inject(HttpClient);
+  private baseUrl: string = 'http://localhost:3000/api/teachers/menu/';
+  constructor() {}
+
 export class TeachersService {
   private httpClient = inject(HttpClient);
   private baseUrl: string = 'http://localhost:3100/api/teachers';
+
 
   constructor() { }
 
