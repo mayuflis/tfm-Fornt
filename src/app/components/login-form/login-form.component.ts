@@ -38,8 +38,9 @@ export class LoginFormComponent {
       this.router.navigate(['']);
     } catch (error: any) {
       this.state = true;
-      this.errorMessage = error.error.fatal;
-      console.log(error.error.fatal);
+      if (error.error.fatal) this.errorMessage = error.error.fatal;
+
+      console.error(error.error.error);
     }
   }
   getState(): Boolean {
