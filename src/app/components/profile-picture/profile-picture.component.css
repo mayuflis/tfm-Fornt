@@ -4,7 +4,8 @@ h5{
 
 .flex{
     display: flex;
-    gap: 35px;
+    gap: 55px;
+    margin-left: 30px;
 }
 
 .round{
@@ -24,4 +25,10 @@ h5{
     border-color: rgb(124, 168, 106);
     margin-bottom: 70px;
     width: 75%;
+}
+
+.btn{
+    height: 50px;
+    width: 50%;
+    
 }

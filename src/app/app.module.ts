@@ -30,7 +30,6 @@ import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-prof
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
 import { TutorSubjectsComponent } from './components/tutor-subjects/tutor-subjects.component';
-import { TutorMyStudentsPageComponent } from './pages/tutor-my-students-page/tutor-my-students-page.component';
 import { TutorMystudentCardComponent } from './components/tutor-mystudent-card/tutor-mystudent-card.component';
 import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tutor-my-subjects-page.component';
 import { TutorMySubjectsCardComponent } from './components/tutor-my-subjects-card/tutor-my-subjects-card.component';
@@ -52,11 +51,13 @@ import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tut
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
-import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
-import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
+import { TutorAboutMeProfileComponent } from './components/tutor-about-me-profile/tutor-about-me-profile.component';
 import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
 import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
 import { ContactTutorFormComponent } from './components/contact-tutor-form/contact-tutor-form.component';
+import { TutorMyClassesPageComponent } from './pages/tutor-my-classes-page/tutor-my-classes-page.component';
+import { TutorClassCardComponent } from './components/tutor-class-card/tutor-class-card.component';
+import { StudentAboutMeProfileComponent } from './components/student-about-me-profile/student-about-me-profile.component';
 
 
 @NgModule({
@@ -85,7 +86,6 @@ import { ContactTutorFormComponent } from './components/contact-tutor-form/conta
     ProfileFormComponent,
     ProfilePictureComponent,
     TutorSubjectsComponent,
-    TutorMyStudentsPageComponent,
     TutorMystudentCardComponent,
     TutorMySubjectsPageComponent,
     TutorMySubjectsCardComponent,
@@ -109,11 +109,13 @@ import { ContactTutorFormComponent } from './components/contact-tutor-form/conta
     TableSubjectPriceComponent,
     StudentPersonalInfoComponent,
     StudentInfoPageComponent,
-    TutorAdsComponent,
-    TutorNewAdComponent,
+    TutorAboutMeProfileComponent,
     StudentMytutorCardComponent,
     ContactTutorPageComponent,
     ContactTutorFormComponent,
+    TutorMyClassesPageComponent,
+    TutorClassCardComponent,
+    StudentAboutMeProfileComponent,
   ],
 
   imports: [
