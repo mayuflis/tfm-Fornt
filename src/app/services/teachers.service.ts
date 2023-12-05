@@ -8,7 +8,7 @@ import { Subjects } from '../interfaces/WebPublic';
 })
 export class TeachersTsService {
   private httClient = inject(HttpClient);
-  private baseUrl: string = 'http://localhost:3100/api/teachers/menu/';
+  private baseUrl: string = 'http://localhost:3000/api/teachers/menu/';
   constructor() {}
 
   //Obtiene la cantidad de alumnos por asignatura
