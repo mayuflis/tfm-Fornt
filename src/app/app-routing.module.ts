@@ -15,6 +15,7 @@ import { StudentClassesPageComponent } from './pages/student-classes-page/studen
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 
+
 import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
 import { TutorMyClassesPageComponent } from './pages/tutor-my-classes-page/tutor-my-classes-page.component';
 
@@ -32,9 +33,18 @@ const routes: Routes = [
 
 
   { path: 'tutor/:idTutor/info', component: TutorInfoPageComponent },
-  { path: 'tutor/:idTutor/subjects', component: TutorMySubjectsPageComponent },
+
+  { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
+  { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
+  {
+    path: 'tutor/:idTutor/notifications',
+    component: TutorNotificationsPageComponent,
+  },
+
+
   { path: 'tutor/:idTutor/classes', component: TutorMyClassesPageComponent },
   { path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent },
+
   { path: 'tutor/:idTutor/opinions', component: TutorOpinionsPageComponent },
   { path: 'tutor/:idTutor/profile', component: TutorProfilePageComponent },
   { path: 'tutor/:idTutor/contact-tutor', component: ContactTutorPageComponent},
@@ -57,7 +67,11 @@ const routes: Routes = [
   */
 
 
-/* Mis alumnos se eliminaba. Mis asignaturas era con las cards de sergio, Mis clases era la card con nombre, asignatura, email, dia y hora
+  { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
+
+
+
+/* 
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
   */
@@ -77,38 +91,29 @@ const routes: Routes = [
   // { path: 'tutor-students/:idTutor', component: TutorStudentsPageComponent },
   
    /*
-  {
-    path: 'student-tutors/:idStudent',
-    component: StudentMyTutorsPageComponent,
+  { path: 'student-tutors/:idStudent',     component: StudentMyTutorsPageComponent,
   },
-  {
-    path: 'student-notifications/:idStudent',
-    component: StudentNotificationsPageComponent,
-  },
+  {     path: 'student-notifications/:idStudent',     component: StudentNotificationsPageComponent,   },
 
   { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
 
-  {
-    path: 'student/classes',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentClassesPageComponent,
+  {     path: 'student/classes',     canActivate: [authRoleStudentsGuard],     component: StudentClassesPageComponent,
+  },
+  {     path: 'student/:idStudent/tutors',     canActivate: [authRoleStudentsGuard],     component: StudentMyTutorsPageComponent,
+  },
+  {     path: 'student/:idStudent/notifications',     component: StudentNotificationsPageComponent,
   },
   {
-    path: 'student/:idStudent/tutors',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentMyTutorsPageComponent,
+    path: 'student/:idStudent//profile',    component: StudentProfilePageComponent,
   },
-  {
-    path: 'student/:idStudent/notifications',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentNotificationsPageComponent,
-  },
+
   {
     path: 'student/:idStudent/profile',
     canActivate: [authRoleStudentsGuard],
     component: StudentProfilePageComponent,
   },
   */
+
 
 ];
 

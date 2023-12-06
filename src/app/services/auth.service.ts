@@ -56,6 +56,7 @@ export class AuthService {
     );
   }
 
+
   //Recibe la validación del token
   validaToken(token: any) {
     return lastValueFrom(

@@ -66,6 +66,13 @@ import { TableSubjectPriceComponent } from './components/table-subject-price/tab
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
 
+import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
+import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
+/*import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
+import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
+*/
+
+
 import { TutorAboutMeProfileComponent } from './components/tutor-about-me-profile/tutor-about-me-profile.component';
 import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
 import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
@@ -82,6 +89,7 @@ import { StudentMytutorCardComponent } from './components/student-mytutor-card/s
 import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
 import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
 */
+
 
 @NgModule({
   declarations: [
@@ -149,7 +157,9 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TutorAdsComponent,
     TutorNewAdComponent,
     StudentMytutorCardComponent,
+
 */
+
   ],
 
   imports: [
