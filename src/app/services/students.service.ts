@@ -7,7 +7,9 @@ import { infoClass } from '../pages/student-classes-page/student-classes-page.co
 })
 export class StudentsService {
   private http = inject(HttpClient);
+
   private baseUrl: string = 'http://localhost:3100/api/students/';
+
   constructor() {}
 
   //Obtiene información del las clases que recibe el alumno

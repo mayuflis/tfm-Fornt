@@ -1,4 +1,5 @@
 export interface TeachersWebPublic {
+  idusers: number;
   name: string;
   last_name: string;
   image: string;
@@ -17,7 +18,6 @@ export interface TeachersWebPublic {
 export interface Subjects {
   idsubjects: number;
   name: string;
-
   NumberOfStudents: number;
 
 }

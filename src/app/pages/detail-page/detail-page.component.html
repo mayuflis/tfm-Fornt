@@ -1,1 +1,38 @@
-<p>detail-page works!</p>
+<div class="m-3">
+
+    <main class="section-container d-flex align-items-start justify-content-center">
+        <div>
+            <img [src]='detailedTeacher[0].image' t="Descripcion de la imagen"
+                class="py-3 px-5 profile-image h-50 rounded-circle">
+            <div class="py-5 px-3 height-auto d-flex flex-column text-left align-items-start">
+                <div class="mb-3">
+
+                    <h3 class="py-2">{{detailedTeacher[0].name}} {{detailedTeacher[0].last_name}}</h3>
+                    <h6 class="py-2">{{detailedTeacher[0].email}}</h6>
+                    <p>{{detailedTeacher[0].name_province}}</p>
+                </div>
+                <p class="py-2">Estrellas</p>
+                <div>
+                    <p>{{detailedTeacher[0].title_prof}}</p>
+                    <p>{{detailedTeacher[0].description_prof}}</p>
+                </div>
+                <div>
+                    <p class="">Asignaturas</p>
+                    <div>
+                        <span class="badge badge-pill me-1 tags"
+                            *ngFor="let subjects of detailedTeacher[0].arraySubjects">{{subjects.subject_name}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mx-5">
+            <h2 class="">Opiniones</h2>
+        </div>
+    </main>
+    <section class="d-flex justify-content-center">
+        <div class="m-3 p-2 btn-group " role="group" aria-label="Button group">
+            <a class="btn btn-outline-dark hover-danger">Volver a listado</a>
+        </div>
+    </section>
+</div>

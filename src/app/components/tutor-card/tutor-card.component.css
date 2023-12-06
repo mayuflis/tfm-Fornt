@@ -2,8 +2,8 @@
     padding: 20px;
 }
 
-.review{
-    display:flex;
+.review {
+    display: flex;
     position: relative;
     margin: auto;
 }
@@ -14,6 +14,11 @@
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.bold {
+    font-weight: 800;
+    color: rgb(131, 182, 131);
 }
 
 .rate {
@@ -27,11 +32,22 @@
     font-weight: bold;
 }
 
+.tags {
+    background-color: rgb(97, 132, 97);
+    font-size: 14px;
+}
+
 .text {
     margin: 0;
     padding-bottom: 6px;
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.light{
+    font-weight: lighter;
 }
 
 .btn {
@@ -41,3 +57,29 @@
     background-color: rgb(141, 184, 141);
     border-color: transparent;
 }
+
+.btn:hover {
+    background-color: rgb(81, 117, 81);
+}
+
+/* TODO: CAMBIAR ESTILO?? */
+/* .teacher-card {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    color: #fff;
+} 
+
+    .teacher-card button {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.teacher-card button:hover {
+    background: linear-gradient(to right, #3498db, #2c3e50);
+}  */

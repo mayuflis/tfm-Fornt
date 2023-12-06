@@ -1,11 +1,15 @@
-<section >
+<section>
     <app-tutor-menu></app-tutor-menu>
     <div class="info">
-        <app-tutor-card></app-tutor-card>
-        <app-tutor-personal-info></app-tutor-personal-info>
+        <app-tutor-card [teacher]="detailedTeacher[0]" [showContactButton]="false"
+            [showSimpleTags]="false"></app-tutor-card>
+        <app-tutor-personal-info [teacher]="detailedTeacher[0]"></app-tutor-personal-info>
     </div>
     <div class="margin">
-        <app-table-subject-price ></app-table-subject-price>
+        <app-table-subject-price></app-table-subject-price>
     </div>
-    
+    <section class="m-5 d-flex justify-content-center">
+        <app-map-details></app-map-details>
+    </section>
+
 </section>
