@@ -1,6 +1,6 @@
-<google-map height="100vh" width="100vw" [center]="myPosition" [zoom]="zoom">
+<google-map height="70vh" width="75vw" [center]="userPosition" [zoom]="zoom">
     <map-marker #myMarker="mapMarker" *ngFor="let teacher of arrMapInfo, let i = index " [position]="teacher.position"
-        [options]="markerOptions" (mapClick)="openInfoWindow(myMarker, i)">
+        (mapClick)="openInfoWindow(myMarker, i)">
         <map-info-window>
             <section class="m-3">
                 <div class="d-flex align-items-center">
@@ -29,4 +29,5 @@
             </section>
         </map-info-window>
     </map-marker>
+    <map-marker [position]="userPosition" [options]="userOptions"></map-marker>
 </google-map>

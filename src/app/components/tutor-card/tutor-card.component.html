@@ -1,16 +1,27 @@
-<div class="card" style="width: 18rem;">
-    <img src="../../../assets//images/personal-placeholder-dona.jpg" class="card-img-top" alt="...">
+<div class="card teacher-card" style="width: 18rem;">
+    <img [src]="teacher.image" class="card-img-top rounded-circle" alt="...">
     <div class="card-body">
-        <h5 class="name">{{myTeacher.name}}</h5>
-        <app-tutor-stars [starsCount]="4.6" [votes]="29" [rate]="4.7"></app-tutor-stars>
-        <div>
-            <p>Cerca de <span class="bold">{{myTeacher.name_province}}</span></p>
+        <h5 class="name">{{teacher.name}}</h5>
+        <div class="my-2 bold">
+            <h5 *ngIf="showEmail">{{teacher.email}}</h5>
         </div>
-        <section>
-            <span class="badge badge-pill me-2 tags"
-                *ngFor="let subject of myTeacher.arraySubjects">{{subject.subject_name}}</span>
+        <app-tutor-stars [starsCount]="teacher.reviews.rate" [votes]="teacher.reviews.num_reviews"
+            [rate]=" teacher.reviews.rate"></app-tutor-stars>
+        <div>
+            <p>Cerca de <span class="bold">{{teacher.name_province}}</span></p>
+        </div>
+        <section *ngIf="showSimpleTags">
+            <span class="badge badge-pill me-2 mb-2 tags"
+                *ngFor="let subject of teacher.arraySubjects">{{subject.subject_name}}</span>
         </section>
-
-        <a href="#" class="btn btn-primary" [routerLink]="['/tutor/info', myTeacher.idusers]">Contactar</a>
+        <section *ngIf="showDetailedTags">
+            <span class="badge badge-pill me-2 mb-2 tags"
+                *ngFor="let subject of teacher.arraySubjects">{{subject.subject_name}}
+                ({{subject.level}})</span>
+        </section>
+        <div class="mt-2 d-flex justify-content-center">
+            <button class="btn btn-primary" *ngIf="showContactButton"
+                [routerLink]="['/tutor/info', teacher.idusers]">Contactar</button>
+        </div>
     </div>
 </div>

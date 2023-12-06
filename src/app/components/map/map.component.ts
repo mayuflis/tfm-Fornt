@@ -12,16 +12,19 @@ import { TeachersService } from 'src/app/services/teachers.service';
 export class MapComponent {
   @ViewChildren(MapInfoWindow) myInfoWindow: QueryList<MapInfoWindow> | any;
 
-  zoom: number = 7;
-  myPosition: google.maps.LatLng | any;
-  markerOptions = {
-    animation: google.maps.Animation.DROP,
+  zoom: number = 8;
+  userPosition: google.maps.LatLng | any;
+   userOptions = {
+    icon: {
+      url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+    },
   };
   activateRoute = inject(ActivatedRoute);
   teachersService = inject(TeachersService);
   arrTeachers: TeacherCard[] = []
   // TODO: CREAR INTERFACE MapInfo
   arrMapInfo: any = []
+
 
 
   async ngOnInit(): Promise<void> {
@@ -44,10 +47,10 @@ export class MapComponent {
     } catch (error) {
       console.log(error)
     }
-    //GetCurrentPosition
+     //To get the position of the user
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords;
-      this.myPosition = new google.maps.LatLng(latitude, longitude)
+      this.userPosition = new google.maps.LatLng(latitude, longitude)
     })
 
   }

@@ -28,14 +28,7 @@ export class TutorInfoPageComponent {
         }
         else {
           this.detailedTeacher = response
-          if (this.detailedTeacher.birthday) {
-            const fechaNacimiento = parseISO(this.detailedTeacher.birthday);
-            this.age = differenceInYears(new Date(), fechaNacimiento);
-          }
         }
-        console.log(this.detailedTeacher)
-        console.log('Edad:', this.age);
-
       } catch (error) {
         console.log(error)
       }

@@ -1,8 +1,9 @@
 <section>
     <app-tutor-menu></app-tutor-menu>
     <div class="info">
-        <app-tutor-card [myTeacher]="detailedTeacher[0]"></app-tutor-card>
-        <app-tutor-personal-info [myTeacher]="detailedTeacher[0]"></app-tutor-personal-info>
+        <app-tutor-card [teacher]="detailedTeacher[0]" [showContactButton]="false"
+            [showSimpleTags]="false"></app-tutor-card>
+        <app-tutor-personal-info [teacher]="detailedTeacher[0]"></app-tutor-personal-info>
     </div>
     <div class="margin">
         <app-table-subject-price></app-table-subject-price>
