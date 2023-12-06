@@ -1,5 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, QueryList, ViewChildren, inject } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { ActivatedRoute } from '@angular/router';
+import { TeacherCard } from 'src/app/interfaces/teacher-card.interface';
+import { TeachersService } from 'src/app/services/teachers.service';
 
 @Component({
   selector: 'app-map',
@@ -7,25 +10,62 @@ import { MapInfoWindow, MapMarker } from '@angular/google-maps';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent {
-  zoom: number = 7;
-  center: google.maps.LatLng = new google.maps.LatLng(40, -3); //Latitud de Pinto
-  girona: google.maps.LatLng = new google.maps.LatLng(42, 2.8);
-  bcn: google.maps.LatLng = new google.maps.LatLng(41.5, 2.2);
-  myPosition: google.maps.LatLng | any;
-  markerOptions = {
-    animation: google.maps.Animation.DROP,
+  @ViewChildren(MapInfoWindow) myInfoWindow: QueryList<MapInfoWindow> | any;
+
+  zoom: number = 8;
+  userPosition: google.maps.LatLng | any;
+   userOptions = {
+    icon: {
+      url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+    },
   };
+  activateRoute = inject(ActivatedRoute);
+  teachersService = inject(TeachersService);
+  arrTeachers: TeacherCard[] = []
+  // TODO: CREAR INTERFACE MapInfo
+  arrMapInfo: any = []
 
-  @ViewChild(MapInfoWindow) myInfoWindow: MapInfoWindow | any;
 
-  ngOnInit() {
+
+  async ngOnInit(): Promise<void> {
+    //
+    try {
+      this.arrTeachers = await this.teachersService.getTeachersInfo()
+      this.arrTeachers.forEach(teacher => {
+        this.arrMapInfo.push({
+          id: teacher.idusers,
+          image: teacher.image,
+          name: teacher.name,
+          description: teacher.title_prof,
+          province: teacher.name_province,
+          birthday: teacher.birthday,
+          position: new google.maps.LatLng(teacher.latitude, teacher.longitude),
+          arraySubjects: teacher.arraySubjects,
+        })
+      })
+      console.log(this.arrMapInfo)
+    } catch (error) {
+      console.log(error)
+    }
+     //To get the position of the user
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords;
-      this.myPosition = new google.maps.LatLng(latitude, longitude)
+      this.userPosition = new google.maps.LatLng(latitude, longitude)
     })
+
   }
 
-  openInfoWindow(myMarker: MapMarker) {
-    this.myInfoWindow.open(myMarker)
+  openInfoWindow(myMarker: MapMarker, index: number) {
+    let counter = 0;
+    this.myInfoWindow.forEach((window: MapInfoWindow) => {
+      if (index === counter) {
+        window.open(myMarker)
+        counter++
+      }
+      else {
+        window.close()
+        counter++
+      }
+    })
   }
 }

@@ -1,21 +1,25 @@
-<div class="flex">
-    <div class="name item">
-        <p class="text">Nombre</p>
-        <p>Marta Alemán Suárez</p>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tutores</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tutors-table-body">
+          <!-- Aquí se generará dinámicamente el contenido de la tabla de tutores -->
+        </tbody>
+      </table>
     </div>
-    <div class="subject item">
-        <p class="text">Asignatura</p>
-        <p>Matemáticas, Inglés</p>
-    </div>
-    <div class="email item">
-        <p class="text">Email</p>
-        <p>marta@gmail.com</p>
-    </div>
-    <div class="phone item">
-        <p class="text">Teléfono</p>
-        <p>987 654 321</p>
-    </div>
-    <div>
-        <button>+ Info</button>
-    </div>
-</div>
+    <script src="student-mytutor-card.component.ts"></script>
+  </body>
+

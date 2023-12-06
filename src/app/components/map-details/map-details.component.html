@@ -1,0 +1,5 @@
+<google-map height="550px" width="900px" [center]="this.position" [zoom]="zoom">
+    <map-marker [position]="position"></map-marker>
+    <map-marker [position]="userPosition" [options]="markerOptions">
+    </map-marker>
+</google-map>

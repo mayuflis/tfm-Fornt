@@ -1,39 +1,27 @@
 <div class="myhtml">
-    <div class="cabecera">
+    <header>
         <app-home-header [nombre]=nombre></app-home-header>
-    </div>
+    </header>
 
     <app-filter-professors (sendTeachers)="getFilterTeachers($event)"></app-filter-professors>
 
 
-    <!-- TODO: HACER LISTADO Y LIMITAR A 15 CARDS por pagina, filtrar por los mejor valorados de forma predeterminada -->
-    <!-- TODO: PONER EL FILTER -->
+    <!-- TODO: LIMITAR A 15 CARDS por pagina, filtrar por los mejor valorados de forma predeterminada -->
 
     <main class="container mt-5">
-        <div class="row gx-3 gy-4">
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
-            <app-tutor-card class="col-12 col-md-6 col-lg-3"></app-tutor-card>
+        <div>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <article *ngFor="let teacher of teachers">
+                    <app-tutor-card [teacher]="teacher" [showDetailedTags]="false" [showEmail]="false"></app-tutor-card>
+                </article>
+            </div>
+            <pagination-controls (pageChange)="pagination = $event" previousLabel="Anterior" nextLabel="Siguiente"
+                class="d-block m-5 text-center" [responsive]=true></pagination-controls>
         </div>
-        <pagination-controls (pageChange)="pagination = $event" previousLabel="Anterior" nextLabel="Siguiente"
-            class="d-block m-5 text-center" [responsive]=true></pagination-controls>
     </main>
 
-    <section class="my-5" style="max-width: 500px">
-        <app-map class="w-75" style="max-width: 100%"></app-map>
+    <section class="my-5 d-flex justify-content-center">
+        <app-map></app-map>
     </section>
 
 
@@ -41,4 +29,3 @@
         <app-footer></app-footer>
     </div>
 </div>
-

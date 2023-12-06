@@ -20,6 +20,7 @@ export class FilterProfessorsComponent {
   private experienceRange: number[] = [1, 2, 3, 4, 5];
   private provinces: Provinces[] = [];
   private teachers = signal<TeachersWebPublic>({
+    idusers: 0,
     name: '',
     last_name: '',
     image: '',
