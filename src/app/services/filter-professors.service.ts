@@ -17,8 +17,8 @@ type FormValueFilter = {
 })
 export class FilterProfessorsService {
   private httpClient = inject(HttpClient);
-  private baseUrl: string = 'http://localhost:3000/api/webPublic/';
-  private baseUrlProvince: string = 'http://localhost:3000/api/users/province';
+  private baseUrl: string = 'http://localhost:3100/api/webPublic/';
+  private baseUrlProvince: string = 'http://localhost:3100/api/users/province';
   constructor() {}
 
   getAllSubjects(): Promise<Subjects[]> {

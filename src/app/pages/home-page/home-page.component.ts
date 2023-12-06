@@ -10,21 +10,20 @@ import { TeachersService } from 'src/app/services/teachers.service';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent {
-  activateRoute = inject(ActivatedRoute)
+  activateRoute = inject(ActivatedRoute);
   teachersService = inject(TeachersService);
   teachers: TeacherCard[] = [];
   filterOfTeachers!: TeachersWebPublic;
-  nombre = 'nombre'
-  pagination: number = 5
+  nombre = 'nombre';
+  pagination: number = 5;
   // TODO: TopRatedUsers
 
   async ngOnInit(): Promise<void> {
     try {
       //Get all users
-      this.teachers = await this.teachersService.getTeachersInfo()
-      console.log(this.teachers)
+      this.teachers = await this.teachersService.getTeachersInfo();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
@@ -36,5 +35,4 @@ export class HomePageComponent {
     }
     console.log(this.filterOfTeachers);
   }
-
 }

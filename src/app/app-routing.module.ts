@@ -15,67 +15,103 @@ import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-op
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
-
 import { authRoleStudentsGuard } from './guards/auth-roleStudents.guard';
 import { authRoleTeachersGuard } from './guards/auth-roleTeachers.guard';
-
+import { notLoginGuard } from './guards/not-login.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
-  { path: 'login', component: LoginPageComponent },
+  {
+    path: 'login',
+
+    component: LoginPageComponent,
+  },
   { path: 'registro', component: RegisterPageComponent },
-  { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
-  { path: 'student-info/:idStudent', component: StudentInfoPageComponent },
+
+  { path: 'details/:idTutor', component: DetailPageComponent },
+
+  {
+    path: 'tutor/:idTutor/info',
+    canActivate: [authRoleTeachersGuard],
+    component: TutorInfoPageComponent,
+  },
+  {
+    path: 'tutor/subjects',
+    canActivate: [authRoleTeachersGuard],
+    component: TutorMySubjectsPageComponent,
+  },
+  {
+    path: 'tutor/:idTutor/students',
+    canActivate: [authRoleTeachersGuard],
+    component: TutorMyStudentsPageComponent,
+  },
+  {
+    path: 'tutor/:idTutor/notifications',
+    canActivate: [authRoleTeachersGuard],
+    component: TutorNotificationsPageComponent,
+  },
+  { path: 'tutor/:idTutor/opinions', component: TutorOpinionsPageComponent },
+  {
+    path: 'tutor/:idTutor/profile',
+    canActivate: [authRoleTeachersGuard],
+    component: TutorProfilePageComponent,
+  },
+
+  {
+    path: 'student/:idStudent/info',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentInfoPageComponent,
+  },
+
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
-  { path: 'tutor/:idTutor/subjects', component: TutorMySubjectsPageComponent },
-  { path: 'student-profile/:idStudent', component: StudentProfilePageComponent },
+
+  {
+    path: 'student-profile/:idStudent',
+    component: StudentProfilePageComponent,
+  },
   { path: 'details/:idTutor', component: DetailPageComponent },
   { path: 'tutor-info/:idTutor', component: TutorInfoPageComponent },
   // { path: 'student/:idStudent/teachers', component: StudentMyTeachersPageComponent },
   // { path: 'tutor-students/:idTutor', component: TutorStudentsPageComponent },
   // { path: 'tutor-classes/:idTutor', component: TutorClassesPageComponent },
-  { path: 'tutor-notifications/:idTutor', component: TutorNotificationsPageComponent },
-  { path: 'student-classes/:idStudent', component: StudentClassesPageComponent },
-  { path: 'tutor-opinions/:idTutor', component: TutorOpinionsPageComponent },
-  { path: 'student-tutors/:idStudent', component: StudentMyTutorsPageComponent },
-  { path: 'student-notifications/:idStudent', component: StudentNotificationsPageComponent },
-  { path: 'details/:idTutor', component: DetailPageComponent },
-  { path: 'tutor/:idTutor/info', component: TutorInfoPageComponent },
+
+  {
+    path: 'student-tutors/:idStudent',
+    component: StudentMyTutorsPageComponent,
+  },
+  {
+    path: 'student-notifications/:idStudent',
+    component: StudentNotificationsPageComponent,
+  },
+
   { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
-  { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
-  { path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent, },
-  { path: 'tutor/:idTutor/opinions', component: TutorOpinionsPageComponent },
-  { path: 'tutor/:idTutor/profile', component: TutorProfilePageComponent },
-  { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
 
   {
     path: 'student/classes',
+    canActivate: [authRoleStudentsGuard],
     component: StudentClassesPageComponent,
   },
   {
     path: 'student/:idStudent/tutors',
+    canActivate: [authRoleStudentsGuard],
     component: StudentMyTutorsPageComponent,
   },
   {
     path: 'student/:idStudent/notifications',
+    canActivate: [authRoleStudentsGuard],
     component: StudentNotificationsPageComponent,
   },
   {
-    path: 'student/:idStudent//profile',
+    path: 'student/:idStudent/profile',
+    canActivate: [authRoleStudentsGuard],
     component: StudentProfilePageComponent,
   },
-
-  { path: 'student/:idStudent/classes', component: StudentClassesPageComponent },
-  { path: 'student/:idStudent/tutors', component: StudentMyTutorsPageComponent },
-  { path: 'student/:idStudent/notifications', component: StudentNotificationsPageComponent },
-  { path: 'student/:idStudent//profile', component: StudentProfilePageComponent }
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
