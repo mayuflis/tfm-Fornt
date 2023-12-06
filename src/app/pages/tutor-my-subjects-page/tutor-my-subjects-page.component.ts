@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { Subjects } from 'src/app/interfaces/WebPublic';
-import { TeachersTsService } from 'src/app/services/teachers.service';
+import { TeachersService } from 'src/app/services/teachers.service';
 
 @Component({
   selector: 'app-tutor-my-subjects-page',
@@ -8,7 +8,7 @@ import { TeachersTsService } from 'src/app/services/teachers.service';
   styleUrls: ['./tutor-my-subjects-page.component.css'],
 })
 export class TutorMySubjectsPageComponent {
-  private techersUser = inject(TeachersTsService);
+  private techersUser = inject(TeachersService);
   private subjects!: Subjects[];
   private dataSubject!: Subjects;
 

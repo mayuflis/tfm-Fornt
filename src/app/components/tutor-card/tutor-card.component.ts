@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TeacherCard } from 'src/app/interfaces/teacher-card.interface';
 
 @Component({
   selector: 'app-tutor-card',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./tutor-card.component.css']
 })
 export class TutorCardComponent {
+  @Input() myTeacher: TeacherCard | any;
 
 }

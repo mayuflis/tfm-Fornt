@@ -1,18 +1,16 @@
 <div class="card" style="width: 18rem;">
     <img src="../../../assets//images/personal-placeholder-dona.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="name">Sean</h5>
-
-        <app-tutor-stars [starsCount]="4" [votes] ="29" [rate]="4.7"></app-tutor-stars>
-
-
+        <h5 class="name">{{myTeacher.name}}</h5>
+        <app-tutor-stars [starsCount]="4.6" [votes]="29" [rate]="4.7"></app-tutor-stars>
         <div>
-            <p class="text">Respuesta media <span>4 h</span></p>
+            <p>Cerca de <span class="bold">{{myTeacher.name_province}}</span></p>
         </div>
-        <div>
-            <p class="text">Número de alumnos <span>+20</span></p>
-        </div>
+        <section>
+            <span class="badge badge-pill me-2 tags"
+                *ngFor="let subject of myTeacher.arraySubjects">{{subject.subject_name}}</span>
+        </section>
 
-        <a href="#" class="btn btn-primary">Contactar</a>
+        <a href="#" class="btn btn-primary" [routerLink]="['/tutor/info', myTeacher.idusers]">Contactar</a>
     </div>
 </div>

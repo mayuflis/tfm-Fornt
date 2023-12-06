@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { ActivatedRoute } from '@angular/router';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { TutorInfoPageComponent } from './pages/tutor-info-page/tutor-info-page.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
@@ -64,6 +63,31 @@ const routes: Routes = [
     canActivate: [authRoleStudentsGuard],
     component: StudentInfoPageComponent,
   },
+
+  { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
+  { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
+
+  {
+    path: 'student-profile/:idStudent',
+    component: StudentProfilePageComponent,
+  },
+  { path: 'details/:idTutor', component: DetailPageComponent },
+  { path: 'tutor-info/:idTutor', component: TutorInfoPageComponent },
+  // { path: 'student/:idStudent/teachers', component: StudentMyTeachersPageComponent },
+  // { path: 'tutor-students/:idTutor', component: TutorStudentsPageComponent },
+  // { path: 'tutor-classes/:idTutor', component: TutorClassesPageComponent },
+
+  {
+    path: 'student-tutors/:idStudent',
+    component: StudentMyTutorsPageComponent,
+  },
+  {
+    path: 'student-notifications/:idStudent',
+    component: StudentNotificationsPageComponent,
+  },
+
+  { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
+
   {
     path: 'student/classes',
     canActivate: [authRoleStudentsGuard],
