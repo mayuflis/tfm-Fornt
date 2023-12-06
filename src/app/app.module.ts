@@ -25,6 +25,18 @@ import { CarrouselFilterComponent } from './components/carrousel-filter/carrouse
 import { CarrouselMapComponent } from './components/carrousel-map/carrousel-map.component';
 import { CarrouselBestRatingComponent } from './components/carrousel-best-rating/carrousel-best-rating.component';
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
+import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { AdminTeacherTableComponent } from './components/admin-teacher-table/admin-teacher-table.component';
+import { AdminPageTeachersComponent } from './pages/admin-page-teachers/admin-page-teachers.component';
+import { AdminPageUsersComponent } from './pages/admin-page-users/admin-page-users.component';
+import { AdminAllTeachersTableComponent } from './components/admin-all-teachers-table/admin-all-teachers-table.component';
+import { AdminUsersTableComponent } from './components/admin-users-table/admin-users-table.component';
+import { AdminSubjectsTableComponent } from './components/admin-subjects-table/admin-subjects-table.component';
+import { AdminPageSubjectsComponent } from './pages/admin-page-subjects/admin-page-subjects.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 
 
 
@@ -53,9 +65,14 @@ import { FilterProfessorsComponent } from './components/filter-professors/filter
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
     FilterProfessorsComponent,
-
-   
-
+    AdminHeaderComponent,
+    AdminTeacherTableComponent,
+    AdminPageTeachersComponent,
+    AdminPageUsersComponent,
+    AdminAllTeachersTableComponent,
+    AdminUsersTableComponent,
+    AdminSubjectsTableComponent,
+    AdminPageSubjectsComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +81,7 @@ import { FilterProfessorsComponent } from './components/filter-professors/filter
     TypeaheadModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,22 @@
+.small-icon {
+    width: 70px;
+    height: 70px;
+
+}
+
+.bordered-image {
+    border: 2px solid #000; /* Cambia el color y el grosor del borde según tus preferencias */
+}
+
+.title-text{
+    color: rgb(24, 127, 24);
+    font-weight: 600;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: rgb(24, 127, 24);
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+    color: rgb(0, 0, 0);
+}
