@@ -10,7 +10,7 @@ export class TutorMystudentCardComponent {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  const teacherId = 123;
+  const teacherId = 12;
 
   fetch(`http://localhost:3000/api/teachers/teacher_info/${teacherId}`)
     .then((response) => response.json() as Promise<{ name: string; last_name: string; email: string; mobile: string; }[]>)

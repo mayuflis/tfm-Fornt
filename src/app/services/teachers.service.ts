@@ -13,21 +13,22 @@ import { Subjects } from '../interfaces/WebPublic';
 
 export class TeachersService {
   private httpClient = inject(HttpClient);
-  private baseUrl: string = 'http://localhost:3100/api/teachers';
+  private baseUrl: string = 'http://localhost:3000/api/teachers';
+  private publicUrl: string = 'http://localhost:3000/api/webPublic'
 
   constructor() {}
 
   //Gets the necessary info for Teachers Card and Map Component
   getTeachersInfo(): Promise<TeacherCard[]> {
     return lastValueFrom(
-      this.httpClient.get<TeacherCard[]>(`${this.baseUrl}/teacherinfo`)
+      this.httpClient.get<TeacherCard[]>(`${this.publicUrl}/teacherinfo`)
     );
   }
 
   //Gets the necessary info by teacherId for DetailsPage
   getTeacherInfoById(id: number): Promise<TeacherCard> {
     return lastValueFrom(
-      this.httpClient.get<TeacherCard>(`${this.baseUrl}/teacherinfo/${id}`)
+      this.httpClient.get<TeacherCard>(`${this.publicUrl}/teacherinfo/${id}`)
     );
   }
   //Obtiene la cantidad de alumnos por asignatura

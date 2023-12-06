@@ -13,5 +13,8 @@ export class TutorCardComponent {
   @Input() showSimpleTags: boolean = true;
   @Input() showDetailedTags: boolean = true;
 
+  ngOnInit() {
+    console.log(this.teacher[0]);
+  }
 
 }

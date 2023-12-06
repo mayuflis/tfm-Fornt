@@ -14,8 +14,6 @@ import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-op
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
-
-
 import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
 import { TutorMyClassesPageComponent } from './pages/tutor-my-classes-page/tutor-my-classes-page.component';
 
@@ -32,14 +30,11 @@ const routes: Routes = [
   { path: 'details/:idTutor', component: DetailPageComponent },
 
 
-  { path: 'tutor/:idTutor/info', component: TutorInfoPageComponent },
+  { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
 
   { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
-  { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
-  {
-    path: 'tutor/:idTutor/notifications',
-    component: TutorNotificationsPageComponent,
-  },
+  /*{ path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },*/
+  { path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent },
 
 
   { path: 'tutor/:idTutor/classes', component: TutorMyClassesPageComponent },
@@ -80,7 +75,7 @@ const routes: Routes = [
   { path: 'student/:idStudent/classes', component: StudentClassesPageComponent },
   { path: 'student/:idStudent/tutors', component: StudentMyTutorsPageComponent},
   { path: 'student/:idStudent/notifications', component: StudentNotificationsPageComponent },
-  { path: 'student/:idStudent/profile', component: StudentProfilePageComponent }
+  { path: 'student/:idStudent/profile', component: StudentProfilePageComponent },
   
 
 

@@ -67,7 +67,7 @@ import { StudentPersonalInfoComponent } from './components/student-personal-info
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
 
 import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
-import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
+
 /*import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
 import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
 */
@@ -80,6 +80,7 @@ import { ContactTutorFormComponent } from './components/contact-tutor-form/conta
 import { TutorMyClassesPageComponent } from './pages/tutor-my-classes-page/tutor-my-classes-page.component';
 import { TutorClassCardComponent } from './components/tutor-class-card/tutor-class-card.component';
 import { StudentAboutMeProfileComponent } from './components/student-about-me-profile/student-about-me-profile.component';
+import { MapDetailsComponent } from './components/map-details/map-details.component';
 
 
   /*
@@ -150,10 +151,9 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TutorMyClassesPageComponent,
     TutorClassCardComponent,
     StudentAboutMeProfileComponent,
-
-
-/*
-    MapDetailsComponent,
+    MapDetailsComponent
+  
+/*    
     TutorAdsComponent,
     TutorNewAdComponent,
     StudentMytutorCardComponent,

@@ -1,19 +1,23 @@
-<div class="card teacher-card" style="width: 18rem;">
+<div class="card p-3">
     <img [src]="teacher.image" class="card-img-top rounded-circle" alt="...">
     <div class="card-body">
 
-        <h5 class="name">{{teacher.name}}</h5>
+        <h5 class="name">{{teacher.name}} {{teacher.last_name}}</h5>
         <div class="my-2 bold">
             <h5 *ngIf="showEmail">{{teacher.email}}</h5>
         </div>
-        <app-tutor-stars [starsCount]="teacher.reviews.rate" [votes]="teacher.reviews.num_reviews"
-            [rate]=" teacher.reviews.rate"></app-tutor-stars>
+        <app-tutor-stars class="d-flex flex-column justify-content-center mb-3" [starsCount]="teacher.reviews.rate" [votes]="teacher.reviews.num_reviews" [rate]=" teacher.reviews.rate">
+        </app-tutor-stars>
+
+        <div>
+            <p>Años de experiencia: {{teacher.experience}}</p>
+        </div>
+            
         <div>
             <p>Cerca de <span class="bold">{{teacher.name_province}}</span></p>
         </div>
         <section *ngIf="showSimpleTags">
-            <span class="badge badge-pill me-2 mb-2 tags"
-                *ngFor="let subject of teacher.arraySubjects">{{subject.subject_name}}</span>
+            <span class="badge badge-pill me-2 mb-2 tags" *ngFor="let subject of teacher.arraySubjects">{{subject.subject_name}}</span>
         </section>
         <section *ngIf="showDetailedTags">
             <span class="badge badge-pill me-2 mb-2 tags"
