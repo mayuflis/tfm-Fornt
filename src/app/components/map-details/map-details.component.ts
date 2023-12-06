@@ -19,11 +19,6 @@ export class MapDetailsComponent {
   markerOptions = {
     icon: {
       url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-      label: {
-        color: 'green',
-        text: 'You'
-      },
-      title: "Usted esta aqui"
     },
   };
   infoContent: string = 'Usted esta aqui'

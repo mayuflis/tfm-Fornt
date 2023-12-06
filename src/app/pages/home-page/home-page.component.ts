@@ -19,10 +19,10 @@ export class HomePageComponent {
   // TODO: TopRatedUsers
 
   async ngOnInit(): Promise<void> {
-
     try {
       //Get all users
       this.teachers = await this.teachersService.getTeachersInfo()
+      console.log(this.teachers)
     } catch (error) {
       console.log(error)
     }

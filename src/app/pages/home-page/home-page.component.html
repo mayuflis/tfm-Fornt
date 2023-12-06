@@ -1,4 +1,3 @@
-
 <div class="myhtml">
     <header>
         <app-home-header [nombre]=nombre></app-home-header>
@@ -13,7 +12,7 @@
         <div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <article *ngFor="let teacher of teachers">
-                    <app-tutor-card [myTeacher]="teacher"></app-tutor-card>
+                    <app-tutor-card [teacher]="teacher" [showDetailedTags]="false" [showEmail]="false"></app-tutor-card>
                 </article>
             </div>
             <pagination-controls (pageChange)="pagination = $event" previousLabel="Anterior" nextLabel="Siguiente"
@@ -21,8 +20,8 @@
         </div>
     </main>
 
-    <section class="my-5" style="max-width: 500px">
-        <app-map class="w-75" style="max-width: 100%"></app-map>
+    <section class="my-5 d-flex justify-content-center">
+        <app-map></app-map>
     </section>
 
 
@@ -30,5 +29,3 @@
         <app-footer></app-footer>
     </div>
 </div>
-
-

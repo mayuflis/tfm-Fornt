@@ -7,7 +7,7 @@ import { TeacherCard } from 'src/app/interfaces/teacher-card.interface';
   styleUrls: ['./tutor-personal-info.component.css']
 })
 export class TutorPersonalInfoComponent {
-  @Input() myTeacher: TeacherCard | any;
+  @Input() teacher: TeacherCard | any;
 
 
 }
