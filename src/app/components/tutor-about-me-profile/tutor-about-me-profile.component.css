@@ -24,18 +24,16 @@ h5 {
     padding-right: 5px;
 }
 
-.plus {
-    border-color: rgb(0, 128, 0, 0.3);
-    background-color: white;
-    color: rgb(124, 168, 106);
-    font-weight: bold;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    text-align: center;
+.form-select {
+    width: 25%;
 }
 
-.link {
-    text-decoration: none;
-    color: black;
+.form-control{
+    width: 170%;
+}
+
+.form-check {
+    width: 35%;
+    margin: 0;
+    padding-top: 6px;
 }

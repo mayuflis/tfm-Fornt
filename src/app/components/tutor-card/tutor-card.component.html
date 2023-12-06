@@ -1,6 +1,7 @@
 <div class="card teacher-card" style="width: 18rem;">
     <img [src]="teacher.image" class="card-img-top rounded-circle" alt="...">
     <div class="card-body">
+
         <h5 class="name">{{teacher.name}}</h5>
         <div class="my-2 bold">
             <h5 *ngIf="showEmail">{{teacher.email}}</h5>
