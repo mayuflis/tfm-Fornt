@@ -3,7 +3,7 @@
     <app-home-header [nombre]="nombre"></app-home-header>
   </header>
 
-   <app-filter-professors></app-filter-professors>
+  <app-filter-professors></app-filter-professors>
 
   <!--
   <app-filter-professors
@@ -17,17 +17,10 @@
     <div>
       <div class="container mt-5">
         <div class="row d-flex align-items-stretch">
-          <article
-            class="col-12 col-md-6 col-lg-4 mb-3 d-flex flex-column"
-            *ngFor="let teacher of teachers"
-          >
+          <article class="col-12 col-md-6 col-lg-4 mb-3 d-flex flex-column" *ngFor="let teacher of teachers">
             <div class="d-flex flex-grow-1">
               <!-- Contenido de la tarjeta -->
-              <app-tutor-card
-                [teacher]="teacher"
-                [showDetailedTags]="false"
-                [showEmail]="false"
-              ></app-tutor-card>
+              <app-tutor-card [teacher]="teacher" [showDetailedTags]="false" [showEmail]="false"></app-tutor-card>
             </div>
           </article>
         </div>
@@ -37,13 +30,8 @@
       <div class="row row-cols-1 row-cols-md-4 g-4">
         <article *ngFor="let teacher of teachers"></article>
       </div>
-      <pagination-controls
-        (pageChange)="pagination = $event"
-        previousLabel="Anterior"
-        nextLabel="Siguiente"
-        class="d-block m-5 text-center"
-        [responsive]="true"
-      ></pagination-controls>
+      <pagination-controls (pageChange)="pagination = $event" previousLabel="Anterior" nextLabel="Siguiente"
+        class="d-block m-5 text-center" [responsive]="true"></pagination-controls>
     </div>
   </main>
 

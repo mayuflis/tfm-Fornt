@@ -21,28 +21,38 @@ import { authRoleStudentsGuard } from './guards/auth-roleStudents.guard';
 import { authRoleTeachersGuard } from './guards/auth-roleTeachers.guard';
 import { notLoginGuard } from './guards/not-login.guard';
 
-
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
-  { path: 'login', component: LoginPageComponent   },
+  { path: 'login', component: LoginPageComponent },
   { path: 'registro', component: RegisterPageComponent },
   { path: 'details/:idTutor', component: DetailPageComponent },
 
+  { path: 'tutor/info', component: TutorInfoPageComponent },
 
-  { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
+  {
+    path: 'tutor/subjects',
+    canActivate: [authRoleTeachersGuard],
+    component: TutorMySubjectsPageComponent,
+  },
+  //{ path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
+  {
+    path: 'tutor/:idTutor/notifications',
+    component: TutorNotificationsPageComponent,
+  },
 
-  { path: 'tutor/subjects', component: TutorMySubjectsPageComponent },
-  /*{ path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },*/
-  { path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent },
+  { path: 'tutor/classes', component: TutorMyClassesPageComponent },
+  {
+    path: 'tutor/notifications',
+    component: TutorNotificationsPageComponent,
+  },
 
-
-  { path: 'tutor/:idTutor/classes', component: TutorMyClassesPageComponent },
-  { path: 'tutor/:idTutor/notifications', component: TutorNotificationsPageComponent },
-
-  { path: 'tutor/:idTutor/opinions', component: TutorOpinionsPageComponent },
-  { path: 'tutor/:idTutor/profile', component: TutorProfilePageComponent },
-  { path: 'tutor/:idTutor/contact-tutor', component: ContactTutorPageComponent},
+  { path: 'tutor/opinions', component: TutorOpinionsPageComponent },
+  { path: 'tutor/profile', component: TutorProfilePageComponent },
+  {
+    path: 'tutor/:idTutor/contact-tutor',
+    component: ContactTutorPageComponent,
+  },
 
   /*
   { path: 'tutor/:idTutor/info', canActivate: [authRoleTeachersGuard], component: TutorInfoPageComponent,  },
@@ -61,31 +71,49 @@ const routes: Routes = [
   },
   */
 
+  {
+    path: 'student/info',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentInfoPageComponent,
+  },
 
-  { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
-
-
-
-/* 
+  /* 
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
   */
 
-  { path: 'student/:idStudent/info', component: StudentInfoPageComponent },
-  { path: 'student/:idStudent/classes', component: StudentClassesPageComponent },
-  { path: 'student/:idStudent/tutors', component: StudentMyTutorsPageComponent},
-  { path: 'student/:idStudent/notifications', component: StudentNotificationsPageComponent },
-  { path: 'student/:idStudent/profile', component: StudentProfilePageComponent },
-  
-
-
+  {
+    path: 'student/info',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentInfoPageComponent,
+  },
+  {
+    path: 'student/classes',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentClassesPageComponent,
+  },
+  {
+    path: 'student/tutors',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentMyTutorsPageComponent,
+  },
+  {
+    path: 'student/notifications',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentNotificationsPageComponent,
+  },
+  {
+    path: 'student/profile',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentProfilePageComponent,
+  },
 
   { path: 'details/:idTutor', component: DetailPageComponent },
 
   // { path: 'student/:idStudent/teachers', component: StudentMyTeachersPageComponent },
   // { path: 'tutor-students/:idTutor', component: TutorStudentsPageComponent },
-  
-   /*
+
+  /*
   { path: 'student-tutors/:idStudent',     component: StudentMyTutorsPageComponent,
   },
   {     path: 'student-notifications/:idStudent',     component: StudentNotificationsPageComponent,   },
@@ -108,8 +136,6 @@ const routes: Routes = [
     component: StudentProfilePageComponent,
   },
   */
-
-
 ];
 
 @NgModule({

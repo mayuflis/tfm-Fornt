@@ -11,7 +11,7 @@ export const authRoleTeachersGuard: CanActivateFn = async (route, state) => {
     const token: string = localStorage.getItem('token')!;
     result = await authService.validaToken(token);
 
-    if (result.user_id && result.user_role === 'Profesor') {
+    if (result.user_id && result.user_role === 'teacher') {
       return true;
     }
   }

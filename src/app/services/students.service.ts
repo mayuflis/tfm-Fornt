@@ -8,7 +8,7 @@ import { infoClass } from '../pages/student-classes-page/student-classes-page.co
 export class StudentsService {
   private http = inject(HttpClient);
 
-  private baseUrl: string = 'http://localhost:3100/api/students/';
+  private baseUrl: string = 'http://localhost:3000/api/students/';
 
   constructor() {}
 

@@ -20,33 +20,31 @@ export class HomePageComponent {
   nombre = 'nombre';
   pagination: number = 5;
 
-
-async ngOnInit(): Promise<void> {
-  try {
-    //this.getFilterTeachers; 
-    //this.teachers = await this.teachersService.getTeachersInfo()
-    const savedFilters = localStorage.getItem('filterOfTeachers');
-    if (savedFilters) {
-      this.filterOfTeachers = JSON.parse(savedFilters);
-      console.log('Estoy dentro');
-    } else {
-      this.filterOfTeachers = {
-        "selectedProvince":"",
-        "selectedSubject":"",
-        "selectedPrice":"0",
-        "selectedExperience":"0",
-        "minRating":"0"
+  async ngOnInit(): Promise<void> {
+    try {
+      //this.getFilterTeachers;
+      //this.teachers = await this.teachersService.getTeachersInfo()
+      const savedFilters = localStorage.getItem('filterOfTeachers');
+      if (savedFilters) {
+        this.filterOfTeachers = JSON.parse(savedFilters);
+      } else {
+        this.filterOfTeachers = {
+          selectedProvince: '',
+          selectedSubject: '',
+          selectedPrice: '0',
+          selectedExperience: '0',
+          minRating: '0',
+        };
       }
+      console.log(this.filterOfTeachers);
+      this.teachers = await this.filterTeacherService.getFilterData(
+        this.filterOfTeachers
+      );
+
+      localStorage.removeItem('filterOfTeachers');
+      console.log(this.teachers);
+    } catch (error) {
+      console.error(error);
     }
-    console.log(this.filterOfTeachers);
-    this.teachers = await this.filterTeacherService.getFilterData(this.filterOfTeachers);
-    
-    localStorage.removeItem('filterOfTeachers');
-    
-  } catch (error) {
-    console.error(error);
   }
-}
-
-
 }

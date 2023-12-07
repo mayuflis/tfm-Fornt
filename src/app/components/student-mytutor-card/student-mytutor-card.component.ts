@@ -1,53 +1,54 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SubjectspricesService } from 'src/app/services/subjectsprices.service';
+
+type MyTutors = {
+  user_name: string;
+  last_name: string;
+  email: string;
+  mobile: string;
+  subject_name: string;
+};
 
 @Component({
   selector: 'app-student-mytutor-card',
   templateUrl: './student-mytutor-card.component.html',
-  styleUrls: ['./student-mytutor-card.component.css']
+  styleUrls: ['./student-mytutor-card.component.css'],
 })
 export class StudentMytutorCardComponent {
+  private activatedRoute = inject(ActivatedRoute);
+  private myTutorsService = inject(SubjectspricesService);
+  private tutorInfo!: MyTutors[];
+  async ngOnInit() {
+    this.tutorInfo = await this.myTutorsService.getMyTutorsInfo();
+    const tutorsTableBody = document.getElementById('tutors-table-body');
 
+    if (tutorsTableBody && this.tutorInfo && this.tutorInfo.length > 0) {
+      this.tutorInfo.forEach((tutor) => {
+        const row = document.createElement('tr');
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = `${tutor.user_name || ''} ${
+          tutor.last_name || ''
+        }`;
+        row.appendChild(nameCell);
+
+        const emailCell = document.createElement('td');
+        emailCell.textContent = tutor.email || '';
+        row.appendChild(emailCell);
+
+        const phoneCell = document.createElement('td');
+        phoneCell.textContent = tutor.mobile || '';
+        row.appendChild(phoneCell);
+
+        const subjectCell = document.createElement('td');
+        subjectCell.textContent = tutor.subject_name || '';
+        row.appendChild(subjectCell);
+
+        tutorsTableBody.appendChild(row);
+      });
+    } else {
+      console.log('No tienes profesores');
+    }
+  }
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-  const userId = 222;
-
-  fetch(`http://localhost:3000/api/users/${userId}/teacher-info`)
-    .then((response) => response.json() as Promise<{ name: string; last_name: string; email: string; mobile: string; }[]>)
-    .then((data) => {
-      const tutorsTableBody = document.getElementById('tutors-table-body');
-
-      if (tutorsTableBody && data && data.length > 0) {
-        data.forEach((tutor) => {
-          const row = document.createElement('tr');
-
-          const nameCell = document.createElement('td');
-          nameCell.textContent = `${tutor.name || ''} ${tutor.last_name || ''}`;
-          row.appendChild(nameCell);
-
-          const emailCell = document.createElement('td');
-          emailCell.textContent = tutor.email || '';
-          row.appendChild(emailCell);
-
-          const phoneCell = document.createElement('td');
-          phoneCell.textContent = tutor.mobile || '';
-          row.appendChild(phoneCell);
-
-          const actionCell = document.createElement('td');
-          const infoButton = document.createElement('button');
-          infoButton.textContent = '+ Info';
-          infoButton.classList.add('btn-3');
-          actionCell.appendChild(infoButton);
-          row.appendChild(actionCell);
-
-          tutorsTableBody.appendChild(row);
-        });
-      } else {
-        console.error('No se encontraron datos para el usuario con ID:', userId);
-      }
-    })
-    .catch((error) => {
-      console.error('Error al obtener los datos:', error);
-    });
-});
-

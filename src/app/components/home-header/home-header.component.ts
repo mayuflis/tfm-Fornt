@@ -1,21 +1,29 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Token } from 'src/app/interfaces/token';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-home-header',
   templateUrl: './home-header.component.html',
-  styleUrls: ['./home-header.component.css']
+  styleUrls: ['./home-header.component.css'],
 })
 export class HomeHeaderComponent {
   @Input() nombre: string = 'nombre';
   @Output() inscribirmeClick: EventEmitter<void> = new EventEmitter<void>();
+  private roleToken!: Token;
+  private tokenService = inject(TokenService);
+  private router = inject(Router);
+
   mostrarPopup: boolean = false;
   opcionSeleccionada: string = '';
 
   inscribirme() {
-    console.log('inscribirmeClick')
+    console.log('inscribirmeClick');
     this.inscribirmeClick.emit();
-    this.mostrarPopup ? this.mostrarPopup = false : this.mostrarPopup = true;
+    this.mostrarPopup
+      ? (this.mostrarPopup = false)
+      : (this.mostrarPopup = true);
   }
 
   manejarOpcionSeleccionada(opcion: string): void {
@@ -24,57 +32,18 @@ export class HomeHeaderComponent {
     console.log('Opción seleccionada:', opcion);
     this.mostrarPopup = false;
   }
+  ngOnInit() {}
 
-constructor(private router: Router, private route: ActivatedRoute) {}
-goToTutorInfo() {
-    this.route.paramMap.subscribe((params) => {
-      const idTutor = params.get('idTutor');
-      if (idTutor) {
-        this.router.navigate(['/tutor-info', idTutor]);
-      }
-    });
+  getRoleToken() {
+    this.roleToken = this.tokenService.getToken();
+    if (this.roleToken !== undefined) {
+      let count = 1 + 1; //TODO:Coloco un avariable porque hay un problema de sincronía
+      return this.roleToken.user_role;
+    }
+    return;
   }
-  goToTutorProfile() {
-    this.route.paramMap.subscribe((params) => {
-      const idTutor = params.get('idTutor');
-      if (idTutor) {
-        this.router.navigate(['/tutor-profile', idTutor]);
-      }
-    });
+  removeToken() {
+    localStorage.removeItem('token');
+    window.location.href = 'login';
   }
-  goToTutorClasses() {
-    this.route.paramMap.subscribe((params) => {
-      const idTutor = params.get('idTutor');
-      if (idTutor) {
-        this.router.navigate(['/tutor-classes', idTutor]);
-      }
-    });
-  }
-  goToTutorStudents() {
-    this.route.paramMap.subscribe((params) => {
-      const idTutor = params.get('idTutor');
-      if (idTutor) {
-        this.router.navigate(['/tutor-students', idTutor]);
-      }
-    });
-  }
-  goToTutorNotifications() {
-    this.route.paramMap.subscribe((params) => {
-      const idTutor = params.get('idTutor');
-      if (idTutor) {
-        this.router.navigate(['/tutor', idTutor, 'notifications']);
-      }
-    });
-  }
-  goToTutorOpinions() {
-    this.route.paramMap.subscribe((params) => {
-      const idTutor = params.get('idTutor');
-      if (idTutor) {
-        this.router.navigate(['/tutor-opinions', idTutor]);
-      }
-    });
-  }
-
-
-
 }

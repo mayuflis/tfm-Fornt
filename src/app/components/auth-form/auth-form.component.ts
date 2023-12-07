@@ -82,10 +82,13 @@ export class AuthFormComponent implements OnInit {
   }
 
   async onSubmit() {
+    console.log('EntraAAAAAA');
     try {
       if (this.authForm.valid) {
         await this.authService.registerUser(this.authForm.value);
         this.router.navigate(['/login']);
+      } else {
+        this.mostrarAlert();
       }
     } catch (error: any) {
       console.error(error.error.fatal);
