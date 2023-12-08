@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { jwtDecode } from 'jwt-decode';
-type itemToken = {
+export type itemToken = {
   user_id: number;
   user_role: string;
   exp: number;
@@ -27,19 +27,19 @@ export class SubjectspricesService {
   private baseUrl: string = 'http://localhost:3000/api/subjects/';
   private baseUrlMyTutor: string = 'http://localhost:3000/api/users/';
 
-  private httpClient = inject(HttpClient);
-  private token = localStorage.getItem('token');
+  private httpClient = inject(HttpClient)
+    private token = localStorage.getItem('token');
   private decode: itemToken = jwtDecode(this.token!);
-  constructor() {}
+  constructor() { }
 
-  GetPricesSubjects(): Promise<subject[]> {
+  getPricesSubjects(tutorId: number): Promise<subject[]> {
     return lastValueFrom(
       this.httpClient.get<subject[]>(
-        `${this.baseUrl}${this.decode.user_id}/subjects`
+        `${this.baseUrl}/${tutorId}/subjects`
       )
     );
   }
-
+  
   getMyTutorsInfo(): Promise<MyTutors[]> {
     return lastValueFrom(
       this.httpClient.get<MyTutors[]>(

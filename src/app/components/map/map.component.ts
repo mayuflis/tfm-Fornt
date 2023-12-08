@@ -22,7 +22,6 @@ export class MapComponent {
   activateRoute = inject(ActivatedRoute);
   teachersService = inject(TeachersService);
   arrTeachers: TeacherCard[] = []
-  // TODO: CREAR INTERFACE MapInfo
   arrMapInfo: any = []
 
 
@@ -33,17 +32,10 @@ export class MapComponent {
       this.arrTeachers = await this.teachersService.getTeachersInfo()
       this.arrTeachers.forEach(teacher => {
         this.arrMapInfo.push({
-          id: teacher.idusers,
-          image: teacher.image,
-          name: teacher.name,
-          description: teacher.title_prof,
-          province: teacher.name_province,
-          birthday: teacher.birthday,
-          position: new google.maps.LatLng(teacher.latitude, teacher.longitude),
-          arraySubjects: teacher.arraySubjects,
+          position: new google.maps.LatLng(teacher.latitude, teacher.longitude)
         })
       })
-      console.log(this.arrMapInfo)
+      console.log(this.arrTeachers)
     } catch (error) {
       console.log(error)
     }

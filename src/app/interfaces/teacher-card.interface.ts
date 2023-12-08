@@ -8,10 +8,11 @@ export interface TeacherCard {
     longitude: number;
     birthday: Date;
     name_province: string;
-    image?: string;
+    image: string;
     description_prof: string;
-    title_prof?: string;
+    title_prof: string;
     description_class?: string;
+    position?: google.maps.LatLng;
     arraySubjects: [
         {
             level: number;

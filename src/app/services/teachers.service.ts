@@ -24,9 +24,9 @@ export class TeachersService {
   }
 
   //Gets the necessary info by teacherId for DetailsPage
-  getTeacherInfoById(id: number): Promise<TeacherCard> {
+  getTeacherInfoById(id: number): Promise<TeacherCard[]> {
     return lastValueFrom(
-      this.httpClient.get<TeacherCard>(`${this.publicUrl}/teacherinfo/${id}`)
+      this.httpClient.get<TeacherCard[]>(`${this.publicUrl}/teacherinfo/${id}`)
     );
   }
   //Obtiene la cantidad de alumnos por asignatura

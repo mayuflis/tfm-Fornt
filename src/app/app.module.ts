@@ -58,7 +58,6 @@ import { StudentClassesPageComponent } from './pages/student-classes-page/studen
 import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { MapComponent } from './components/map/map.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 import { StudentMenuComponent } from './components/student-menu/student-menu.component';
 import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
@@ -81,6 +80,7 @@ import { TutorMyClassesPageComponent } from './pages/tutor-my-classes-page/tutor
 import { TutorClassCardComponent } from './components/tutor-class-card/tutor-class-card.component';
 import { StudentAboutMeProfileComponent } from './components/student-about-me-profile/student-about-me-profile.component';
 import { MapDetailsComponent } from './components/map-details/map-details.component';
+import { Error404Component } from './components/error404/error404.component';
 
 
   /*
@@ -129,7 +129,6 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     ProfileFormComponent,
     FilterProfessorsComponent,
     MapComponent,
-    DetailPageComponent,
     StudentProfilePageComponent,
     TutorNotificationsPageComponent,
     TutorOpinionsPageComponent,
@@ -151,7 +150,8 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TutorMyClassesPageComponent,
     TutorClassCardComponent,
     StudentAboutMeProfileComponent,
-    MapDetailsComponent
+    MapDetailsComponent,
+    Error404Component
   
 /*    
     TutorAdsComponent,

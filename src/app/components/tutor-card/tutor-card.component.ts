@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { TeacherCard } from 'src/app/interfaces/teacher-card.interface';
 
 @Component({
@@ -12,9 +13,17 @@ export class TutorCardComponent {
   @Input() showEmail: boolean = true;
   @Input() showSimpleTags: boolean = true;
   @Input() showDetailedTags: boolean = true;
+  @Input() showAge: boolean = true;
+  
+  token = localStorage.getItem('token');
+  router = inject(Router)
 
   ngOnInit() {
-    console.log(this.teacher[0]);
   }
-
+  checkToken() {
+    if (!this.token) {
+      this.router.navigate(['/login'])
+      alert('Tienes que estar conectado.')
+    }
+  }
 }
