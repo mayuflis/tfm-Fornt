@@ -4,19 +4,20 @@ h5{
 
 .flex{
     display: flex;
-    gap: 55px;
     margin-left: 30px;
+}
+
+.w-35 {
+    width: 35%;
 }
 
 .round{
     border-radius: 50%;
 }
 
-.upload{
+.color{
     background-color: rgb(124, 168, 106);
     color: white;
-    margin-top: 70px;
-    width: 75%;
 }
 
 .take{
@@ -27,8 +28,7 @@ h5{
     width: 75%;
 }
 
-.btn{
-    height: 50px;
-    width: 50%;
-    
+.fit-content {
+    width: fit-content;
 }
+
