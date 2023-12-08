@@ -2,7 +2,7 @@
     <map-marker #myMarker="mapMarker" *ngFor="let teacher of arrMapInfo, let i = index " [position]="teacher.position"
         (mapClick)="openInfoWindow(myMarker, i)">
         <map-info-window>
-            <app-tutor-card [teacher]="teacher"></app-tutor-card>
+            <app-tutor-card [teacher]="teacher" [showEmail]="false" [showDetailedTags]="false"></app-tutor-card>
         </map-info-window>
     </map-marker>
     <map-marker [position]="userPosition" [options]="userOptions"></map-marker>
