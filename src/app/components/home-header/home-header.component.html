@@ -9,7 +9,7 @@
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-start ms-4" id="navbarNav" *ngIf="getRoleToken()=='teacher'">
+    <div class="collapse navbar-collapse justify-content-start ms-4" id="navbarNav" *ngIf="role =='teacher'">
       <ul class="navbar-nav">
 
 
@@ -40,7 +40,7 @@
 
       </ul>
     </div>
-    <div class="collapse navbar-collapse justify-content-start ms-4" id="navbarNav" *ngIf="getRoleToken()=='student' ">
+    <div class="collapse navbar-collapse justify-content-start ms-4" id="navbarNav" *ngIf="role =='student' ">
       <ul class="navbar-nav">
 
 
@@ -76,17 +76,17 @@
           </a>
         </li>
 
-        <li class="nav-item" *ngIf="getRoleToken()!==undefined">
+        <li class="nav-item" *ngIf="role !==undefined">
           <a class="nav-link font-weight-bold hand-cursor" (click)="removeToken()">
             <i class="bi bi-house-door"></i> Cerrar Sesión
           </a>
         </li>
-        <li class="nav-item" *ngIf="getRoleToken()===undefined">
+        <li class="nav-item" *ngIf="role ===undefined">
           <a class="nav-link font-weight-bold" routerLink="/registro" routerLinkActive="active">
             <i class="bi bi-house-door"></i> Registrate
           </a>
         </li>
-        <li class="nav-item" *ngIf="getRoleToken()===undefined">
+        <li class="nav-item" *ngIf="role ===undefined">
           <a class="nav-link font-weight-bold" routerLink="/login" routerLinkActive="active">
             <i class="bi bi-house-door"></i> Iniciar Sesión
           </a>
