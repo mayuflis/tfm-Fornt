@@ -23,19 +23,20 @@ export class MapComponent {
   teachersService = inject(TeachersService);
   arrTeachers: TeacherCard[] = []
   arrMapInfo: any = []
-
+  checkToken: boolean = false
 
 
   async ngOnInit(): Promise<void> {
     //
     try {
       this.arrTeachers = await this.teachersService.getTeachersInfo()
-      this.arrTeachers.forEach(teacher => {
-        this.arrMapInfo.push({
+      this.arrMapInfo = this.arrTeachers.map(teacher => {
+        return {
+          ...teacher,
           position: new google.maps.LatLng(teacher.latitude, teacher.longitude)
-        })
+        }
       })
-      console.log(this.arrTeachers)
+      console.log(this.arrMapInfo)
     } catch (error) {
       console.log(error)
     }
@@ -60,4 +61,5 @@ export class MapComponent {
       }
     })
   }
+
 }

@@ -82,7 +82,6 @@ export class AuthFormComponent implements OnInit {
   }
 
   async onSubmit() {
-    console.log('EntraAAAAAA');
     try {
       if (this.authForm.valid) {
         await this.authService.registerUser(this.authForm.value);

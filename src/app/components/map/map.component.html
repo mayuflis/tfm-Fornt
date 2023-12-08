@@ -1,9 +1,8 @@
 <google-map height="70vh" width="75vw" [center]="userPosition" [zoom]="zoom">
     <map-marker #myMarker="mapMarker" *ngFor="let teacher of arrMapInfo, let i = index " [position]="teacher.position"
         (mapClick)="openInfoWindow(myMarker, i)">
-        <!-- TODO: ANADIR MANUALMENTE -->
         <map-info-window>
-
+            <app-tutor-card [teacher]="teacher"></app-tutor-card>
         </map-info-window>
     </map-marker>
     <map-marker [position]="userPosition" [options]="userOptions"></map-marker>

@@ -23,7 +23,7 @@ export class TutorCardComponent {
   checkToken() {
     if (!this.token) {
       this.router.navigate(['/login'])
-      alert('Tienes que estar conectado.')
+      alert('Tienes que iniciar sesión.')
     }
   }
 }
