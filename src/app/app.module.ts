@@ -71,7 +71,6 @@ import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/stu
 import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
 */
 
-
 import { TutorAboutMeProfileComponent } from './components/tutor-about-me-profile/tutor-about-me-profile.component';
 import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
 import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
@@ -81,16 +80,17 @@ import { TutorClassCardComponent } from './components/tutor-class-card/tutor-cla
 import { StudentAboutMeProfileComponent } from './components/student-about-me-profile/student-about-me-profile.component';
 import { MapDetailsComponent } from './components/map-details/map-details.component';
 import { Error404Component } from './components/error404/error404.component';
+import { StudentsClassesCardComponent } from './components/students-classes-card/students-classes-card.component';
+import { ChooseClassComponent } from './components/choose-class/choose-class.component';
+import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 
-
-  /*
+/*
 import { MapDetailsComponent } from './components/map-details/map-details.component';
 import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
 import { StudentMytutorCardComponent } from './components/student-mytutor-card/student-mytutor-card.component';
 import { TutorNewAdComponent } from './components/tutor-new-ad/tutor-new-ad.component';
 import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
 */
-
 
 @NgModule({
   declarations: [
@@ -151,15 +151,17 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TutorClassCardComponent,
     StudentAboutMeProfileComponent,
     MapDetailsComponent,
-    Error404Component
-  
-/*    
+    Error404Component,
+    StudentsClassesCardComponent,
+    ChooseClassComponent,
+    Error404PageComponent,
+
+    /*    
     TutorAdsComponent,
     TutorNewAdComponent,
     StudentMytutorCardComponent,
 
 */
-
   ],
 
   imports: [

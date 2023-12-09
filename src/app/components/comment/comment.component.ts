@@ -6,10 +6,10 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
-  styleUrls: ['./comment.component.css']
+  styleUrls: ['./comment.component.css'],
 })
 export class CommentComponent {
-  gfg = true;//collapse write opinion
+  gfg = true; //collapse write opinion
   rating: any;
   opinionTitle: string = '';
   opinionBody: string = '';
@@ -18,7 +18,6 @@ export class CommentComponent {
   tutorId: any = null;
   allCommentsFromTutor: any = null;
   userName: string = '';
-
 
   ngOnInit(): void {
     this.rating = 0;
@@ -36,10 +35,9 @@ export class CommentComponent {
 
         // Extraer info de payload
         this.userId = parseInt(payload.user_id);
-        this.isStudent = payload.user_role == "Alumno";
-        console.log("userId: ", this.userId)
-        console.log("isStudent: ", this.isStudent)
-
+        this.isStudent = payload.user_role == 'student';
+        console.log('userId: ', this.userId);
+        console.log('isStudent: ', this.isStudent);
       } catch (error) {
         console.error('Error al decodificar el token:', error);
       }
@@ -47,52 +45,54 @@ export class CommentComponent {
       console.error('No se encontró el token en el localStorage.');
     }
 
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       const id = params['idTutor'];
       console.log('tutorId: ', id);
-      this.tutorId = parseInt(id)
+      this.tutorId = parseInt(id);
     });
 
     //Aqui se llama al back para traer todas las reviews de un determinado tutor
-    this.http.get(`http://localhost:3100/api/reviews/selectallreviewsfromtutor/${this.tutorId}`).subscribe(
-        data => {
-          this.allCommentsFromTutor = data
-          console.log(data)
-        },
-        error => {
-          console.log(error)
-        }
+    this.http
+      .get(
+        `http://localhost:3000/api/reviews/selectallreviewsfromtutor/${this.tutorId}`
       )
+      .subscribe(
+        (data) => {
+          this.allCommentsFromTutor = data;
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
-  constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute,
-  ) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   submitForm(form: NgForm) {
-    console.log("rating: " + this.rating);
-    console.log("opinionTitle: " + this.opinionTitle);
-    console.log("opinionBody: " + this.opinionBody);
+    console.log('rating: ' + this.rating);
+    console.log('opinionTitle: ' + this.opinionTitle);
+    console.log('opinionBody: ' + this.opinionBody);
 
-
-    this.http.post(`http://localhost:3100/api/reviews/insertreview`, {
-        "opinions": this.opinionBody,
-        "recommendations": '',
-        "teachers_id_teachers": this.tutorId,
-        "rate": this.rating,
-        "users_idusers": this.userId,
-    }).subscribe(
-        data => {
-          console.log("success")
+    this.http
+      .post(`http://localhost:3000/api/reviews/insertreview`, {
+        opinions: this.opinionBody,
+        recommendations: '',
+        teachers_id_teachers: this.tutorId,
+        rate: this.rating,
+        users_idusers: this.userId,
+      })
+      .subscribe(
+        (data) => {
+          console.log('success');
         },
-        error => {
-          console.log(error)
+        (error) => {
+          console.log(error);
         }
-      )
+      );
 
     form.resetForm();
     this.rating = 0;
-    window.location.reload()
+    window.location.reload();
   }
 }

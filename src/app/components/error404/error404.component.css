@@ -1,0 +1,36 @@
+.space {
+  gap: 100px;
+}
+
+.short {
+  width: 40%;
+}
+
+.text {
+  font-size: 70px;
+  padding-top: 100px;
+  font-weight: bold;
+  color: rgb(23, 119, 23);
+}
+
+h5 {
+  padding-top: 20px;
+}
+
+button {
+  margin-top: 50px;
+  margin-left: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.long {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+img {
+  display: block;
+  align-items: center;
+}

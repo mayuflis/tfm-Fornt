@@ -20,6 +20,7 @@ import { authRoleStudentsGuard } from './guards/auth-roleStudents.guard';
 import { authRoleTeachersGuard } from './guards/auth-roleTeachers.guard';
 import { notLoginGuard } from './guards/not-login.guard';
 import { Error404Component } from './components/error404/error404.component';
+import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -106,7 +107,6 @@ const routes: Routes = [
     component: StudentProfilePageComponent,
   },
 
-
   // { path: 'student/:idStudent/teachers', component: StudentMyTeachersPageComponent },
   // { path: 'tutor-students/:idTutor', component: TutorStudentsPageComponent },
 
@@ -133,7 +133,7 @@ const routes: Routes = [
     component: StudentProfilePageComponent,
   },
   */
-  {path: '**', component: Error404Component }
+  { path: '**', component: Error404PageComponent },
 ];
 
 @NgModule({

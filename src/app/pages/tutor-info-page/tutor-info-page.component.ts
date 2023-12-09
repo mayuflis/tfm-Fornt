@@ -29,39 +29,40 @@ export class TutorInfoPageComponent {
       const token = localStorage.getItem('token');
       const decode: itemToken = jwtDecode(token!);
       const idSesion: number = decode.user_id;
-      
+
       if (params.idTutor) {
         //Vista detalle de cada tutor desde la lista, apretando el boton contactar
         const idTutor = params.idTutor;
 
         try {
-          const response: TeacherCard[] = await this.teachersService.getTeacherInfoById(idTutor);
-          console.log(response)
-          if (response === undefined || response.length === 0 ) {
+          const response: TeacherCard[] =
+            await this.teachersService.getTeacherInfoById(idTutor);
+          console.log(response);
+          if (response === undefined || response.length === 0) {
             this.router.navigate(['/error']);
           }
-          this.detailedTeacher = response
-          const birthday = parseISO(this.detailedTeacher[0].birthday)
-          this.age = differenceInYears(new Date(), birthday)
-          this.detailedTeacher[0].age = this.age
-          
+          this.detailedTeacher = response;
+          const birthday = parseISO(this.detailedTeacher[0].birthday);
+          this.age = differenceInYears(new Date(), birthday);
+          this.detailedTeacher[0].age = this.age;
         } catch (error) {
           console.log(error);
         }
       } else {
         // Estás en la vista de información del tutor desde el panel
         try {
-          const response = await this.teachersService.getTeacherInfoById(idSesion);
+          const response = await this.teachersService.getTeacherInfoById(
+            idSesion
+          );
           if (response === undefined) {
             alert('Este profesor no existe');
             this.router.navigate(['/home']);
           } else {
-            console.log('entra')
             this.detailedTeacher = response;
-            console.log(this.detailedTeacher)
-            const birthday = parseISO(this. detailedTeacher[0].birthday)
-            this.age = differenceInYears(new Date(), birthday)
-            this.detailedTeacher[0].age = this.age
+            console.log(this.detailedTeacher);
+            const birthday = parseISO(this.detailedTeacher[0].birthday);
+            this.age = differenceInYears(new Date(), birthday);
+            this.detailedTeacher[0].age = this.age;
           }
         } catch (error) {
           console.log(error);
