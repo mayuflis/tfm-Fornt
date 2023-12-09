@@ -34,3 +34,24 @@ img {
   display: block;
   align-items: center;
 }
+@media  screen and (max-width:1530px) {
+  .flex {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .short {
+    width: 100%;
+    text-align: center;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+      align-items: center;
+  }
+  button {
+    margin: 4% 0 0 0;
+  }
+  .long {
+    width: 100%;
+  }
+}
