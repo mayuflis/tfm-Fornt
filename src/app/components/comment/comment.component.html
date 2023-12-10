@@ -1,6 +1,6 @@
 <div style="margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
     <div class="" style="margin: 0 auto; display: inline-block;">
-        <div class="ms-5" *ngIf="isStudent">
+        <div class="ms-5" *ngIf="isStudent && responseReviewFromUserOfTutor.toString() == [].toString()">
             <p class="text-right">
                 <br />
                 <button type="button" class="btn btn-success" (click)="collapse.toggle()" [attr.aria-expanded]="!gfg"
@@ -59,10 +59,14 @@
 
                     <div class="row">
                         <div class="col">
-
-
+                            <div *ngIf="allCommentsFromTutor.toString() == [].toString()">
+                                <p class="width-of-p small mb-1 mt-1">
+                                    Ningun estudiante ha opinado hasta el momento.
+                                </p>
+                            </div>
+                            
                             <div *ngFor="let objeto of allCommentsFromTutor">
-                                <div class="d-flex flex-start mt-3">
+                                <div class="d-flex flex-start mt-3 ">
                                     <img class="rounded-circle shadow-1-strong me-3"
                                         src="https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg"
                                         alt="avatar" width="65" height="65" />
@@ -75,11 +79,11 @@
                                                 </p>
                                                 <!--<a href="#!"><i class="fas fa-reply fa-xs"></i></a>-->
                                             </div>
-                                            <app-tutor-stars [starsCount]="objeto.rate"
-                                                [rate]="objeto.rate"></app-tutor-stars>
-                                            <!--<p class="mb-1 mt-1">
-                                            <b>{{objeto.opinions}}</b>
-                                        </p>-->
+                                            <app-tutor-stars [starsCount]="objeto.rate" [rate]="objeto.rate"
+                                                [show]=false></app-tutor-stars>
+                                            <p class="mb-1 mt-1">
+                                                <b>{{objeto.title_opinion}}</b>
+                                            </p>
                                             <p class="width-of-p small mb-1 mt-1">
                                                 {{objeto.opinions}}
                                             </p>
