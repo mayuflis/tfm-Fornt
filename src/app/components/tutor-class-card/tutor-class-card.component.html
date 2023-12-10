@@ -17,7 +17,7 @@
     </div>
     <div class="item">
         <p class="text">Día</p>
-        <p>{{student.class_date}} </p>
+        <p>{{student.class_date | date:'dd/M/yyyy'}} </p>
     </div>
     <div class="item mb-3">
         <p class="text">Hora</p>
@@ -25,6 +25,6 @@
     </div>
 
     <div>
-        <button>+ Info</button>
+        <button [routerLink]="['/student/info',student.idusers]" routerLinkActive="router-link-active">+ Info</button>
     </div>
 </div>

@@ -36,10 +36,11 @@ export interface ListOfTeachers {
 }
 
 export interface MyTutors {
+  id_teachers: number;
   idusers: number;
-  user_name: string;
-  last_name: string;
-  email: string;
-  mobile: string;
+  teacher_name: string;
+  teacher_last_name: string;
+  teacher_email: string;
+  teacher_mobile: string;
   subject_name: string;
 }

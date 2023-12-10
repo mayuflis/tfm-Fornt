@@ -3,6 +3,7 @@ import { jwtDecode } from 'jwt-decode';
 import { StudentsService } from 'src/app/services/students.service';
 import { itemToken } from 'src/app/services/subjectsprices.service';
 import { differenceInYears, parseISO } from 'date-fns';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-student-card',
   templateUrl: './student-card.component.html',
@@ -13,10 +14,21 @@ export class StudentCardComponent implements OnInit {
   token = localStorage.getItem('token');
   decode: itemToken = jwtDecode(this.token!);
   idSesion: number = this.decode.user_id;
+  private role: string = this.decode.user_role;
+  private activatedRoute = inject(ActivatedRoute);
   async ngOnInit() {
-    const data = await this.studentsService.getDataStudentsCards(this.idSesion);
-    console.log(data);
-    this.getUserData(data);
+    this.activatedRoute.params.subscribe(async (params: any) => {
+      let id: number = params.idStudent;
+      if (id) {
+        const data = await this.studentsService.getDataStudentsCards(id);
+        this.getUserData(data);
+      } else {
+        const data = await this.studentsService.getDataStudentsCards(
+          this.idSesion
+        );
+        this.getUserData(data);
+      }
+    });
   }
 
   getUserData(data: any) {
@@ -58,5 +70,9 @@ export class StudentCardComponent implements OnInit {
         data.idusers
       );
     }
+  }
+
+  getRole(): string {
+    return this.role;
   }
 }

@@ -12,8 +12,11 @@
 
                 <p class="text" id="user-birthday"></p>
             </div>
-            <button class="btn btn-primary" [routerLink]="['/student/profile']"
-                routerLinkActive="router-link-active">Editar perfil</button>
+            <div *ngIf="getRole()==='student'">
+                <button class="btn btn-primary" [routerLink]="['/student/profile']"
+                    routerLinkActive="router-link-active">Editar perfil</button>
+            </div>
+
         </div>
         <script src="student-card.component.ts"></script>
     </div>
