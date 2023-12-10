@@ -7,6 +7,7 @@
                 <th scope="col">Nivel</th>
                 <th scope="col">Tarifa por hora</th>
                 <th scope="col">Desplazamientos</th>
+
             </tr>
         </thead>
         <tbody id="subject-table-body">
@@ -16,3 +17,8 @@
     <script src="table-subject-price.component.ts"></script>
 </div>
 
+
+<button (click)="toggleElement()" class="btn btn-primary">Solicitar</button>
+<div *ngIf="mostrarElemento" class="mt-3">
+    <app-choose-class [class]="asignaturas"></app-choose-class>
+</div>

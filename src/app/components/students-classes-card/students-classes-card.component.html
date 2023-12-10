@@ -1,0 +1,26 @@
+<section class="container">
+    <div class="card" *ngFor="let student of getInfo()">
+        <div class="item ">
+            <p class="text">Profesor</p>
+            <p>{{student.teacher_name}} {{student.last_name}} </p>
+        </div>
+        <div class="item">
+            <p class="text">Asignatura</p>
+            <p>{{student.subject_name}} </p>
+        </div>
+
+        <div class="item">
+            <p class="text">Nivel</p>
+            <p> {{student.level}} </p>
+        </div>
+        <div class="item">
+            <p class="text">Email</p>
+            <p> {{student.email}} </p>
+        </div>
+
+
+        <div>
+            <button [routerLink]="['/tutor/info',student.idusers]" routerLinkActive="router-link-active">+ Info</button>
+        </div>
+    </div>
+</section>

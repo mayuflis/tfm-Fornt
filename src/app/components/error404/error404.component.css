@@ -1,0 +1,57 @@
+.space {
+  gap: 100px;
+}
+
+.short {
+  width: 40%;
+}
+
+.text {
+  font-size: 70px;
+  padding-top: 100px;
+  font-weight: bold;
+  color: rgb(23, 119, 23);
+}
+
+h5 {
+  padding-top: 20px;
+}
+
+button {
+  margin-top: 50px;
+  margin-left: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.long {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+img {
+  display: block;
+  align-items: center;
+}
+@media  screen and (max-width:1530px) {
+  .flex {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .short {
+    width: 100%;
+    text-align: center;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+      align-items: center;
+  }
+  button {
+    margin: 4% 0 0 0;
+  }
+  .long {
+    width: 100%;
+  }
+}

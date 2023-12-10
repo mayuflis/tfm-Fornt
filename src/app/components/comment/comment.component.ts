@@ -17,10 +17,10 @@ type review = {
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
-  styleUrls: ['./comment.component.css']
+  styleUrls: ['./comment.component.css'],
 })
 export class CommentComponent {
-  gfg = true;//collapse write opinion
+  gfg = true; //collapse write opinion
   rating: any;
   opinionTitle: string = '';
   opinionBody: string = '';
@@ -29,8 +29,10 @@ export class CommentComponent {
   tutorId: any = null;
   allCommentsFromTutor: any = null;
   userName: string = '';
+
   userAlreadyVotedOnThatTutor: boolean = false;
   responseReviewFromUserOfTutor: any;
+
 
   ngOnInit(): void {
     this.rating = 0;
@@ -48,9 +50,11 @@ export class CommentComponent {
 
         // Extraer info de payload
         this.userId = parseInt(payload.user_id);
+
         this.isStudent = payload.user_role == "student" || payload.user_role == "Alumno";
         console.log("userId: ", this.userId)
         console.log("is a student logged?: ", this.isStudent)
+
 
       } catch (error) {
         console.error('Error al decodificar el token:', error);
@@ -59,13 +63,14 @@ export class CommentComponent {
       console.error('No se encontró el token en el localStorage.');
     }
 
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       const id = params['idTutor'];
       console.log('tutorId: ', id);
-      this.tutorId = parseInt(id)
+      this.tutorId = parseInt(id);
     });
 
     //Aqui se llama al back para traer todas las reviews de un determinado tutor
+
     this.http.get(`http://localhost:3000/api/reviews/selectallreviewsfromtutor/${this.tutorId}`).subscribe(
       data => {
         this.allCommentsFromTutor = data
@@ -86,17 +91,15 @@ export class CommentComponent {
         console.log(error)
       }
     )
+
   }
 
-  constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute,
-  ) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   submitForm(form: NgForm) {
-    console.log("rating: " + this.rating);
-    console.log("opinionTitle: " + this.opinionTitle);
-    console.log("opinionBody: " + this.opinionBody);
+    console.log('rating: ' + this.rating);
+    console.log('opinionTitle: ' + this.opinionTitle);
+    console.log('opinionBody: ' + this.opinionBody);
 
 
     this.http.post(`http://localhost:3000/api/reviews/insertreview`, {
@@ -116,8 +119,9 @@ export class CommentComponent {
       }
     )
 
+
     form.resetForm();
     this.rating = 0;
-    window.location.reload()
+    window.location.reload();
   }
 }

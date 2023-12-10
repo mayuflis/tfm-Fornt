@@ -1,1 +1,14 @@
-<p>error404 works!</p>
+<div class="flex d-flex container-fluid space">
+    <div class="short">
+        <p class="text">Oops!</p>
+        <h2>Parece que te has perdido</h2>
+        <h5>La página a la que intentas acceder no está disponible</h5>
+        <div class="button-container">
+            <button type="button" class="btn btn-success" [routerLink]='["/home"]'>Volver a Inicio</button>
+        </div>
+    </div>
+
+    <div class="long">
+        <img src="assets/images/404-verde.jpg" class="img-fluid align-content-center" alt="Error 404">
+    </div>
+</div>

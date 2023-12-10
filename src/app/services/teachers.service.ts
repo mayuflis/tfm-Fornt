@@ -2,7 +2,10 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 
-import { TeacherCard } from '../interfaces/teacher-card.interface';
+import {
+  ListOfTeachers,
+  TeacherCard,
+} from '../interfaces/teacher-card.interface';
 
 import { Subjects } from '../interfaces/WebPublic';
 
@@ -13,7 +16,8 @@ export class TeachersService {
   private httpClient = inject(HttpClient);
   private baseUrl: string = 'http://localhost:3000/api/teachers';
   private publicUrl: string = 'http://localhost:3000/api/webPublic';
-
+  private listOfTeachers: string =
+    'http://localhost:3000/api/teachers/menu/list/';
   constructor() {}
 
   //Gets the necessary info for Teachers Card and Map Component
@@ -41,6 +45,14 @@ export class TeachersService {
   getSubjects(): Promise<Subjects[]> {
     return lastValueFrom(
       this.httpClient.get<Subjects[]>(`${this.baseUrl}/menu/subjects`)
+    );
+  }
+
+  //Obtiene el listado de alumno
+
+  getListOfTeachers(idUsers: number): Promise<ListOfTeachers[]> {
+    return lastValueFrom(
+      this.httpClient.get<ListOfTeachers[]>(`${this.listOfTeachers}${idUsers}`)
     );
   }
 }

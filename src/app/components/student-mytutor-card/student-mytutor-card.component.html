@@ -1,25 +1,29 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Lista de Tutores</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link>
-</head>
-
-<body>
-  <div class="container mt-4">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Nombre</th>
-          <th scope="col">Email</th>
-          <th scope="col">Teléfono</th>
-          <th scope="col">Asignatura</th>
-        </tr>
-      </thead>
-      <tbody id="tutors-table-body">
-        <!-- Aquí se generará dinámicamente el contenido de la tabla de tutores -->
-      </tbody>
-    </table>
+<div class="flex mb-4 " *ngFor="let student of tutorInfo">
+  <div class="item ">
+    <p class="text">Alumno</p>
+    <p>{{student.user_name}} {{student.last_name}} </p>
   </div>
-  <script src="student-mytutor-card.component.ts"></script>
-</body>
+
+  <div class="item">
+    <p class="text">Email</p>
+    <p> {{student.email}} </p>
+  </div>
+  <div class="item">
+    <p class="text">Teléfono</p>
+    <p> {{student.mobile}} </p>
+  </div>
+  <div class="item">
+    <p class="text">Asignatura</p>
+    <p>{{student.subject_name}} </p>
+  </div>
+
+  <div>
+    <button [routerLink]="['/tutor/info',student.idusers]" routerLinkActive="router-link-active">+ Info</button>
+  </div>
+</div>
+
+<!-- <th scope="col">Nombre</th>
+  <th scope="col">Email</th>
+  <th scope="col">Teléfono</th>
+  <th scope="col">Asignatura</th>
+  </tr> -->
