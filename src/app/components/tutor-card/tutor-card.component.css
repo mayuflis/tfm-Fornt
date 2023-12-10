@@ -4,14 +4,6 @@
   margin: auto;
 }
 
-.name {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 .bold {
   font-weight: 800;
   color: rgb(131, 182, 131);
