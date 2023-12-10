@@ -75,11 +75,11 @@
                                                 </p>
                                                 <!--<a href="#!"><i class="fas fa-reply fa-xs"></i></a>-->
                                             </div>
-                                            <app-tutor-stars [starsCount]="objeto.rate"
-                                                [rate]="objeto.rate"></app-tutor-stars>
-                                            <!--<p class="mb-1 mt-1">
-                                            <b>{{objeto.opinions}}</b>
-                                        </p>-->
+                                            <app-tutor-stars [starsCount]="objeto.rate" [rate]="objeto.rate"
+                                                [show]=false></app-tutor-stars>
+                                            <p class="mb-1 mt-1">
+                                                <b>{{objeto.title_opinion}}</b>
+                                            </p>
                                             <p class="width-of-p small mb-1 mt-1">
                                                 {{objeto.opinions}}
                                             </p>

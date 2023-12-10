@@ -22,7 +22,7 @@ export class CommentComponent {
 
   ngOnInit(): void {
     this.rating = 0;
-    this.opinionBody = '';
+    this.opinionTitle = '';
     this.opinionBody = '';
 
     const token = localStorage.getItem('token');
@@ -36,7 +36,7 @@ export class CommentComponent {
 
         // Extraer info de payload
         this.userId = parseInt(payload.user_id);
-        this.isStudent = payload.user_role == "Alumno";
+        this.isStudent = payload.user_role == "student";
         console.log("userId: ", this.userId)
         console.log("isStudent: ", this.isStudent)
 
@@ -54,7 +54,7 @@ export class CommentComponent {
     });
 
     //Aqui se llama al back para traer todas las reviews de un determinado tutor
-    this.http.get(`http://localhost:3100/api/reviews/selectallreviewsfromtutor/${this.tutorId}`).subscribe(
+    this.http.get(`http://localhost:3000/api/reviews/selectallreviewsfromtutor/${this.tutorId}`).subscribe(
         data => {
           this.allCommentsFromTutor = data
           console.log(data)
@@ -76,7 +76,8 @@ export class CommentComponent {
     console.log("opinionBody: " + this.opinionBody);
 
 
-    this.http.post(`http://localhost:3100/api/reviews/insertreview`, {
+    this.http.post(`http://localhost:3000/api/reviews/insertreview`, {
+        "title_opinion": this.opinionTitle,    
         "opinions": this.opinionBody,
         "recommendations": '',
         "teachers_id_teachers": this.tutorId,
@@ -87,12 +88,13 @@ export class CommentComponent {
           console.log("success")
         },
         error => {
+          console.error("wfsdfsdfsdfsdfsdfsd")
           console.log(error)
         }
       )
 
     form.resetForm();
     this.rating = 0;
-    window.location.reload()
+    //window.location.reload()
   }
 }
