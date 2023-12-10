@@ -17,8 +17,9 @@ type FormValueFilter = {
 })
 export class FilterProfessorsService {
   private httpClient = inject(HttpClient);
-  private baseUrl: string = 'http://localhost:3100/api/webPublic/';
-  private baseUrlProvince: string = 'http://localhost:3100/api/users/province';
+  private baseUrl: string = 'http://localhost:3000/api/webPublic/';
+  private baseUrlProvince: string = 'http://localhost:3000/api/users/province';
+  private baseUrlFilter: string = 'http://localhost:3000/api/filter/home';
   constructor() {}
 
   getAllSubjects(): Promise<Subjects[]> {
@@ -26,9 +27,10 @@ export class FilterProfessorsService {
       this.httpClient.get<Subjects[]>(`${this.baseUrl}subjects`)
     );
   }
-  getFilterTeachers(FormValue: FormValueFilter): Promise<any> {
+  getFilterData(FormValue: FormValueFilter): Promise<any> {
+    console.log(FormValue)
     return lastValueFrom(
-      this.httpClient.post<any>(`${this.baseUrl}filter`, FormValue)
+      this.httpClient.post<any>(`${this.baseUrlFilter}`, FormValue)
     );
   }
 

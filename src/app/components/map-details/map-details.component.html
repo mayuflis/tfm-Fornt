@@ -1,0 +1,11 @@
+<google-map height="550px" width="900px" [center]="this.position" [zoom]="zoom">
+    <map-marker [position]="position"></map-marker>
+    <map-marker #myMarker=mapMarker [position]="userPosition" [options]="markerOptions"
+        (mapClick)="openInfoWindow(myMarker)">
+        <map-info-window>
+            <div>
+                <p>Usted Está Aquí</p>
+            </div>
+        </map-info-window>
+    </map-marker>
+</google-map>

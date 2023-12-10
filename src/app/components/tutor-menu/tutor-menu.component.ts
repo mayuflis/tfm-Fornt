@@ -13,7 +13,7 @@ export class TutorMenuComponent {
     this.route.paramMap.subscribe((params) => {
       const idTutor = params.get('idTutor');
       if (idTutor) {
-        this.router.navigate(['/tutor-info', idTutor]);
+        this.router.navigate(['/tutor/info']);
       }
     });
   }

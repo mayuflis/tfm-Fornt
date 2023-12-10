@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h2>Encuentra a tu profesor</h2>
+  <h2>Encuentra a tu profesor entre los mejor valorados</h2>
 
 
   <form [formGroup]=" getFilterForm()" (ngSubmit)="applyFilters()" class="row">
@@ -8,7 +8,7 @@
       <label for="subject" class="form-label">Asignatura:</label>
       <select id="subject" class="form-select" formControlName="selectedSubject">
         <option value="0">Todas las asignaturas</option>
-        <option *ngFor="let subject of getSubjects()" [value]="subject.idsubjects">{{ subject.name }}</option>
+        <option *ngFor="let subject of getSubjects()" [value]="subject.name">{{ subject.name }}</option>
       </select>
     </div>
 
@@ -16,7 +16,7 @@
       <label for="province" class="form-label">Provincia:</label>
       <select id="province" class="form-select" formControlName="selectedProvince">
         <option value="0">Todas las provincias</option>
-        <option *ngFor="let province of getProvince()" [value]="province.idprovince">{{ province.name_province }}
+        <option *ngFor="let province of getProvince()" [value]="province.name_province">{{ province.name_province }}
         </option>
       </select>
     </div>
@@ -31,7 +31,7 @@
       <label for="experience" class="form-label">Experiencia:</label>
       <select id="experience" class="form-select" formControlName="selectedExperience">
         <option value="0">Cualquier experiencia</option>
-        <option *ngFor="let exp of getExperienceRange()" [value]="exp">{{ exp }}+ años</option>
+        <option *ngFor="let exp of getExperienceRange()" [value]="exp">{{ exp }} + años</option>
       </select>
     </div>
     <div class="col-md-3 mt-3">

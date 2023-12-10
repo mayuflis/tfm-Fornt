@@ -1,21 +1,29 @@
-<div class="flex">
-    <div class="name item">
-        <p class="text">Nombre</p>
-        <p>Marta Alemán Suárez</p>
-    </div>
-    <div class="subject item">
-        <p class="text">Asignatura</p>
-        <p>Matemáticas, Inglés</p>
-    </div>
-    <div class="email item">
-        <p class="text">Email</p>
-        <p>marta@gmail.com</p>
-    </div>
-    <div class="phone item">
-        <p class="text">Teléfono</p>
-        <p>987 654 321</p>
-    </div>
-    <div>
-        <button>+ Info</button>
-    </div>
+<div class="flex mb-4 " *ngFor="let student of tutorInfo">
+  <div class="item ">
+    <p class="text">Alumno</p>
+    <p>{{student.user_name}} {{student.last_name}} </p>
+  </div>
+
+  <div class="item">
+    <p class="text">Email</p>
+    <p> {{student.email}} </p>
+  </div>
+  <div class="item">
+    <p class="text">Teléfono</p>
+    <p> {{student.mobile}} </p>
+  </div>
+  <div class="item">
+    <p class="text">Asignatura</p>
+    <p>{{student.subject_name}} </p>
+  </div>
+
+  <div>
+    <button [routerLink]="['/tutor/info',student.idusers]" routerLinkActive="router-link-active">+ Info</button>
+  </div>
 </div>
+
+<!-- <th scope="col">Nombre</th>
+  <th scope="col">Email</th>
+  <th scope="col">Teléfono</th>
+  <th scope="col">Asignatura</th>
+  </tr> -->

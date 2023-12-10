@@ -4,6 +4,19 @@ import { Router } from '@angular/router';
 import { Provinces } from 'src/app/interfaces/auth';
 import { AuthService } from 'src/app/services/auth.service';
 import Swa1 from 'sweetalert2';
+type users = {
+  nombre: string;
+  apellidos: string;
+  fechaNacimiento: Date;
+  provincia: number;
+  telefono: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  rol: string;
+  longitude: number;
+  latitude: number;
+};
 @Component({
   selector: 'app-auth-form',
   templateUrl: './auth-form.component.html',
@@ -15,6 +28,7 @@ export class AuthFormComponent implements OnInit {
   availableTags: string[] = ['Matemáticas', 'Física', 'Química']; // Ejemplo de tags disponibles. CAMBIAR --> Recibir de base de datos
   selectedTags: string[] = []; // Tags seleccionadas
   provinces!: Provinces[];
+
   private authService = inject(AuthService);
   private router = inject(Router);
 
@@ -39,7 +53,7 @@ export class AuthFormComponent implements OnInit {
           [
             Validators.required,
             Validators.pattern(
-              /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/
+              /^[^<>()\[\]\.,;:\s@'"]+@(([^<>()\[\]\.,;:\s@'"]+\.)+[^<>()\[\]\.,;:\s@'"]{2,}|(\[([0-9]{1,3}\.){3}[0-9]{1,3}\]))$/
             ),
           ],
         ],

@@ -1,6 +1,6 @@
 <div style="margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
     <div class="" style="margin: 0 auto; display: inline-block;">
-        <div class="ms-5" *ngIf="isStudent">
+        <div class="ms-5" *ngIf="isStudent && responseReviewFromUserOfTutor.toString() == [].toString()">
             <p class="text-right">
                 <br />
                 <button type="button" class="btn btn-success" (click)="collapse.toggle()" [attr.aria-expanded]="!gfg"
@@ -54,43 +54,49 @@
         </div>
         <div class="me-5 mb-5  ">
             <div class="ms-5 me-5 mb-5 ">
-            <div class="card card-body ">
-                <h4 class="text-start mb-0 pb-2">Comentarios</h4>
+                <div class="card card-body ">
+                    <h4 class="text-start mb-0 pb-2">Comentarios</h4>
 
-                <div class="row">
-                    <div class="col">
-
-
-                        <div *ngFor="let objeto of allCommentsFromTutor">
-                            <div class="d-flex flex-start mt-3">
-                                <img class="rounded-circle shadow-1-strong me-3"
-                                    src="https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg"
-                                    alt="avatar" width="65" height="65" />
-                                <div class="flex-grow-1 flex-shrink-1">
-                                    <div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="mb-0" style="font-weight: regular; font-size: 18px;">
-                                                {{objeto.name}} {{objeto.last_name}} <!-- <span class="small"> - 2 hours ago </span> -->
+                    <div class="row">
+                        <div class="col">
+                            <div *ngIf="allCommentsFromTutor.toString() == [].toString()">
+                                <p class="width-of-p small mb-1 mt-1">
+                                    Ningun estudiante ha opinado hasta el momento.
+                                </p>
+                            </div>
+                            
+                            <div *ngFor="let objeto of allCommentsFromTutor">
+                                <div class="d-flex flex-start mt-3 ">
+                                    <img class="rounded-circle shadow-1-strong me-3"
+                                        src="https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg"
+                                        alt="avatar" width="65" height="65" />
+                                    <div class="flex-grow-1 flex-shrink-1">
+                                        <div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="mb-0" style="font-weight: regular; font-size: 18px;">
+                                                    {{objeto.name}} {{objeto.last_name}}
+                                                    <!-- <span class="small"> - 2 hours ago </span> -->
+                                                </p>
+                                                <!--<a href="#!"><i class="fas fa-reply fa-xs"></i></a>-->
+                                            </div>
+                                            <app-tutor-stars [starsCount]="objeto.rate" [rate]="objeto.rate"
+                                                [show]=false></app-tutor-stars>
+                                            <p class="mb-1 mt-1">
+                                                <b>{{objeto.title_opinion}}</b>
                                             </p>
-                                            <!--<a href="#!"><i class="fas fa-reply fa-xs"></i></a>-->
+                                            <p class="width-of-p small mb-1 mt-1">
+                                                {{objeto.opinions}}
+                                            </p>
                                         </div>
-                                        <app-tutor-stars [starsCount]="objeto.rate" [rate]="objeto.rate"></app-tutor-stars>
-                                        <!--<p class="mb-1 mt-1">
-                                            <b>{{objeto.opinions}}</b>
-                                        </p>-->
-                                        <p class="width-of-p small mb-1 mt-1">
-                                            {{objeto.opinions}}
-                                        </p>
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

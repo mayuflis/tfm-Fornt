@@ -1,0 +1,30 @@
+<div class="flex mb-4 " *ngFor="let student of getStudents()">
+    <div class="item ">
+        <p class="text">Alumno</p>
+        <p>{{student.name}} {{student.last_name}} </p>
+    </div>
+    <div class="item">
+        <p class="text">Asignatura</p>
+        <p>{{student.subject}} </p>
+    </div>
+    <div class="item">
+        <p class="text">Email</p>
+        <p> {{student.email}} </p>
+    </div>
+    <div class="item">
+        <p class="text">Teléfono</p>
+        <p> {{student.mobile}} </p>
+    </div>
+    <div class="item">
+        <p class="text">Día</p>
+        <p>{{student.class_date}} </p>
+    </div>
+    <div class="item mb-3">
+        <p class="text">Hora</p>
+        <p>{{student.start_time}} </p>
+    </div>
+
+    <div>
+        <button>+ Info</button>
+    </div>
+</div>

@@ -1,11 +1,20 @@
-<div class="card" style="width: 18rem;">
-    <img src="../../../assets//images/personal-placeholder-dona.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="name">Marina</h5>
-        <p class="location">Av. de Gran Canaria, 35100 Maspalomas, Las Palmas, España</p>       
-        <div>
-            <p class="text">Nivel<span class="text-secondary">Bachillerato</span></p>
-        </div>           
-        <a href="#" class="btn btn-primary">Editar perfil</a>
+<div class=" container" style="width: 18rem;">
+    <div class=card>
+        <img id="user-image" class="card-img-top" src="" alt="User Image">
+        <div class="card-body">
+            <h5 class="name"><span id="user-name"></span>&nbsp;<span id="user-lastname"></span>
+
+            </h5>
+            <h6>
+                <p id="user-province" class="location"></p>
+            </h6>
+            <div>
+
+                <p class="text" id="user-birthday"></p>
+            </div>
+            <button class="btn btn-primary" [routerLink]="['/student/profile']"
+                routerLinkActive="router-link-active">Editar perfil</button>
+        </div>
+        <script src="student-card.component.ts"></script>
     </div>
 </div>

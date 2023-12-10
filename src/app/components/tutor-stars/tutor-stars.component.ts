@@ -12,6 +12,7 @@ export class TutorStarsComponent implements OnInit {
   @Input() starsCount: number = 0;
   @Input() rate: number = 0;
   @Input() votes: number = 0;
+  @Input() show: boolean = true;
 
   // Creamos un array con 5 elementos, inicializados a 0
   starsArray: number[] = Array(5).fill(0);

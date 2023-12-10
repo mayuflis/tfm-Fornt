@@ -10,5 +10,6 @@
     </span>
     <p class="rate">{{ rate }}</p>
 </div>
-<h6 class="opinions"  *ngIf="votes > 0">({{votes}} votos)</h6>
+<h6 class="opinions d-flex justify-content-center"  *ngIf="votes == null && show ">(0 votos)</h6>
+<h6 class="opinions d-flex justify-content-center"  *ngIf="votes != null && show ">({{votes}} votos)</h6>
 

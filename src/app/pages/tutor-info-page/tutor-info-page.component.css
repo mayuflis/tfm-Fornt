@@ -6,6 +6,15 @@
     padding-left: 80px;
     padding-right: 80px;
     gap: 60px;
+    
+}
+
+.card-container{
+    width: 20vw;
+}
+
+.info-container{
+    width: 80vw;
 }
 
 .margin{

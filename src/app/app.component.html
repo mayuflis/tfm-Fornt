@@ -1,11 +1,10 @@
 <header>
- 
+
 </header>
 
 <main class="main">
-    <ng-container *ngIf="isHomePage()">
-        <app-filter-professors></app-filter-professors>
-      </ng-container>
-    <router-outlet></router-outlet>
+  <ng-container *ngIf="isHomePage()">
+    <app-filter-professors></app-filter-professors>
+  </ng-container>
+  <router-outlet></router-outlet>
 </main>
-

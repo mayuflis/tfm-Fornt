@@ -1,59 +1,65 @@
 <h5>Datos personales</h5>
-<form class="prueba">
-
+<form [formGroup]="profileForm" (ngSubmit)="sendFormData()">
     <!-- Campo para el nombre -->
     <div class="mb-3">
-        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+        <input type="text" class="form-control" formControlName="name" placeholder="Nombre">
         <div>
-            <small class="text-danger">Nombre es requerido. </small>
-            <small class="text-danger">Nombre debe tener almenos 2 caracteres.</small>
+            <small class="text-danger" *ngIf="checkInput('name', 'required')">Nombre es requerido. </small>
+            <small class="text-danger" *ngIf="checkInput('name', 'minlength')">Nombre debe tener almenos 2
+                caracteres.</small>
         </div>
     </div>
 
     <!-- Campo para los apellidos -->
     <div class="mb-3">
-        <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+        <input type="text" class="form-control" formControlName="surname" placeholder="Apellidos">
         <div>
-            <small class="text-danger">Apellido es requerido. </small>
-            <small class="text-danger">Apellido debe tener al menos 2 caracteres.</small>
+            <small class="text-danger" *ngIf="checkInput('surname', 'required')">Apellido es requerido. </small>
+            <small class=" text-danger" *ngIf="checkInput('surname', 'minlength')">Apellido debe tener al menos 2
+                caracteres.</small>
         </div>
     </div>
 
 
     <!-- Campo para la fecha de nacimiento -->
     <div class="mb-3">
-        <input type="date" class="form-control" formControlName="fechaNacimiento" placeholder="Fecha de Nacimiento">
+        <input type="date" class="form-control" formControlName="birthdate" placeholder="Fecha de Nacimiento">
         <div>
-            <small class="text-danger">La fecha de nacimiento es requerida. </small>
+            <small class="text-danger" *ngIf="checkInput('birthdate', 'required')">La fecha de nacimiento es requerida.
+            </small>
         </div>
     </div>
 
     <!-- Campo para la ciudad -->
     <div class="mb-3">
-        <input type="text" class="form-control" formControlName="ciudad" placeholder="Ciudad">
+        <input type="text" class="form-control" formControlName="city" placeholder="Ciudad">
         <div>
-            <small class="text-danger">La ciudad es requerida. </small>
+            <small class="text-danger" *ngIf="checkInput('city', 'required')">La ciudad es requerida. </small>
         </div>
     </div>
 
     <!-- Campo para el número de teléfono -->
     <div class="mb-3">
-        <input type="tel" class="form-control" formControlName="telefono" placeholder="Número de Teléfono">
+        <input type="tel" class="form-control" formControlName="phone" placeholder="Número de Teléfono">
         <div>
-            <small class="text-danger">El número de teléfono es requerido. </small>
-            <small class="text-danger">Formato de teléfono inválido.</small>
+            <small class="text-danger" *ngIf="checkInput('phone', 'required')">El número de teléfono es requerido.
+            </small>
+            <small class="text-danger" *ngIf="checkInput('name', 'pattern')">Formato de teléfono inválido. Debe tener
+                entre 9 y 15 números</small>
         </div>
     </div>
 
     <!-- Campo para el género -->
     <div class="mb-3">
         <label class="form-label">Género</label>
-        <select formControlName="rol" class="form-select">
+        <select formControlName="gender" class="form-select">
             <option value="masculino">Masculino</option>
             <option value="femenino">Femenino</option>
         </select>
+        <div>
+            <small class="text-danger" *ngIf="checkInput('gender', 'required')">El genero es requerido.
+            </small>
+        </div>
     </div>
-
-
+    <input type="submit" value="Enviar" [disabled]="!profileForm.valid">
 </form>
-
