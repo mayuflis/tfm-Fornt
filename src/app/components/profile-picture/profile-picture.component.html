@@ -5,12 +5,16 @@
         <form class="d-flex flex-column w-100 justify-content-center align-items-center my-3"
             [formGroup]="profilePicForm" (ngSubmit)="sendPic()">
             <div class="my-3">
-                <button class="color btn btn-primary py-3 w-100" (click)="displayInput()">Subir foto</button>
+                <button class="color btn btn-primary py-3 w-100" (click)="displayInput()"
+                    *ngIf="!this.activateInput">Subir foto</button>
             </div>
             <div *ngIf="activateInput" class="d-flex flex-column align-items-center">
-                <label for="image"></label>
-                <input type="text" placeholder="Introduce la URL de la foto" formControlName="image" class="mb-3">
-                <button class="d-inline btn btn-danger p-3 fit-content" (click)="cancel()">Cancelar</button>
+                <label for="image">Introduce la URL de la foto</label>
+                <input type="text" class="form-control mb-3" formControlName="image">
+                <div class="d-flex w-100 justify-content-around">
+                    <input type="submit" value="Actualizar Foto" class="color btn btn-primary py-3">
+                    <button class="d-inline btn btn-danger p-3 fit-content" (click)="cancel()">Cancelar</button>
+                </div>
             </div>
         </form>
 

@@ -1,21 +1,57 @@
-<h5>Sobre mi</h5>
-<div class="">
+<h5>Queremos conocerte mejor</h5>
+<form [formGroup]="aboutForm" (ngSubmit)="sendAboutMe()">
     <div class="flex">
         <div class="prueba">
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Escribe una breve descripción sobre lo que ofertas</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="title_class" class="form-label">Escribe un título atractivo para tus
+                    clases</label>
+                <textarea formControlName="title_prof" class="form-control" id="title_class" rows="3"></textarea>
+                <div>
+                    <small class="text-danger" *ngIf="checkInput('title_prof', 'maxlength')">Cuidado! Te has pasado de
+                        carácteres. Intenta ser más conciso.
+                    </small>
+                    <small class=" text-danger" *ngIf="checkInput('title_prof', 'minlength')">El título debe tener
+                        mínimo 2 carácteres</small>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Escribe una breve descripción sobre ti</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="about_me" class="form-label">Escribe una breve descripción sobre
+                    ti</label>
+                <textarea class="form-control" formControlName="description_prof" id="about_me" rows="3"></textarea>
+                <div>
+                    <small class="text-danger" *ngIf="checkInput('description_prof', 'maxlength')">Cuidado! Te has
+                        pasado de
+                        carácteres. Intenta ser más conciso.
+                    </small>
+                    <small class=" text-danger" *ngIf="checkInput('description_prof', 'minlength')">El texto debe tener
+                        mínimo
+                        20 carácteres. Explica un poco más sobre ti.</small>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Escribe una breve descripción sobre la clase a impartir</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="description_class" class="form-label">Describe
+                    detalladamente los servicios que ofreces y lo que los estudiantes pueden esperar</label>
+                <textarea class="form-control" formControlName="description_class" id="description_class"
+                    rows="3"></textarea>
+                <div>
+                    <small class="text-danger" *ngIf="checkInput('description_prof', 'maxlength')">Cuidado! Te has
+                        pasado de
+                        carácteres. Intenta ser más conciso.
+                    </small>
+                    <small class=" text-danger" *ngIf="checkInput('description_prof', 'minlength')">El texto debe tener
+                        mínimo
+                        20 carácteres. Da más información sobre tus clases.</small>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Guardar" [disabled]="!aboutForm.valid">
+            <div *ngIf="updatedUserError" class="py-3">
+                <p class="text-danger">No se ha podido actualizar el usuario. Inténtalo más tarde.</p>
+            </div>
+            <div *ngIf="updatedUserDone" class="py-3">
+                <p class="text-success">Enhorabuena! La información se ha guardado correctamente.</p>
             </div>
         </div>
-        
+
     </div>
-    
-</div>
+
+</form>

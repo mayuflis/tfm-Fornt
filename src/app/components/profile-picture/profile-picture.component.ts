@@ -19,7 +19,7 @@ export class ProfilePictureComponent {
   
   constructor() {
     this.profilePicForm = new FormGroup({
-        image: new FormControl('image', [])
+        image: new FormControl('', [])
       });
   }
 
@@ -38,9 +38,15 @@ export class ProfilePictureComponent {
       else {
         this.userProfile = response
         console.log('user', this.userProfile)
-        this.profilePicForm.patchValue({
-          image: this.userProfile.image
-        });
+        if (!this.userProfile.image) {
+          // TODO: MEJORAR Y PONERLO EN UNA p DESDE EL COMP. HTML
+          this.userProfile.image = 'No se ha encontrado ninguna imagen. Inserte URL'
+        }
+        else {
+          this.profilePicForm.patchValue({
+            image: this.userProfile.image
+          });
+        }
       }
     
     } catch (error) {
@@ -57,9 +63,28 @@ export class ProfilePictureComponent {
     this.activateInput = false;
   }
 
-  sendPic() {
+  async sendPic() {
+  console.log('sending pic....')
+  try {
+    const updatedImage = this.profilePicForm.get('image')?.value;
+    const changeBirthdayFormat = new Date(this.userProfile.birthday).toISOString().split('T')[0]
+    console.log(updatedImage)
 
+    const updatedUserProfile: UserProfile = {
+      ...this.userProfile,
+      birthday: changeBirthdayFormat,
+      image: updatedImage
+    };
+    console.log(updatedUserProfile)
+    const result = await this.usersService.updateInfo(updatedUserProfile, this.userProfile.idusers);
+    console.log('Agregado', result)
+    location.reload()
+  } catch (error) {
+    console.error(error);
   }
+}
+
+
   checkInput(formControlName: string, validator: string): boolean | undefined {
     return (
       this.profilePicForm.get(formControlName)?.hasError(validator) &&
