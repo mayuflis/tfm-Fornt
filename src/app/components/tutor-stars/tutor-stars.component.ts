@@ -12,7 +12,7 @@ export class TutorStarsComponent implements OnInit {
   @Input() starsCount: number = 0;
   @Input() rate: number = 0;
   @Input() votes: number = 0;
-  @Input() show: boolean = true;
+  @Input() show: boolean = false;//Si se quiere mostrar el numero de votos, poner en true
 
   // Creamos un array con 5 elementos, inicializados a 0
   starsArray: number[] = Array(5).fill(0);
