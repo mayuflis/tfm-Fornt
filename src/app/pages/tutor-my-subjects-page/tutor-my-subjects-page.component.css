@@ -12,3 +12,8 @@ h3 {
     margin-right: 200px;
     margin-bottom: 280px;
 }
+
+.card{
+    border: solid 1px rgb(198, 198, 198);
+    border-radius: 20px;
+}

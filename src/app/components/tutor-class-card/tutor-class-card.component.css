@@ -1,6 +1,6 @@
 .flex {
-  margin-left: 220px;
-  margin-right: 220px;
+  margin-left: 200px;
+  margin-right: 200px;
   padding: 35px 45px 15px 35px;
   display: flex;
   border: solid 1px rgb(198, 198, 198);
@@ -11,8 +11,10 @@
 }
 
 .item {
-  width: 20%;
+  width: 15%;
+  /*flex-grow: 4;*/
 }
+
 
 .text {
   font-weight: bold;
