@@ -1,5 +1,7 @@
-.card {
+.card{
+  border: solid 1px rgb(198, 198, 198);
   padding: 20px;
+
 }
 
 .name {
@@ -33,6 +35,7 @@
   background-color: rgb(17, 112, 17);
   font-weight: 500;
 }
+
 .user-image {
   width: 100px; /* Ajusta el tamaño según lo necesites */
   height: 100px; /* Ajusta el tamaño según lo necesites */
