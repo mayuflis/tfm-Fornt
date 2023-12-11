@@ -1,6 +1,6 @@
 <div style="margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
     <div class="" style="margin: 0 auto; display: inline-block;">
-        <div class="ms-5" *ngIf="isStudent && responseReviewFromUserOfTutor.toString() == [].toString()">
+        <div class="ms-5" *ngIf="isStudent && responseReviewFromUserOfTutor.toString() == [].toString() && responseThereIsAClassInCommonWithTutorAndStudent.toString() != [].toString()"><!--Si es estudiante, y si no hay reviews de ese user a ese autor aun,-->
             <p class="text-right">
                 <br />
                 <button type="button" class="btn btn-success" (click)="collapse.toggle()" [attr.aria-expanded]="!gfg"
