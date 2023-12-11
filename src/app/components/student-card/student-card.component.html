@@ -1,22 +1,16 @@
 <div class=" container" style="width: 18rem;">
-    <div class=card>
+    <div class="card">
         <img id="user-image" class="card-img-top" src="" alt="User Image">
         <div class="card-body">
-            <h5 class="name"><span id="user-name"></span>&nbsp;<span id="user-lastname"></span>
-
+            <h5 class="name">
+                <span id="user-name"></span>&nbsp;<span id="user-lastname"></span>
             </h5>
-            <h6>
-                <p id="user-province" class="location"></p>
-            </h6>
-            <div>
-
-                <p class="text" id="user-birthday"></p>
-            </div>
-            <div *ngIf="getRole()==='student'">
+            <h6 id="user-province" class="location"></h6>
+            <p class="text" id="user-birthday"></p>            
+            <div *ngIf="getRole()==='student'" class="text-center">
                 <button class="btn btn-primary" [routerLink]="['/student/profile']"
                     routerLinkActive="router-link-active">Editar perfil</button>
             </div>
-
         </div>
         <script src="student-card.component.ts"></script>
     </div>

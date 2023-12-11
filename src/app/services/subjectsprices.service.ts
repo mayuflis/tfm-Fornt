@@ -9,10 +9,11 @@ export type itemToken = {
   exp: number;
   iat: number;
 };
-type subject = {
+export type subject = {
   name: string;
-  hourly_rate: number;
   level: string;
+  hourly_rate: number;
+  free_class: boolean;
 };
 
 @Injectable({
@@ -29,7 +30,7 @@ export class SubjectspricesService {
 
   getPricesSubjects(tutorId: number): Promise<subject[]> {
     return lastValueFrom(
-      this.httpClient.get<subject[]>(`${this.baseUrl}/${tutorId}/subjects`)
+      this.httpClient.get<any>(`${this.baseUrl}/${tutorId}/subjects`)
     );
   }
 
@@ -39,5 +40,9 @@ export class SubjectspricesService {
         `${this.baseUrlMyTutor}${this.decode.user_id}/teacher-info`
       )
     );
+  }
+
+  getAllSubjects(): Promise<any> {
+    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}`))
   }
 }

@@ -1,7 +1,12 @@
+.margin {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
 .bg {
     margin-top: 50px;
-    margin-left: 220px;
-    margin-right: 220px;
+    margin-left: 150px;
+    margin-right: 150px;
     background: rgba(118, 149, 106, 0.06);
     border-radius: 8px;
     padding: 50px;

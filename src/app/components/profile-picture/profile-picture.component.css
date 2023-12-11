@@ -18,6 +18,7 @@ h5{
 .color{
     background-color: rgb(124, 168, 106);
     color: white;
+    border: solid 1px rgb(125, 168, 106);
 }
 
 .take{

@@ -13,9 +13,8 @@
   text-align: center;
   color: green;
   font-size: 1.1rem;
-
   margin-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .text {
@@ -29,10 +28,10 @@
 
 .btn {
   margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  background-color: rgb(141, 184, 141);
+  color: white;
   border-color: transparent;
+  background-color: rgb(17, 112, 17);
+  font-weight: 500;
 }
 .user-image {
   width: 100px; /* Ajusta el tamaño según lo necesites */

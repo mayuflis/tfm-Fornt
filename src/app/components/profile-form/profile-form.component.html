@@ -12,10 +12,10 @@
 
     <!-- Campo para los apellidos -->
     <div class="mb-3">
-        <input type="text" class="form-control" formControlName="surname" placeholder="Apellidos">
+        <input type="text" class="form-control" formControlName="last_name" placeholder="Apellidos">
         <div>
-            <small class="text-danger" *ngIf="checkInput('surname', 'required')">Apellido es requerido. </small>
-            <small class=" text-danger" *ngIf="checkInput('surname', 'minlength')">Apellido debe tener al menos 2
+            <small class="text-danger" *ngIf="checkInput('last_name', 'required')">Apellido es requerido. </small>
+            <small class=" text-danger" *ngIf="checkInput('last_name', 'minlength')">Apellido debe tener al menos 2
                 caracteres.</small>
         </div>
     </div>
@@ -23,28 +23,28 @@
 
     <!-- Campo para la fecha de nacimiento -->
     <div class="mb-3">
-        <input type="date" class="form-control" formControlName="birthdate" placeholder="Fecha de Nacimiento">
+        <input type="date" class="form-control" formControlName="birthday" placeholder="Fecha de Nacimiento">
         <div>
-            <small class="text-danger" *ngIf="checkInput('birthdate', 'required')">La fecha de nacimiento es requerida.
+            <small class="text-danger" *ngIf="checkInput('birthday', 'required')">La fecha de nacimiento es requerida.
             </small>
         </div>
     </div>
 
     <!-- Campo para la ciudad -->
     <div class="mb-3">
-        <input type="text" class="form-control" formControlName="city" placeholder="Ciudad">
+        <input type="text" class="form-control" formControlName="name_province" placeholder="Ciudad">
         <div>
-            <small class="text-danger" *ngIf="checkInput('city', 'required')">La ciudad es requerida. </small>
+            <small class="text-danger" *ngIf="checkInput('name_province', 'required')">La ciudad es requerida. </small>
         </div>
     </div>
 
     <!-- Campo para el número de teléfono -->
     <div class="mb-3">
-        <input type="tel" class="form-control" formControlName="phone" placeholder="Número de Teléfono">
+        <input type="tel" class="form-control" formControlName="mobile" placeholder="Número de Teléfono">
         <div>
-            <small class="text-danger" *ngIf="checkInput('phone', 'required')">El número de teléfono es requerido.
+            <small class="text-danger" *ngIf="checkInput('mobile', 'required')">El número de teléfono es requerido.
             </small>
-            <small class="text-danger" *ngIf="checkInput('name', 'pattern')">Formato de teléfono inválido. Debe tener
+            <small class="text-danger" *ngIf="checkInput('mobile', 'pattern')">Formato de teléfono inválido. Debe tener
                 entre 9 y 15 números</small>
         </div>
     </div>
@@ -61,5 +61,13 @@
             </small>
         </div>
     </div>
-    <input type="submit" value="Enviar" [disabled]="!profileForm.valid">
+
+
+    <input type="submit" value="Actualizar" class="shadow rounded color px-4 py-1 mt-3" [disabled]="!profileForm.valid">
+    <div *ngIf="updatedUserError" class="py-2">
+        <p class="text-danger">No se ha podido actualizar el usuario. Inténtalo más tarde.</p>
+    </div>
+    <div *ngIf="updatedUserDone" class="py-2">
+        <p class="text-success">Enhorabuena! Has actualizado correctamente tu perfil.</p>
+    </div>
 </form>

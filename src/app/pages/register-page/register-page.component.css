@@ -4,21 +4,21 @@
     height: 100vh;
   }
   
-  .background-layer {
-    position: absolute; /* Establece la posición como absoluta */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../../../assets/images/background_image_2.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    z-index: -1; /* Asegura que esté detrás del contenido */
-  }
+.background-layer {
+  position: absolute; /* Establece la posición como absoluta */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../assets/images/background_image_2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -1; /* Asegura que esté detrás del contenido */
+}
   
-  .background-layer::before {
+.background-layer::before {
     content: "";
     position: absolute; /* Establece la posición del pseudo-elemento como absoluta */
     top: 0;
@@ -27,11 +27,11 @@
     height: 100%;
     background: rgba(47, 86, 40, 0.2); /* Color de fondo con opacidad */
     mix-blend-mode: multiply; /* Aplica un filtro de mezcla */
-  }
+}
   
-  .content-container {
+.content-container {
     position: relative; /* Encima de la capa de fondo */
     z-index: 1; /* Asegura que el contenido esté por encima de la capa de fondo */
-  }
+}
 
   
