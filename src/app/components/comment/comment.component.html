@@ -76,11 +76,14 @@
                             alt="avatar" width="65" height="65" />
                         <div class="flex-grow-1 flex-shrink-1">
                             <div class="d-flex justify-content-between align-items-center">
-                                <p class="mb-0" style="font-weight: bold; font-size: 18px;">
+                                <p class="mb-0" style="font-weight: bold; font-size: 20px;">
                                     {{objeto.name}} {{objeto.last_name}}
                                 </p>
                                 <app-tutor-stars [starsCount]="objeto.rate" [rate]="objeto.rate" [show]=false></app-tutor-stars>
                             </div>
+                            <p class="mb-1 mt-1">
+                                <b>{{objeto.title_opinion}}</b>
+                            </p>
                             <p class="width-of-p mt-3">
                                 {{objeto.opinions}}
                             </p>
@@ -92,7 +95,7 @@
     </div>
 </div>
 
-<div class="text-center" *ngIf="isStudent && responseReviewFromUserOfTutor.toString() == [].toString()">
+<div class="text-center" *ngIf="isStudent && responseReviewFromUserOfTutor.toString() == [].toString() && responseThereIsAClassInCommonWithTutorAndStudent.toString() != [].toString()">
     <button type="button" class="btn btn-success mb-5 px-3 shadow p-2 rounded" (click)="collapse.toggle()"
         [attr.aria-expanded]="!gfg" aria-controls="collapseExample">
         Escribe una opinión
