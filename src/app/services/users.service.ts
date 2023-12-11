@@ -21,6 +21,12 @@ export type AboutMe = {
   description_class: string
 }
 
+export type AboutMeStudent = {
+  idusers: number, 
+  aboutMe: string,
+  myInterests: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -40,10 +46,18 @@ export class UsersService {
   }
 
   getAboutMeInfo(id: number): Promise<AboutMe> {
-    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}/profile/aboutme/${id}`))
+    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}/profile/tutor/aboutme/${id}`))
   }
 
   updateAboutMe(formValue: AboutMe, id: number): Promise<AboutMe> {
-    return lastValueFrom(this.httpClient.put<any>(`${this.baseUrl}/profile/aboutme/${id}`, formValue))
+    return lastValueFrom(this.httpClient.put<any>(`${this.baseUrl}/profile/tutor/aboutme/${id}`, formValue))
+  }
+
+  getAboutMeInfoStudent(id: number): Promise<AboutMeStudent> {
+    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}/profile/student/aboutme/${id}`))
+  }
+
+  updateAboutMeStudent(formValue: AboutMeStudent, id: number): Promise<AboutMeStudent> {
+    return lastValueFrom(this.httpClient.put<any>(`${this.baseUrl}/profile/student/aboutme/${id}`, formValue))
   }
 }

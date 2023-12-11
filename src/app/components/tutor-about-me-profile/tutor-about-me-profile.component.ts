@@ -18,11 +18,11 @@ export class TutorAboutMeProfileComponent {
 
   constructor() {
     this.aboutForm = new FormGroup({
-      description_prof: new FormControl('', [Validators.minLength(20), Validators.maxLength(800)]),
+      description_prof: new FormControl('', [Validators.minLength(20), Validators.maxLength(400)]),
       
       
       title_prof: new FormControl('', [Validators.minLength(2), Validators.maxLength(50)]),
-      description_class: new FormControl('', [Validators.minLength(20), Validators.maxLength(800)])
+      description_class: new FormControl('', [Validators.minLength(20), Validators.maxLength(400)])
 
     }) 
   }
@@ -31,6 +31,7 @@ export class TutorAboutMeProfileComponent {
     const token = localStorage.getItem('token');
     const decode: itemToken = jwtDecode(token!);
     const idSesion: number = decode.user_id;
+    
     try {
       const response = await this.usersService.getAboutMeInfo(idSesion)
       if (response === undefined) {

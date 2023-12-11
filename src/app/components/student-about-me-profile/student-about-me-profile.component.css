@@ -11,19 +11,12 @@ h5 {
     padding-bottom: 30px;
 }
 
-.btn {
-    font-weight: 500;
-    background-color: rgb(0, 128, 0, 0.3);
-    border-color: transparent;
+.btn-styles {
+    background-color: rgb(104, 148, 86);
     color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
+    border: none;
+    border-radius: 6%;
 }
-
 .form-select {
     width: 25%;
 }
