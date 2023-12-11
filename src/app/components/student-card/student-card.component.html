@@ -6,13 +6,11 @@
                 <span id="user-name"></span>&nbsp;<span id="user-lastname"></span>
             </h5>
             <h6 id="user-province" class="location"></h6>
-            <p class="text" id="user-birthday"></p>
-            
-            <div class="text-center">
-                <button class="btn btn-primary shadow " [routerLink]="['/student/profile']"
-                routerLinkActive="router-link-active">Editar perfil</button>
+            <p class="text" id="user-birthday"></p>            
+            <div *ngIf="getRole()==='student'" class="text-center">
+                <button class="btn btn-primary" [routerLink]="['/student/profile']"
+                    routerLinkActive="router-link-active">Editar perfil</button>
             </div>
-            
         </div>
         <script src="student-card.component.ts"></script>
     </div>

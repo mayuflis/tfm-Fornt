@@ -70,11 +70,11 @@ const routes: Routes = [
   },
   */
 
-  {
-    path: 'student/info',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentInfoPageComponent,
-  },
+  // {
+  //   path: 'student/info',
+  //   canActivate: [authRoleStudentsGuard],
+  //   component: StudentInfoPageComponent,
+  // },
 
   /* 
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
@@ -82,8 +82,13 @@ const routes: Routes = [
   */
 
   {
+    path: 'student/info/:idStudent',
+    // canActivate: [authRoleStudentsGuard, authRoleTeachersGuard],
+    component: StudentInfoPageComponent,
+  },
+  {
     path: 'student/info',
-    canActivate: [authRoleStudentsGuard],
+    // canActivate: [authRoleStudentsGuard, authRoleTeachersGuard],
     component: StudentInfoPageComponent,
   },
   {

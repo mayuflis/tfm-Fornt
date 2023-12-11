@@ -32,6 +32,7 @@ export class CommentComponent {
 
   userAlreadyVotedOnThatTutor: boolean = false;
   responseReviewFromUserOfTutor: any;
+  responseThereIsAClassInCommonWithTutorAndStudent: any;
 
 
   ngOnInit(): void {
@@ -64,37 +65,81 @@ export class CommentComponent {
     }
 
     this.route.params.subscribe((params) => {
-      const id = params['idTutor'];
-      console.log('tutorId: ', id);
-      this.tutorId = parseInt(id);
+      var id = params['idTutor'];
+
+      if (id) {//si hay un idTutor en el parametro de la url, tomarlo de la url
+        this.tutorId = parseInt(id);
+      } else {// si no: es porque esta logeado como tutor
+        this.tutorId = parseInt(this.userId);
+      }
+
+      //traduccion de userId de la tabla user tutorId key principal de la tabla teachers
+      this.http.get(`http://localhost:3000/api/reviews/getTutorIdFromUserId/${this.tutorId}`).subscribe(
+        data => {
+          this.tutorId = JSON.stringify(data);
+          console.log("hola")
+          console.log('tutorId: ', this.tutorId);
+
+
+
+
+          //Aqui se llama al back para traer todas las reviews de un determinado tutor
+
+          this.http.get(`http://localhost:3000/api/reviews/selectallreviewsfromtutor/${this.tutorId}`).subscribe(
+            data => {
+              this.allCommentsFromTutor = data
+              console.log("allCommentsFromTutor", data)
+            },
+            error => {
+              console.log(error)
+            }
+          )
+
+          //Aqui se llama al back para saber si el student o user puede crear otro comentario (mostrar o no boton)
+          this.http.get(`http://localhost:3000/api/reviews/isThereAReviewFromUserOfTutor/${this.userId}/${this.tutorId}`).subscribe(
+            data => {
+              this.responseReviewFromUserOfTutor = data
+              console.log(data)
+            },
+            error => {
+              console.log(error)
+            }
+          )
+
+          //Aqui se llama al back para saber si el student ha tenido una clase en la cual el tutor ha sido su maestro (para poder comentar)
+          this.http.get(`http://localhost:3000/api/reviews/isThereAtLeastOneClassInCommon/${this.userId}/${this.tutorId}`).subscribe(
+            data => {
+              this.responseThereIsAClassInCommonWithTutorAndStudent = data
+              console.log(data)
+            },
+            error => {
+              console.log(error)
+            }
+          )
+
+
+
+
+
+
+
+
+
+
+        },
+        error => {
+          console.log(error)
+        }
+      )
+
+
     });
 
-    //Aqui se llama al back para traer todas las reviews de un determinado tutor
 
-    this.http.get(`http://localhost:3000/api/reviews/selectallreviewsfromtutor/${this.tutorId}`).subscribe(
-      data => {
-        this.allCommentsFromTutor = data
-        console.log("allCommentsFromTutor",data)
-      },
-      error => {
-        console.log(error)
-      }
-    )
-
-    //Aqui se llama al back para saber si el student o user puede crear otro comentario (mostrar o no boton)
-    this.http.get(`http://localhost:3000/api/reviews/isThereAReviewFromUserOfTutor/${this.tutorId}/${this.userId}`).subscribe(
-      data => {
-        this.responseReviewFromUserOfTutor = data
-        console.log(data)
-      },
-      error => {
-        console.log(error)
-      }
-    )
 
   }
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   submitForm(form: NgForm) {
     console.log('rating: ' + this.rating);

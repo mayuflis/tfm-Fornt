@@ -7,6 +7,7 @@ import * as $ from 'jquery';
 })
 export class ChooseClassComponent {
   @Input() class!: string[];
+
   ngOnInit() {
     console.log(this.class);
   }

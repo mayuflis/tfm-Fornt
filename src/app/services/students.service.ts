@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { infoClass } from '../pages/student-classes-page/student-classes-page.component';
 import { Student } from '../interfaces/student';
+import { name } from '../components/student-personal-info/student-personal-info.component';
 @Injectable({
   providedIn: 'root',
 })
@@ -26,6 +27,11 @@ export class StudentsService {
     );
   }
 
+  getNameStudents(idUsers: number): Promise<name[]> {
+    return lastValueFrom(
+      this.http.get<name[]>(`${this.baseUrl}getName/${idUsers}`)
+    );
+  }
   getStudetnsDescriptions(idUsers: number): Promise<Student[]> {
     return lastValueFrom(
       this.http.get<Student[]>(`${this.baseUrl}studentDescription/${idUsers}`)

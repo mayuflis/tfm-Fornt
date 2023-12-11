@@ -1,24 +1,24 @@
-<div class="flex mb-4" *ngFor="let student of tutorInfo">
+<div class="flex mb-4 " *ngFor="let teacher of tutorInfo">
   <div class="item ">
-    <p class="text">Alumno</p>
-    <p>{{student.user_name}} {{student.last_name}} </p>
+    <p class="text">Profesor</p>
+    <p>{{teacher.teacher_name}} {{teacher.teacher_last_name}} </p>
   </div>
 
   <div class="item">
     <p class="text">Email</p>
-    <p> {{student.email}} </p>
+    <p> {{teacher.teacher_email}} </p>
   </div>
   <div class="item">
     <p class="text">Teléfono</p>
-    <p> {{student.mobile}} </p>
+    <p> {{teacher.teacher_mobile}} </p>
   </div>
   <div class="item">
     <p class="text">Asignatura</p>
-    <p>{{student.subject_name}} </p>
+    <p>{{teacher.subject_name}} </p>
   </div>
 
   <div>
-    <button [routerLink]="['/tutor/info',student.idusers]" routerLinkActive="router-link-active">+ Info</button>
+    <button [routerLink]="['/tutor/info',teacher.idusers]" routerLinkActive="router-link-active">+ Info</button>
   </div>
 </div>
 
