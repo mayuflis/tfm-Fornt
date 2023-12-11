@@ -12,8 +12,6 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 
-
-
 import { TutorInfoPageComponent } from './pages/tutor-info-page/tutor-info-page.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
@@ -21,10 +19,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tutor-my-subjects-page.component';
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
-import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
 import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-opinions-page.component';
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
-import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
 import { TutorMyClassesPageComponent } from './pages/tutor-my-classes-page/tutor-my-classes-page.component';
 
@@ -39,39 +35,44 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'registro', component: RegisterPageComponent },
-  { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
-  { path: 'tutor/info', component: TutorInfoPageComponent },
-    {path: '', component: LandingPageComponent},
-  {path: 'login', component: LoginPageComponent},
-  {path: 'registro', component: RegisterPageComponent},
+
   {path: 'admin', component: AdminPageComponent}, //tendrá el id de adminitrador como parámetro
   {path: 'admin/profesores', component: AdminPageTeachersComponent},
   {path: 'admin/usuarios', component: AdminPageUsersComponent},
   {path: 'admin/asignaturas', component: AdminPageSubjectsComponent},
-  {
-    path: 'tutor/subjects',
-    canActivate: [authRoleTeachersGuard],
-    component: TutorMySubjectsPageComponent,
-  },
-  //{ path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
-  {
-    path: 'tutor/:idTutor/notifications',
-    component: TutorNotificationsPageComponent,
-  },
 
+  { path: 'tutor/info', component: TutorInfoPageComponent },
+  { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
+  { path: 'tutor/subjects', canActivate: [authRoleTeachersGuard], component: TutorMySubjectsPageComponent },
   { path: 'tutor/classes', component: TutorMyClassesPageComponent },
-  {
-    path: 'tutor/notifications',
-    component: TutorNotificationsPageComponent,
-  },
-
   { path: 'tutor/opinions', component: TutorOpinionsPageComponent },
   { path: 'tutor/profile', component: TutorProfilePageComponent },
+  { path: 'tutor/:idTutor/contact-tutor', component: ContactTutorPageComponent },
+
+
   {
-    path: 'tutor/:idTutor/contact-tutor',
-    component: ContactTutorPageComponent,
+    path: 'student/info',
+    // canActivate: [authRoleStudentsGuard, authRoleTeachersGuard],
+    component: StudentInfoPageComponent,
+  },
+  {
+    path: 'student/classes',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentClassesPageComponent,
+  },
+  {
+    path: 'student/tutors',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentMyTutorsPageComponent,
+  },
+  {
+    path: 'student/profile',
+    canActivate: [authRoleStudentsGuard],
+    component: StudentProfilePageComponent,
   },
 
+  { path: '**', component: Error404PageComponent },
+  
   /*
   { path: 'tutor/:idTutor/info', canActivate: [authRoleTeachersGuard], component: TutorInfoPageComponent,  },
   { path: 'tutor/subjects',   canActivate: [authRoleTeachersGuard],     component: TutorMySubjectsPageComponent,  },
@@ -95,41 +96,19 @@ const routes: Routes = [
   //   component: StudentInfoPageComponent,
   // },
 
-  /* 
+  /*
   { path: 'tutor-profile/:idTutor', component: TutorProfilePageComponent },
   { path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
   */
 
-  {
+  /*{
     path: 'student/info/:idStudent',
     // canActivate: [authRoleStudentsGuard, authRoleTeachersGuard],
     component: StudentInfoPageComponent,
   },
-  {
-    path: 'student/info',
-    // canActivate: [authRoleStudentsGuard, authRoleTeachersGuard],
-    component: StudentInfoPageComponent,
-  },
-  {
-    path: 'student/classes',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentClassesPageComponent,
-  },
-  {
-    path: 'student/tutors',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentMyTutorsPageComponent,
-  },
-  {
-    path: 'student/notifications',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentNotificationsPageComponent,
-  },
-  {
-    path: 'student/profile',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentProfilePageComponent,
-  },
+  */
+  
+  
 
   // { path: 'student/:idStudent/teachers', component: StudentMyTeachersPageComponent },
   // { path: 'tutor-students/:idTutor', component: TutorStudentsPageComponent },
@@ -157,7 +136,7 @@ const routes: Routes = [
     component: StudentProfilePageComponent,
   },
   */
-  { path: '**', component: Error404PageComponent },
+  
 
 ];
 

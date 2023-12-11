@@ -36,7 +36,6 @@ export class MapComponent {
           position: new google.maps.LatLng(teacher.latitude, teacher.longitude)
         }
       })
-      console.log(this.arrMapInfo)
     } catch (error) {
       console.log(error)
     }

@@ -1,38 +1,54 @@
 <h5 class="underline">¿Qué quieres enseñar?</h5>
-
-<form class="flex" [formGroup]="subjectForm" (ngSubmit)="sendData()">
-    <select formControlName="name" class="form-select">
-        <option value="0">Seleccionar...</option>
-        <option *ngFor="let subject of arraySubjects">{{subject.name}}</option>
-    </select>
-
-    <select formControlName="level" class="form-select">
-        <option value="0">Seleccionar...</option>
-        <option value="Primaria">Primaria</option>
-        <option value="Secundaria">Secundaria</option>
-        <option value="Bachillerato">Bachillerato</option>
-        <option value="Universidad">Universidad</option>
-    </select>
-
-    <input type="number" class="form-control" placeholder="Precio" formControlName="hourly_rate">
-
-    <div class=" form-check">
-        <input class="form-check-input" type="checkbox" formControlName="free_classl" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate">
-            Primera clase gratis
-        </label>
+<form [formGroup]="subjectForm" (ngSubmit)="sendData()">
+    <div class="d-flex flex-column">
+        <div class="form-group d-flex flex-row justify-content-between w-100 align-items-center">
+            <select formControlName="name" class="form-select select">
+                <option value="0">Seleccionar...</option>
+                <option *ngFor="let subject of arraySubjects">{{subject.name}}</option>
+            </select>
+            <select formControlName="level" class="form-select select">
+                <option value="0">Seleccionar...</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Secundaria">Secundaria</option>
+                <option value="Bachillerato">Bachillerato</option>
+                <option value="Universidad">Universidad</option>
+            </select>
+            <input type="number" class="form-control select" placeholder="Precio" formControlName="hourly_rate">
+            <div class=" form-check">
+                <input class="form-check-input" type="checkbox" formControlName="free_classl"
+                    id="flexCheckIndeterminate">
+                <label class="form-check-label" for="flexCheckIndeterminate">
+                    Primera clase gratis
+                </label>
+            </div>
+        </div>
     </div>
-    <div>
-        <input type="submit" value="Añadir asignatura">
+    <div class="d-flex justify-content-end align-items-end">
+        <div class="d-flex flex-column align-items-end">
+            <div class="pb-3" *ngIf="updatedUserError">
+                <p class="text-danger">No se ha podido añadir la asignatura. Comprueba los valores.</p>
+            </div>
+            <div *ngIf="updatedUserRepeated" class="pb-3">
+                <p class="text-danger">Ya has añadido esta asignatura anteriormente.</p>
+            </div>
+            <div *ngIf="updatedUserDone" class="pb-3">
+                <p class="text-success">Enhorabuena! La información se ha guardado correctamente.</p>
+            </div>
+            <input type="submit" class="color shadow rounded" value="Añadir asignatura" [disabled]="!subjectForm.valid">
+        </div>
     </div>
 </form>
-
-<div>
-    <article *ngFor="let subject of tutorSubjects" class="flex">
-        <p>{{subject.name}}</p>
-        <p>{{subject.level}}</p>
-        <p>{{subject.hourly_rate}} euros</p>
-        <p *ngIf="subject.free_classl">Primera clase gratis</p>
-
-
+<div class="d-flex mt-5 row justify-content-between background">
+    <article *ngFor="let subject of tutorSubjects" class="col-12 col-md-6 col-lg-3 p-3 my-4 mx-3 border-subjects">
+        <div>
+            <p class="font-title pb-1">{{subject.name}}</p>
+        </div>
+        <div>
+            <p class="font">Nivel: {{subject.level}}</p>
+        </div>
+        <div>
+            <p class="font-price">{{subject.hourly_rate}} €</p>
+        </div>
+        <p *ngIf="subject.free_classl" class="font-highlight">PRIMERA CLASE GRATIS</p>
     </article>
+</div>

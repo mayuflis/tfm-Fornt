@@ -28,14 +28,12 @@
 
                 <div class="mt-1" *ngIf="getState()">
                     <small class="text-danger">{{getMessageError()}} </small>
-
                 </div>
             </div>
 
             <div class="text-center mt-4">
                 <button type="submit" class="btn btn-success px-5" [disabled]="!loginForm.valid">Login</button>
             </div>
-            
         </form>
     </div>
 </div>

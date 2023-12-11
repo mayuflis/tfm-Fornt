@@ -71,7 +71,6 @@ export class AuthFormComponent implements OnInit {
       this.obtenerUbicacion();
       this.provinces = await this.authService.getAllProvinces();
     } catch (error: any) {
-      console.log(error.fatal);
     }
   }
 

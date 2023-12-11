@@ -37,7 +37,6 @@ export class TableSubjectPriceComponent implements OnInit {
           this.asignaturas = this.data.map((ele) => {
             return ele;
           });
-
           console.log(this.asignaturas);
           const subjectTableBody =
             document.getElementById('subject-table-body');
@@ -71,12 +70,11 @@ export class TableSubjectPriceComponent implements OnInit {
           this.data = await this.subjectPriceService.getPricesSubjects(
             this.idSesion
           );
+
           this.asignaturas = this.data.map((ele) => {
             return ele;
           });
-
-          console.log(this.data);
-
+          
           const subjectTableBody =
             document.getElementById('subject-table-body');
 

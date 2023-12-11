@@ -37,7 +37,6 @@ export class StudentAboutMeProfileComponent {
       } 
       else {
         this.aboutMeInfo = response
-        console.log(this.aboutMeInfo)
         this.aboutMeForm.patchValue({
           aboutMe: this.aboutMeInfo.aboutMe,
           myInterests: this.aboutMeInfo.myInterests
