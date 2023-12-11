@@ -1,5 +1,5 @@
 <div class=" container" style="width: 18rem;">
-    <div class="card">
+    <div class="card shadow-sm">
         <img id="user-image" class="card-img-top" src="" alt="User Image">
         <div class="card-body">
             <h5 class="name">
@@ -8,7 +8,7 @@
             <h6 id="user-province" class="location"></h6>
             <p class="text" id="user-birthday"></p>            
             <div *ngIf="getRole()==='student'" class="text-center">
-                <button class="btn btn-primary" [routerLink]="['/student/profile']"
+                <button class="btn btn-primary shadow-sm" [routerLink]="['/student/profile']"
                     routerLinkActive="router-link-active">Editar perfil</button>
             </div>
         </div>

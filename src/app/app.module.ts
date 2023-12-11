@@ -40,7 +40,7 @@ import { CommentComponent } from './components/comment/comment.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { TutorMenuComponent } from './components/tutor-menu/tutor-menu.component';
+
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
@@ -59,7 +59,7 @@ import { StudentNotificationsPageComponent } from './pages/student-notifications
 import { MapComponent } from './components/map/map.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
-import { StudentMenuComponent } from './components/student-menu/student-menu.component';
+
 import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
 import { StudentPersonalInfoComponent } from './components/student-personal-info/student-personal-info.component';
@@ -114,7 +114,6 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     CarrouselMapComponent,
     CarrouselBestRatingComponent,
     CommentComponent,
-    TutorMenuComponent,
     TutorProfilePageComponent,
     ProfileFormComponent,
     ProfilePictureComponent,
@@ -136,7 +135,6 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     StudentNotificationsPageComponent,
     MapComponent,
     HomePageComponent,
-    StudentMenuComponent,
     TutorPersonalInfoComponent,
     TableSubjectPriceComponent,
     StudentPersonalInfoComponent,

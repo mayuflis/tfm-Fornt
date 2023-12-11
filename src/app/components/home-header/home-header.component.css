@@ -79,14 +79,29 @@ button:active {
 }
 
 .title-text {
-  color: rgb(24, 127, 24);
+  color: rgb(60, 107, 60);
   font-weight: 600;
+  font-size:x-large;
 }
 
-.navbar-nav .nav-item .nav-link {
-  color: rgb(24, 127, 24);
+.navbar-nav .nav-link {
+  color: rgb(52, 124, 52); 
 }
 
 .navbar-nav .nav-item:hover .nav-link {
-  color: rgb(0, 0, 0);
+  
+  
+  color: rgb(8, 66, 16);
+}
+
+.text{
+  font-weight: bold;
+}
+
+/*.back{
+  background-color: rgb(114, 136, 115);
+}*/
+
+.color1{
+  color: rgb(255, 255, 255);
 }
