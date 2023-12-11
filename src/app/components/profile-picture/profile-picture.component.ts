@@ -27,7 +27,6 @@ export class ProfilePictureComponent {
     const token = localStorage.getItem('token');
     const decode: itemToken = jwtDecode(token!);
     const idSesion: number = decode.user_id;
-    console.log('id', idSesion)
     
     try {
       const response = await this.usersService.getProfileInfo(idSesion);
@@ -37,9 +36,7 @@ export class ProfilePictureComponent {
       }
       else {
         this.userProfile = response
-        console.log('user', this.userProfile)
         if (!this.userProfile.image) {
-          // TODO: MEJORAR Y PONERLO EN UNA p DESDE EL COMP. HTML
           this.userProfile.image = 'No se ha encontrado ninguna imagen. Inserte URL'
         }
         else {
@@ -64,20 +61,16 @@ export class ProfilePictureComponent {
   }
 
   async sendPic() {
-  console.log('sending pic....')
   try {
     const updatedImage = this.profilePicForm.get('image')?.value;
     const changeBirthdayFormat = new Date(this.userProfile.birthday).toISOString().split('T')[0]
-    console.log(updatedImage)
 
     const updatedUserProfile: UserProfile = {
       ...this.userProfile,
       birthday: changeBirthdayFormat,
       image: updatedImage
     };
-    console.log(updatedUserProfile)
     const result = await this.usersService.updateInfo(updatedUserProfile, this.userProfile.idusers);
-    console.log('Agregado', result)
     location.reload()
   } catch (error) {
     console.error(error);

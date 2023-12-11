@@ -5,6 +5,11 @@ h5 {
     border-bottom: solid 1px rgb(150, 150, 150);
 }
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
 .flex{
     display: flex;
     gap: 40px;
@@ -38,4 +43,43 @@ h5 {
 .link{
     text-decoration: none;
     color: black;
+}
+
+.select {
+    margin: 20px;
+    max-width: 200px;
+}
+
+.color {
+    background-color:rgb(124, 168, 106);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.border-subjects {
+    border-radius: 10px;
+    background: linear-gradient(to right, #8cbf78, #4b8e3d);    
+    opacity: 0.9;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.font-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.font-price {
+    font-weight: 800;
+    font-size: 22px;
+    color: #ffd700;
+}
+
+.font-highlight {
+    font-weight: 800;
+    color: #ff9900;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.9)
 }

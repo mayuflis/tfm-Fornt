@@ -21,7 +21,6 @@ export class StudentsService {
     );
   }
   getDataStudentsCards(idStudents: number) {
-    //TODO:implementar la interfaz
     return lastValueFrom(
       this.http.get<any[]>(`${this.baseUrlDataStudents}${idStudents}`)
     );

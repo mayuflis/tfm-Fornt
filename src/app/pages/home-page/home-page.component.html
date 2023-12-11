@@ -1,7 +1,6 @@
 <header>
   <app-home-header [nombre]="nombre"></app-home-header>
 </header>
-
 <section>
   <div class="back shadow">
     <div class="mt-5 mb-5 pb-5">
@@ -26,7 +25,6 @@
   <pagination-controls (pageChange)="pagination = $event" previousLabel="Anterior" nextLabel="Siguiente"
     class="d-block m-5 text-center" [responsive]="true"></pagination-controls>
 </section>
-
 <section class="d-flex justify-content-center margin">
   <app-map></app-map>
 </section>

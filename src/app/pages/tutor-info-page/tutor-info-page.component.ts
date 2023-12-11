@@ -37,7 +37,6 @@ export class TutorInfoPageComponent {
         try {
           const response: TeacherCard[] =
             await this.teachersService.getTeacherInfoById(idTutor);
-          console.log(response);
           if (response === undefined || response.length === 0) {
             this.router.navigate(['/error']);
           }

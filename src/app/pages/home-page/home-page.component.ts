@@ -36,13 +36,10 @@ export class HomePageComponent {
           minRating: '0',
         };
       }
-      console.log(this.filterOfTeachers);
       this.teachers = await this.filterTeacherService.getFilterData(
         this.filterOfTeachers
       );
-
       localStorage.removeItem('filterOfTeachers');
-      console.log(this.teachers);
     } catch (error) {
       console.error(error);
     }

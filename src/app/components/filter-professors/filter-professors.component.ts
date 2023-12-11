@@ -63,9 +63,7 @@ export class FilterProfessorsComponent {
     console.error(error);
   }
 }
- 
-  //TODO: cambiar localstorage por algo más elaborado 
-  async applyFilters() {
+   async applyFilters() {
     localStorage.setItem('filterOfTeachers', JSON.stringify(this.filterForm.value));
     if (this.router.url === '/home') {
     window.location.reload();

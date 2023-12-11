@@ -14,7 +14,6 @@ export class StudentsClassesCardComponent {
     try {
       //Recibe la información de las clases que imparte el almuno
       this.info = await this.teachersService.getInfoClass();
-      console.log(this.info);
     } catch (error) {
       console.error(error);
     }
