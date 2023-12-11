@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { Provinces } from '../interfaces/auth';
 import { Subjects } from '../interfaces/WebPublic';
-//TODO:pasarlo a interfaz Subjects
 
 type FormValueFilter = {
   selectedSubject: number;
@@ -28,7 +27,6 @@ export class FilterProfessorsService {
     );
   }
   getFilterData(FormValue: FormValueFilter): Promise<any> {
-    console.log(FormValue)
     return lastValueFrom(
       this.httpClient.post<any>(`${this.baseUrlFilter}`, FormValue)
     );

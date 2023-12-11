@@ -43,7 +43,7 @@
                         20 carácteres. Da más información sobre tus clases.</small>
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary" value="Guardar" [disabled]="!aboutForm.valid">
+            <input type="submit" class="color shadow rounded" value="Guardar" [disabled]="!aboutForm.valid">
             <div *ngIf="updatedUserError" class="py-3">
                 <p class="text-danger">No se ha podido actualizar el usuario. Inténtalo más tarde.</p>
             </div>
@@ -51,7 +51,5 @@
                 <p class="text-success">Enhorabuena! La información se ha guardado correctamente.</p>
             </div>
         </div>
-
     </div>
-
 </form>

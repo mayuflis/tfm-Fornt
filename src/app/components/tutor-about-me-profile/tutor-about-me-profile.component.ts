@@ -39,7 +39,6 @@ export class TutorAboutMeProfileComponent {
       } 
       else {
         this.aboutMeInfo = response
-        console.log(this.aboutMeInfo)
         this.aboutForm.patchValue({
           description_prof: this.aboutMeInfo.description_prof,
           title_prof: this.aboutMeInfo.title_prof,

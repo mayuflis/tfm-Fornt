@@ -60,4 +60,5 @@ export class UsersService {
   updateAboutMeStudent(formValue: AboutMeStudent, id: number): Promise<AboutMeStudent> {
     return lastValueFrom(this.httpClient.put<any>(`${this.baseUrl}/profile/student/aboutme/${id}`, formValue))
   }
+  
 }

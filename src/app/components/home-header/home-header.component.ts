@@ -17,7 +17,6 @@ export class HomeHeaderComponent {
   opcionSeleccionada: string = '';
 
   inscribirme() {
-    console.log('inscribirmeClick');
     this.inscribirmeClick.emit();
     this.mostrarPopup
       ? (this.mostrarPopup = false)
@@ -27,7 +26,6 @@ export class HomeHeaderComponent {
   manejarOpcionSeleccionada(opcion: string): void {
     this.opcionSeleccionada = opcion;
     // Realiza la lógica necesaria según la opción seleccionada
-    console.log('Opción seleccionada:', opcion);
     this.mostrarPopup = false;
   }
   ngOnInit() {

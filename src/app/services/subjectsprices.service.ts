@@ -45,4 +45,8 @@ export class SubjectspricesService {
   getAllSubjects(): Promise<any> {
     return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}`))
   }
+
+  postSubject(formValue: subject, id: number): Promise<subject> {
+    return lastValueFrom(this.httpClient.post<any>(`${this.baseUrl}/${id}`, formValue))
+  }
 }

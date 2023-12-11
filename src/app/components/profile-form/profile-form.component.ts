@@ -48,7 +48,6 @@ export class ProfileFormComponent {
       }
       else {
         this.userProfile = response
-        console.log(this.userProfile)
         const birthday = new Date(this.userProfile.birthday);
         this.profileForm.patchValue({
           name: this.userProfile.name,
@@ -67,7 +66,6 @@ export class ProfileFormComponent {
 async sendFormData() {
   try {
     const updateValue = this.profileForm.value;
-    console.log(updateValue);
 
     const updatedUserProfile: UserProfile = {
       ...this.userProfile, 

@@ -24,7 +24,6 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { TutorInfoPageComponent } from './pages/tutor-info-page/tutor-info-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { ProfileInfoPageComponent } from './pages/profile-info-page/profile-info-page.component';
 import { HomeHeaderComponent } from './components/home-header/home-header.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -103,7 +102,6 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TutorInfoPageComponent,
     HomePageComponent,
     LandingPageComponent,
-    ProfileInfoPageComponent,
     HomeHeaderComponent,
     LoginFormComponent,
     FooterComponent,
