@@ -1,0 +1,27 @@
+<div class="table-responsive custom-rounded-table">
+    <table class="table table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Provincia</th>
+                <th>Fecha de nacimiento</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí van los datos de los profesores pendientes -->
+            <tr *ngFor="let teacher of teachers">
+                <td>{{ teacher.name }}</td>
+                <td>{{ teacher.email }}</td>
+                <td>{{ teacher.phone }}</td>
+                <td>{{ teacher.province }}</td>
+                <td>{{ teacher.birthday }}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm me-2 mb-2" (click)="rejectTeacher(teacher)">Invalidar profesor</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

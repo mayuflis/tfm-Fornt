@@ -1,0 +1,15 @@
+<div class="content-container">
+    <app-admin-header></app-admin-header>
+    <div class="container mt-4">
+        <h2 class="mb-3">Listado de asignaturas</h2>
+
+        <app-admin-subjects-table></app-admin-subjects-table>
+
+        <form class="mt-4" (submit)="addNewSubject()">
+            <div class="form-group">
+                <input type="text" class="form-control" id="newSubjectName" [(ngModel)]="newSubjectName" name="subjectName" placeholder="Introduce el nombre de la nueva asignatura" required>
+            </div>
+            <button type="submit" class="btn btn-success mt-2">Añadir asignatura</button>
+        </form>
+    </div>
+</div>
