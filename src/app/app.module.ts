@@ -52,6 +52,20 @@ import { StudentProfilePageComponent } from './pages/student-profile-page/studen
 import { StudentLearningComponent } from './components/student-learning/student-learning.component';
 import { TutorSubjectsNewComponent } from './components/tutor-subjects-new/tutor-subjects-new.component';
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
+
+import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { AdminTeacherTableComponent } from './components/admin-teacher-table/admin-teacher-table.component';
+import { AdminPageTeachersComponent } from './pages/admin-page-teachers/admin-page-teachers.component';
+import { AdminPageUsersComponent } from './pages/admin-page-users/admin-page-users.component';
+import { AdminAllTeachersTableComponent } from './components/admin-all-teachers-table/admin-all-teachers-table.component';
+import { AdminUsersTableComponent } from './components/admin-users-table/admin-users-table.component';
+import { AdminSubjectsTableComponent } from './components/admin-subjects-table/admin-subjects-table.component';
+import { AdminPageSubjectsComponent } from './pages/admin-page-subjects/admin-page-subjects.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
 import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
 import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-opinions-page.component';
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
@@ -59,6 +73,7 @@ import { StudentNotificationsPageComponent } from './pages/student-notifications
 import { MapComponent } from './components/map/map.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
+
 
 import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
@@ -127,6 +142,16 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TutorSubjectsNewComponent,
     ProfileFormComponent,
     FilterProfessorsComponent,
+
+    AdminHeaderComponent,
+    AdminTeacherTableComponent,
+    AdminPageTeachersComponent,
+    AdminPageUsersComponent,
+    AdminAllTeachersTableComponent,
+    AdminUsersTableComponent,
+    AdminSubjectsTableComponent,
+    AdminPageSubjectsComponent,
+
     MapComponent,
     StudentProfilePageComponent,
     TutorNotificationsPageComponent,
@@ -160,6 +185,7 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     StudentMytutorCardComponent,
 
 */
+
   ],
 
   imports: [
@@ -182,6 +208,7 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: UserInterceptor, multi: true },
+
   ],
   bootstrap: [AppComponent],
 })

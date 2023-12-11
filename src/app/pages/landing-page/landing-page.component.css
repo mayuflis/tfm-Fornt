@@ -1,0 +1,13 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegúrate de que el z-index sea mayor que el de los demás elementos */
+    
+  }
+
+  .vertical-carousel {
+    position: relative;
+    z-index: 1
+  }

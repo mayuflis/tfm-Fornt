@@ -2,6 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { AdminAllTeachersTableComponent } from './components/admin-all-teachers-table/admin-all-teachers-table.component';
+import { AdminPageUsersComponent } from './pages/admin-page-users/admin-page-users.component';
+import { AdminPageTeachersComponent } from './pages/admin-page-teachers/admin-page-teachers.component';
+import { AdminPageSubjectsComponent } from './pages/admin-page-subjects/admin-page-subjects.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+
+
+
+
 import { TutorInfoPageComponent } from './pages/tutor-info-page/tutor-info-page.component';
 import { StudentInfoPageComponent } from './pages/student-info-page/student-info-page.component';
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
@@ -29,6 +41,13 @@ const routes: Routes = [
   { path: 'registro', component: RegisterPageComponent },
   { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
   { path: 'tutor/info', component: TutorInfoPageComponent },
+    {path: '', component: LandingPageComponent},
+  {path: 'login', component: LoginPageComponent},
+  {path: 'registro', component: RegisterPageComponent},
+  {path: 'admin', component: AdminPageComponent}, //tendrá el id de adminitrador como parámetro
+  {path: 'admin/profesores', component: AdminPageTeachersComponent},
+  {path: 'admin/usuarios', component: AdminPageUsersComponent},
+  {path: 'admin/asignaturas', component: AdminPageSubjectsComponent},
   {
     path: 'tutor/subjects',
     canActivate: [authRoleTeachersGuard],
@@ -139,6 +158,7 @@ const routes: Routes = [
   },
   */
   { path: '**', component: Error404PageComponent },
+
 ];
 
 @NgModule({
