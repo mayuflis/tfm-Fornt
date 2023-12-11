@@ -5,6 +5,7 @@ import {
   itemToken,
 } from 'src/app/services/subjectsprices.service';
 import { jwtDecode } from 'jwt-decode';
+import { asignaturas } from '../choose-class/choose-class.component';
 
 type subject = {
   name: string;
@@ -24,7 +25,7 @@ export class TableSubjectPriceComponent implements OnInit {
   private token = localStorage.getItem('token');
   private decode: itemToken = jwtDecode(this.token!);
   idSesion: number = this.decode.user_id;
-  asignaturas!: string[];
+  asignaturas!: asignaturas[];
 
   async ngOnInit() {
     this.activateRoute.params.subscribe(async (params: any) => {
@@ -33,7 +34,10 @@ export class TableSubjectPriceComponent implements OnInit {
         const idTutor = params.idTutor;
         try {
           this.data = await this.subjectPriceService.getPricesSubjects(idTutor);
-          this.asignaturas = this.data.map((ele) => ele.name);
+          this.asignaturas = this.data.map((ele) => {
+            return ele;
+          });
+          console.log(this.asignaturas);
           const subjectTableBody =
             document.getElementById('subject-table-body');
 
@@ -66,8 +70,11 @@ export class TableSubjectPriceComponent implements OnInit {
           this.data = await this.subjectPriceService.getPricesSubjects(
             this.idSesion
           );
-          this.asignaturas = this.data.map((ele) => ele.name);
 
+          this.asignaturas = this.data.map((ele) => {
+            return ele;
+          });
+          
           const subjectTableBody =
             document.getElementById('subject-table-body');
 

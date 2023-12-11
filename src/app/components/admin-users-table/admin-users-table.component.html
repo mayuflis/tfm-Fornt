@@ -1,0 +1,27 @@
+<div class="table-responsive custom-rounded-table">
+    <table class="table table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Provincia</th>
+                <th>Fecha de nacimiento</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí van los datos de los profesores pendientes -->
+            <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.province }}</td>
+                <td>{{ user.birthday }}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm me-2 mb-2" (click)="deleteUser(user)">Eliminar usuario</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

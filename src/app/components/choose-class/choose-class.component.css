@@ -1,5 +1,7 @@
 .btn{
-    background-color: rgb(111, 166, 111);
+    background-color: rgb(238, 113, 117);
     color: white;
     font-weight: 500;
+    border: transparent;
+    margin-top: 20px;
 }

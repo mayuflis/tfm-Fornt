@@ -1,0 +1,20 @@
+<div class="table-responsive custom-rounded-table">
+    <table class="table table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Asignaturas</th>
+                <th>Número de profesores</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let subject of subjects">
+                <td>{{ subject.name }}</td>
+                <td>{{ subject.numberOfTeachers }}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm me-2 mb-2">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

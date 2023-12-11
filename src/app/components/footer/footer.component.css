@@ -6,4 +6,10 @@
   height: 10em;
 }
 
+.back{
+  background-color: rgb(49, 49, 49);
+}
 
+.front{
+  color: rgb(176, 176, 176);
+}

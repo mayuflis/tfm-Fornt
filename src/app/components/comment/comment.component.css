@@ -31,10 +31,6 @@
     width: 500px;
 }
 
-.margin_1{
-    margin-left: 150px;
-    margin-right: 150px;
-}
 
 .margin_2{
     margin-left: 220px;
@@ -49,4 +45,9 @@
 h4{
     margin-left: 180px;
     margin-right: 180px;
+}
+
+.prueba{
+    border: solid 1px rgb(198, 198, 198);
+    border-radius: 20px;
 }

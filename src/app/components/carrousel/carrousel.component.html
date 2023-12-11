@@ -1,1 +1,11 @@
-<p>carrousel works!</p>
+<div class="vertical-carousel" (wheel)="onScroll($event)">
+  <div *ngFor="let item of carouselItems; let i = index" 
+       [class.active]="i === activeSlide" 
+       class="carousel-item" 
+       [style.background-image]="'url(' + item.backgroundImage + ')'">
+       
+    <div class="carousel-content">
+      {{ item.content }}
+    </div>
+  </div>
+</div>

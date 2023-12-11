@@ -30,3 +30,9 @@ h5 {
     margin: 0;
     padding-top: 6px;
 }
+
+.color {
+    background-color: rgb(124, 168, 106);
+    color: white;
+    border: solid 1px rgb(125, 168, 106);
+}

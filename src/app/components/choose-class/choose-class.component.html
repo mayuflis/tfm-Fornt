@@ -1,27 +1,39 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form id="miFormulario">
-                <div class="form-group mb-4 ">
-                    <label for="fecha" class="mb-3">Elige un día:</label>
-                    <input type="date" class="form-control" id="fecha" name="fecha" pattern="\d{4}-\d{2}-\d{2}"
-                        required>
-                    <small id="fechaHelp" class="form-text text-muted">Formato: AAAA-MM-DD</small>
+            <form [formGroup]="miFormulario" (ngSubmit)="submit()">
+                <div class="form-group">
+                    <label for="fecha" class="mb-2">Elige un día:</label>
+                    <input formControlName="fecha" type="date" class="form-control" id="fecha" name="fecha"
+                        pattern="\d{4}-\d{2}-\d{2}" required>
                 </div>
-                <div class="form-group mb-4">
-                    <label for="hora" class="mb-3">Elige una hora:</label>
-                    <input type="time" class="form-control" id="hora" name="hora" pattern="\d{2}:\d{2}:\d{2}" required>
-                    <small id="horaHelp" class="form-text text-muted">Formato: HH:MM:SS</small>
+                <div class="form-group">
+                    <label for="hora" class="mb-2 mt-4">Elige una hora:</label>
+                    <input formControlName="hora" type="time" class="form-control" id="hora" name="hora"
+                        pattern="\d{2}:\d{2}:\d{2}" required>
                 </div>
-                <div class="form-group mb-4">
-                    <label for="hora" class="mb-3">Elige la asignatura</label>
-                    <select class="form-control">
-                        <option value="0" *ngFor="let asig of class">{{asig}} </option>
-                    </select>
 
+                <div class="form-group">
+                    <label class="mb-2 mt-4">Elige la asignatura</label>
+                    <select formControlName="selectedAsignatura" class="form-control"
+                        (change)="onAsignaturaChange($event)">
+                        <option value="-1" disabled selected>Selecciona una asignatura</option>
+                        <option *ngFor="let asignatura of class" [value]="asignatura.name">{{ asignatura.name }}
+                        </option>
+                    </select>
                 </div>
-                <button type="submit" class="btn shadow-sm rounded">Solicitar</button>
+
+                <div class="form-group">
+                    <label class="mb-2 mt-4">Elige el nivel</label>
+                    <select formControlName="nivel" class="form-control">
+                        <option value="-1" disabled selected>Selecciona un nivel</option>
+                        <option *ngIf="miFormulario.get('nivel')?.value" [value]="miFormulario.get('nivel')?.value">
+                            {{ miFormulario.get('nivel')?.value }}</option>
+                    </select>
+                </div>
             </form>
+            <input type="submit" class="btn btn-primary shadow-sm" (click)="submit()" value="Enviar"
+                [disabled]="miFormulario.valid">
         </div>
     </div>
 </div>
