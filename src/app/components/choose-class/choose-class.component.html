@@ -2,26 +2,25 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form id="miFormulario">
-                <div class="form-group">
-                    <label for="fecha">Fecha (AAAA-MM-DD):</label>
+                <div class="form-group mb-4 ">
+                    <label for="fecha" class="mb-3">Elige un día:</label>
                     <input type="date" class="form-control" id="fecha" name="fecha" pattern="\d{4}-\d{2}-\d{2}"
                         required>
                     <small id="fechaHelp" class="form-text text-muted">Formato: AAAA-MM-DD</small>
                 </div>
-                <div class="form-group">
-                    <label for="hora">Hora (HH:MM:SS):</label>
+                <div class="form-group mb-4">
+                    <label for="hora" class="mb-3">Elige una hora:</label>
                     <input type="time" class="form-control" id="hora" name="hora" pattern="\d{2}:\d{2}:\d{2}" required>
                     <small id="horaHelp" class="form-text text-muted">Formato: HH:MM:SS</small>
                 </div>
-                <div class="form-group">
-                    <label for="hora">Elige asignaturas</label>
+                <div class="form-group mb-4">
+                    <label for="hora" class="mb-3">Elige la asignatura</label>
                     <select class="form-control">
-
                         <option value="0" *ngFor="let asig of class">{{asig}} </option>
                     </select>
 
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn shadow-sm rounded">Solicitar</button>
             </form>
         </div>
     </div>

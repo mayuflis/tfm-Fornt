@@ -2,9 +2,10 @@
     padding-bottom: 20px;
 }
 
-.prueba{
-    padding-left: 50px;
-    padding-right: 50px;
+.margin{
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 50px;
 }
 
 .table{
@@ -17,3 +18,10 @@ th{
     color: white;
 }
 
+.btn{
+    font-size: 1.2rem;
+    background-color: rgb(255, 242, 218);
+    color: rgb(234, 155, 7);
+    font-weight: 500;
+    border: solid 1px rgb(255, 235, 195);
+}

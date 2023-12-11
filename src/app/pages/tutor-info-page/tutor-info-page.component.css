@@ -1,8 +1,6 @@
 .info {
     display: flex;
-    margin-top: 50px;
-    margin-left: 220px;
-    margin-right: 220px;
+    margin-top: 10px;
     padding-left: 80px;
     padding-right: 80px;
     gap: 60px;
@@ -19,8 +17,21 @@
 
 .margin{
     padding-top: 70px;
-    padding-left: 120px;
-    padding-right: 120px;
-    margin-left: 220px;
-    margin-right: 220px;
+    margin-left: 420px;
+    margin-right: 420px;
+}
+
+.top{
+    margin-top: 110px;
+    margin-bottom: 60px;
+}
+
+.btn{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+    background-color: rgb(255, 242, 218);
+    border: solid 1px rgb(255, 235, 195);
+    color: rgb(234, 155, 7);
+    font-weight: 500;
 }

@@ -1,5 +1,5 @@
 <app-home-header></app-home-header>
-<main>
+<section>
     <div class="margin info">
         <div class="card-container">
             <app-tutor-card [teacher]="detailedTeacher[0]" [showContactButton]="false"
@@ -9,21 +9,21 @@
             <app-tutor-personal-info [teacher]="detailedTeacher[0]"></app-tutor-personal-info>
         </div>
     </div>
-</main>
+</section>
 
 <section class="margin">
     <app-table-subject-price></app-table-subject-price>
 </section>
 <section class="margin">
-    <h2 class="text-align-center">Eso es lo que piensan de {{detailedTeacher[0].name}} sus estudiantes</h2>
+    <h3 class="text-align-center">Esto es lo que piensan de {{detailedTeacher[0].name}} sus estudiantes</h3>
     <app-comment></app-comment>
 </section>
-<section class="m-5 d-flex justify-content-center">
+<section class="top d-flex justify-content-center">
     <!-- TODO: ANADIR TITULO PARA EL MAPA  -->
     <app-map-details></app-map-details>
 </section>
 <section class="d-flex justify-content-center mb-5">
-    <button class="btn btn-primary px-3 py-2 fs-5" [routerLink]="['/home']">Volver al listado</button>
+    <button class="btn btn-primary fs-5       px-5 shadow-sm p-2 rounded" [routerLink]="['/home']">Volver al listado</button>
 </section>
 
 

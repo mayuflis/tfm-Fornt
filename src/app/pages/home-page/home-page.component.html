@@ -1,9 +1,9 @@
-<div class="myhtml">
+
   <header>
     <app-home-header [nombre]="nombre"></app-home-header>
   </header>
 
-  <app-filter-professors></app-filter-professors>
+  
 
   <!--
   <app-filter-professors
@@ -13,9 +13,17 @@
 
   <!-- TODO: LIMITAR A 15 CARDS por pagina, filtrar por los mejor valorados de forma predeterminada -->
 
-  <main class="container mt-5">
-    <div>
-      <div class="container mt-5">
+  <main>
+    <section>
+      <div class="back">
+        <div class="mt-5 mb-5 pb-5">
+          <app-filter-professors></app-filter-professors>
+        </div>
+      </div>
+      
+      
+
+      <div class="container mt-5 pt-5">
         <div class="row d-flex align-items-stretch">
           <article class="col-12 col-md-6 col-lg-4 mb-3 d-flex flex-column" *ngFor="let teacher of teachers">
             <div class="d-flex flex-grow-1">
@@ -32,14 +40,13 @@
       </div>
       <pagination-controls (pageChange)="pagination = $event" previousLabel="Anterior" nextLabel="Siguiente"
         class="d-block m-5 text-center" [responsive]="true"></pagination-controls>
-    </div>
+    </section>
+
+    <section class="d-flex justify-content-center margin">
+      <app-map></app-map>
+    </section>
   </main>
 
-  <section class="my-5 d-flex justify-content-center">
-    <app-map></app-map>
-  </section>
-
-  <div class="footer">
+  <footer class="">
     <app-footer></app-footer>
-  </div>
-</div>
+  </footer>
