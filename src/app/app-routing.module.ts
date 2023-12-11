@@ -41,8 +41,8 @@ const routes: Routes = [
   {path: 'admin/usuarios', component: AdminPageUsersComponent},
   {path: 'admin/asignaturas', component: AdminPageSubjectsComponent},
 
-
   { path: 'tutor/info', component: TutorInfoPageComponent },
+  { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
   { path: 'tutor/subjects', canActivate: [authRoleTeachersGuard], component: TutorMySubjectsPageComponent },
   { path: 'tutor/classes', component: TutorMyClassesPageComponent },
   { path: 'tutor/opinions', component: TutorOpinionsPageComponent },
