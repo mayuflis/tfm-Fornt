@@ -9,10 +9,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TutorMySubjectsPageComponent } from './pages/tutor-my-subjects-page/tutor-my-subjects-page.component';
 import { StudentProfilePageComponent } from './pages/student-profile-page/student-profile-page.component';
 import { StudentMyTutorsPageComponent } from './pages/student-my-tutors-page/student-my-tutors-page.component';
-import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
 import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-opinions-page.component';
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
-import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { ContactTutorPageComponent } from './pages/contact-tutor-page/contact-tutor-page.component';
 import { TutorMyClassesPageComponent } from './pages/tutor-my-classes-page/tutor-my-classes-page.component';
 
@@ -29,29 +27,11 @@ const routes: Routes = [
   { path: 'registro', component: RegisterPageComponent },
   { path: 'tutor/info/:idTutor', component: TutorInfoPageComponent },
   { path: 'tutor/info', component: TutorInfoPageComponent },
-  {
-    path: 'tutor/subjects',
-    canActivate: [authRoleTeachersGuard],
-    component: TutorMySubjectsPageComponent,
-  },
-  //{ path: 'tutor/:idTutor/students', component: TutorMyStudentsPageComponent },
-  {
-    path: 'tutor/:idTutor/notifications',
-    component: TutorNotificationsPageComponent,
-  },
-
+  { path: 'tutor/subjects', canActivate: [authRoleTeachersGuard], component: TutorMySubjectsPageComponent },
   { path: 'tutor/classes', component: TutorMyClassesPageComponent },
-  {
-    path: 'tutor/notifications',
-    component: TutorNotificationsPageComponent,
-  },
-
   { path: 'tutor/opinions', component: TutorOpinionsPageComponent },
   { path: 'tutor/profile', component: TutorProfilePageComponent },
-  {
-    path: 'tutor/:idTutor/contact-tutor',
-    component: ContactTutorPageComponent,
-  },
+  { path: 'tutor/:idTutor/contact-tutor', component: ContactTutorPageComponent },
 
   /*
   { path: 'tutor/:idTutor/info', canActivate: [authRoleTeachersGuard], component: TutorInfoPageComponent,  },
@@ -100,11 +80,6 @@ const routes: Routes = [
     path: 'student/tutors',
     canActivate: [authRoleStudentsGuard],
     component: StudentMyTutorsPageComponent,
-  },
-  {
-    path: 'student/notifications',
-    canActivate: [authRoleStudentsGuard],
-    component: StudentNotificationsPageComponent,
   },
   {
     path: 'student/profile',

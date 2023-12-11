@@ -24,7 +24,6 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { TutorInfoPageComponent } from './pages/tutor-info-page/tutor-info-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { ProfileInfoPageComponent } from './pages/profile-info-page/profile-info-page.component';
 import { HomeHeaderComponent } from './components/home-header/home-header.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -52,10 +51,8 @@ import { StudentProfilePageComponent } from './pages/student-profile-page/studen
 import { StudentLearningComponent } from './components/student-learning/student-learning.component';
 import { TutorSubjectsNewComponent } from './components/tutor-subjects-new/tutor-subjects-new.component';
 import { FilterProfessorsComponent } from './components/filter-professors/filter-professors.component';
-import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
 import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-opinions-page.component';
 import { StudentClassesPageComponent } from './pages/student-classes-page/student-classes-page.component';
-import { StudentNotificationsPageComponent } from './pages/student-notifications-page/student-notifications-page.component';
 import { MapComponent } from './components/map/map.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
@@ -103,7 +100,6 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     TutorInfoPageComponent,
     HomePageComponent,
     LandingPageComponent,
-    ProfileInfoPageComponent,
     HomeHeaderComponent,
     LoginFormComponent,
     FooterComponent,
@@ -129,10 +125,8 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     FilterProfessorsComponent,
     MapComponent,
     StudentProfilePageComponent,
-    TutorNotificationsPageComponent,
     TutorOpinionsPageComponent,
     StudentClassesPageComponent,
-    StudentNotificationsPageComponent,
     MapComponent,
     HomePageComponent,
     TutorPersonalInfoComponent,

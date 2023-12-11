@@ -1,5 +1,4 @@
 <h5 class="underline">¿Qué quieres enseñar?</h5>
-
 <form class="flex" [formGroup]="subjectForm" (ngSubmit)="sendData()">
     <select formControlName="name" class="form-select">
         <option value="0">Seleccionar...</option>
@@ -33,6 +32,5 @@
         <p>{{subject.level}}</p>
         <p>{{subject.hourly_rate}} euros</p>
         <p *ngIf="subject.free_classl">Primera clase gratis</p>
-
-
     </article>
+</div>
