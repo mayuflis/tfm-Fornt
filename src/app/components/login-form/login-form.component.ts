@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
+import { Token } from 'src/app/interfaces/token';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -36,7 +38,13 @@ export class LoginFormComponent {
       const response = await this.userServices.loginUser(this.loginForm.value);
       this.state = false;
       localStorage.setItem('token', response.token);
-      this.router.navigate(['']);
+      const token = localStorage.getItem('token');
+      const decode: Token = jwtDecode(token!);
+      if (decode.user_role == 'admin') {
+        this.router.navigate(['/admin']);
+      } else {
+        this.router.navigate(['']);
+      }
     } catch (error: any) {
       this.state = true;
       if (error.error.fatal) this.errorMessage = error.error.fatal;

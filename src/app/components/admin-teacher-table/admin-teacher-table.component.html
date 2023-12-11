@@ -11,12 +11,12 @@
         <tbody>
             <!-- Aquí van los datos de los profesores pendientes -->
             <tr *ngFor="let teacher of teachers">
-                <td>{{ teacher.name + ' ' + teacher.lastName }}</td>
+                <td>{{ teacher.name + ' ' + teacher.last_name}}</td>
                 <td>{{ teacher.email }}</td>
-                <td>{{ teacher.phone }}</td>
+                <td>{{ teacher.mobile}}</td>
                 <td>
                     <button class="btn btn-success btn-sm me-2 mb-2" (click)="validateTeacher(teacher)">Validar</button>
-                    <button class="btn btn-danger btn-sm me-2 mb-2" (click)="rejectTeacher(teacher)">Rechazar</button>
+
                 </td>
             </tr>
         </tbody>

@@ -3,14 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Teacher } from '../interfaces/teacher.model';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TeacherService {
-  private apiUrl = 'http://localhost:4200/admin';
+  private apiUrl = 'http://localhost:3000/api/teachers/admin';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getTeachers(): Observable<Teacher[]> {
     return this.http.get<Teacher[]>(this.apiUrl);
@@ -18,7 +17,6 @@ export class TeacherService {
 
   updateTeacherStatus(teacherId: number, validate: boolean): Observable<any> {
     const url = `${this.apiUrl}/profesores/${teacherId}`;
-    return this.http.patch(url, { validate });
+    return this.http.post(url, { validate });
   }
-
 }

@@ -47,7 +47,6 @@ export class ChooseClassComponent {
       this.idTutor = params.idTutor;
       this.idUser = this.decoder.user_id;
     });
-    console.log('El tutor es:', this.idTutor);
   }
   onAsignaturaChange(event: any) {
     const asignaturaSeleccionada = event.target.value;
@@ -71,10 +70,10 @@ export class ChooseClassComponent {
       horaSumada: this.horaSumada,
       idSubject: idSubject[0].idsubjects,
     });
-    console.log(this.miFormulario.value);
+
     if (!this.miFormulario.valid) {
       //Todo:arreglar el formulario validacion
-      console.log('entra');
+
       try {
         const result = await this.classService.insertClass(
           this.miFormulario.value

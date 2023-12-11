@@ -1,4 +1,3 @@
-
 <div class="table-responsive custom-rounded-table">
     <table class="table table-hover">
         <thead class="table-light">
@@ -16,11 +15,12 @@
             <tr *ngFor="let teacher of teachers">
                 <td>{{ teacher.name }}</td>
                 <td>{{ teacher.email }}</td>
-                <td>{{ teacher.phone }}</td>
+                <td>{{ teacher.mobile }}</td>
                 <td>{{ teacher.province }}</td>
                 <td>{{ teacher.birthday }}</td>
                 <td>
-                    <button class="btn btn-danger btn-sm me-2 mb-2" (click)="rejectTeacher(teacher)">Invalidar profesor</button>
+                    <button class="btn btn-danger btn-sm me-2 mb-2" (click)="rejectTeacher(teacher)">Invalidar
+                        profesor</button>
                 </td>
             </tr>
         </tbody>

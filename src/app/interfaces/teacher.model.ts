@@ -1,10 +1,10 @@
 export interface Teacher {
-    teacherId: number;
-    name: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    province: string;
-    birthday: string;
-    validate: boolean;
-  }
+  id_teachers: number;
+  name: string;
+  last_name: string;
+  email: string;
+  mobile: string;
+  province: string;
+  birthday: string;
+  validate: boolean;
+}

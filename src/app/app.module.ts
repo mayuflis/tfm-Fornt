@@ -40,7 +40,6 @@ import { CommentComponent } from './components/comment/comment.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 import { TutorProfilePageComponent } from './pages/tutor-profile-page/tutor-profile-page.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
@@ -61,10 +60,6 @@ import { AdminAllTeachersTableComponent } from './components/admin-all-teachers-
 import { AdminUsersTableComponent } from './components/admin-users-table/admin-users-table.component';
 import { AdminSubjectsTableComponent } from './components/admin-subjects-table/admin-subjects-table.component';
 import { AdminPageSubjectsComponent } from './pages/admin-page-subjects/admin-page-subjects.component';
-import { HttpClientModule } from '@angular/common/http';
-
-
-
 
 import { TutorNotificationsPageComponent } from './pages/tutor-notifications-page/tutor-notifications-page.component';
 import { TutorOpinionsPageComponent } from './pages/tutor-opinions-page/tutor-opinions-page.component';
@@ -73,7 +68,6 @@ import { StudentNotificationsPageComponent } from './pages/student-notifications
 import { MapComponent } from './components/map/map.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
-
 
 import { TutorPersonalInfoComponent } from './components/tutor-personal-info/tutor-personal-info.component';
 import { TableSubjectPriceComponent } from './components/table-subject-price/table-subject-price.component';
@@ -185,7 +179,6 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
     StudentMytutorCardComponent,
 
 */
-
   ],
 
   imports: [
@@ -208,7 +201,6 @@ import { TutorAdsComponent } from './components/tutor-ads/tutor-ads.component';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: UserInterceptor, multi: true },
-
   ],
   bootstrap: [AppComponent],
 })
