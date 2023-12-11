@@ -1,0 +1,27 @@
+.text{
+    padding-bottom: 20px;
+}
+
+.margin{
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 50px;
+}
+
+.table{
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+th{
+    background-color: rgb(48, 77, 48);
+    color: white;
+}
+
+.btn{
+    font-size: 1.2rem;
+    background-color: rgb(255, 242, 218);
+    color: rgb(234, 155, 7);
+    font-weight: 500;
+    border: solid 1px rgb(255, 235, 195);
+}

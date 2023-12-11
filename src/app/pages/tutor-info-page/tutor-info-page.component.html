@@ -1,1 +1,29 @@
-<p>tutor-info-page works!</p>
+<app-home-header></app-home-header>
+<section>
+    <div class="margin info">
+        <div class="card-container">
+            <app-tutor-card [teacher]="detailedTeacher[0]" [showContactButton]="false"
+                [showSimpleTags]="false"></app-tutor-card>
+        </div>
+        <div class="info-container">
+            <app-tutor-personal-info [teacher]="detailedTeacher[0]"></app-tutor-personal-info>
+        </div>
+    </div>
+</section>
+
+<section class="margin">
+    <app-table-subject-price></app-table-subject-price>
+</section>
+<section class="margin">
+    <h3 class="text-align-center">Esto es lo que piensan de {{detailedTeacher[0].name}} sus estudiantes</h3>
+    <app-comment></app-comment>
+</section>
+<section class="top d-flex justify-content-center">
+    <!-- TODO: ANADIR TITULO PARA EL MAPA  -->
+    <app-map-details></app-map-details>
+</section>
+<section class="d-flex justify-content-center mb-5">
+    <button class="btn btn-primary fs-5       px-5 shadow-sm p-2 rounded" [routerLink]="['/home']">Volver al listado</button>
+</section>
+
+<app-footer></app-footer>

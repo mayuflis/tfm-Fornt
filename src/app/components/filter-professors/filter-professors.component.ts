@@ -1,37 +1,79 @@
-import { Component } from '@angular/core';
+import { Component, inject, EventEmitter, Output, signal } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Subjects } from '../../interfaces/WebPublic';
+import { Provinces } from 'src/app/interfaces/auth';
 
+import { FilterProfessorsService } from 'src/app/services/filter-professors.service';
+import { TeachersWebPublic } from 'src/app/interfaces/WebPublic';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-filter-professors',
   templateUrl: './filter-professors.component.html',
-  styleUrls: ['./filter-professors.component.css']
+  styleUrls: ['./filter-professors.component.css'],
 })
 export class FilterProfessorsComponent {
-  subjects: string[] = ['Matemáticas', 'Literatura', 'Historia', 'Biología', 'Física', 'Química', 'Geografía', 'Informática','Educación Física', 'Inglés','Francés','Alemán','Filosofía','Economía','Arte','Música','Sociología', 'Psicología', 'Ciencias políticas', 'Educación Cívica', 'Tecnología', 'Ecología y medio ambiente'];
-  priceRange: number[] = [10, 15, 20, 25, 30, 35, 40, 45, 50];
-  experienceRange: number[] = [1, 2, 3, 4, 5]; 
-  minRating: number = 0; 
-  provinces: string[] = [
-    'Álava', 'Albacete', 'Alicante', 'Almería', 'Asturias', 'Ávila', 
-    'Badajoz', 'Barcelona', 'Burgos', 'Cáceres', 'Cádiz', 'Cantabria', 
-    'Castellón', 'Ciudad Real', 'Córdoba', 'Cuenca', 'Gerona', 'Granada', 
-    'Guadalajara', 'Guipúzcoa', 'Huelva', 'Huesca', 'Islas Baleares', 
-    'Jaén', 'La Coruña', 'La Rioja', 'Las Palmas', 'León', 'Lérida', 
-    'Lugo', 'Madrid', 'Málaga', 'Murcia', 'Navarra', 'Orense', 'Palencia', 
-    'Pontevedra', 'Salamanca', 'Segovia', 'Sevilla', 'Soria', 'Tarragona', 
-    'Santa Cruz de Tenerife', 'Teruel', 'Toledo', 'Valencia', 'Valladolid', 
-    'Vizcaya', 'Zamora', 'Zaragoza'
-  ];
-  selectedSubject: string = ''; 
-  selectedProvince: string = ''; 
-  selectedPrice: number = 0; 
-  selectedExperience: number = 0; 
+  private filterForm!: FormGroup;
+  private filterSevice = inject(FilterProfessorsService);
+  private fb = inject(FormBuilder);
+  @Output() sendTeachers: EventEmitter<any>;
+  private subjects: Subjects[] = [];
+  private priceRange: number[] = [10, 15, 20, 25, 30, 35, 40, 45, 50];
+  private experienceRange: number[] = [1, 2, 3, 4, 5];
+  private provinces: Provinces[] = [];
+  private router = inject(Router);
 
-  applyFilters(): void {
- //Filtros
-    console.log('Asignatura:', this.selectedSubject);
-    console.log('Precio:', this.selectedPrice);
-    console.log('Experiencia:', this.selectedExperience);
-    console.log('Puntuación mínima:', this.minRating);
-    console.log('Provincia:', this.selectedProvince);
+  constructor() {
+    this.filterForm = this.fb.group({
+      selectedSubject: [0],
+      selectedProvince: [0],
+      selectedPrice: [0],
+      selectedExperience: [0],
+      minRating: [0],
+    });
+    this.sendTeachers = new EventEmitter();
   }
+
+  getProvince(): Provinces[] {
+    return this.provinces;
+  }
+
+  getSubjects(): Subjects[] {
+    return this.subjects;
+  }
+
+  getPriceRange(): number[] {
+    return this.priceRange;
+  }
+  getExperienceRange(): number[] {
+    return this.experienceRange;
+  }
+  getFilterForm(): FormGroup {
+    return this.filterForm;
+  }
+  
+  async ngOnInit(): Promise<void> {
+  try {
+    this.subjects = await this.filterSevice.getAllSubjects();
+    this.provinces = await this.filterSevice.getAllProvinces();
+
+    const data = this.filterForm.value;
+    this.sendTeachers.emit(data);
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+ 
+  //TODO: cambiar localstorage por algo más elaborado 
+  async applyFilters() {
+    localStorage.setItem('filterOfTeachers', JSON.stringify(this.filterForm.value));
+    if (this.router.url === '/home') {
+    window.location.reload();
+  } else {
+    this.router.navigate(['/home']);
+  }
+    
+  }
+  
+
 }

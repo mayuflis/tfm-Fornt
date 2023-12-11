@@ -1,0 +1,24 @@
+<div class="flex mb-4 shadow-sm" *ngFor="let teacher of tutorInfo">
+  <div class="item ">
+    <p class="text">Profesor</p>
+    <p>{{teacher.teacher_name}} {{teacher.teacher_last_name}} </p>
+  </div>
+
+  <div class="item">
+    <p class="text">Email</p>
+    <p> {{teacher.teacher_email}} </p>
+  </div>
+  <div class="item">
+    <p class="text">Teléfono</p>
+    <p> {{teacher.teacher_mobile}} </p>
+  </div>
+  <div class="item">
+    <p class="text">Asignatura</p>
+    <p>{{teacher.subject_name}} </p>
+  </div>
+
+  <div>
+    <button [routerLink]="['/tutor/info',teacher.idusers]" routerLinkActive="router-link-active">+ Info</button>
+  </div>
+</div>
+

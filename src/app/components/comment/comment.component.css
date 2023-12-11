@@ -1,0 +1,53 @@
+.custom-border {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.survey-hr {
+    margin: 10px 0;
+    border: .5px solid #ddd;
+}
+
+.star {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.filled.bad {
+    color:#ECBA18;
+}
+
+::ng-deep label {
+    font-size: larger;
+}
+
+.gradient-custom { /* fallback for old browsers */ background: #4facfe; /* Chrome 10-25,
+    Safari 5.1-6 */ background: -webkit-linear-gradient(to bottom right, rgba(79, 172, 254,
+    1), rgba(0, 242, 254, 1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+,
+    Safari 7+ */ background: linear-gradient(to bottom right, rgba(79, 172, 254, 1), rgba(0,
+    242, 254, 1)) }
+
+.width-of-p{
+    width: 500px;
+}
+
+
+.margin_2{
+    margin-left: 220px;
+    margin-right: 220px;
+}
+
+.send{
+    background-color: rgb(229, 108, 108);
+    border: transparent;
+}
+
+h4{
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+.card{
+    border: solid 1px rgb(198, 198, 198);
+    border-radius: 20px;
+}

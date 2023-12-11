@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4">
     <div class="container">
-        <a class="navbar-brand text-white title-text" href="#">
-            <img src="assets/icons/app_icon_2.png" alt="Icon" class="img-fluid icon-image rounded-circle small-icon me-3">
+
+
+        <a class="navbar-brand text-white text" href="#">
+            <img src="assets/icons/app_icon_2.png" alt="Icon" class="img-fluid icon-image rounded-circle small-icon me-3 ">
+
             Tutoring
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -11,15 +14,15 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" routerLink="/Inicio" routerLinkActive="active">
+                    <a class="nav-link font-weight-bold text2 me-4" routerLink="/home" routerLinkActive="active">
                         <i class="bi bi-house-door"></i> Inicio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" [routerLink]="linkRoute" routerLinkActive="active">
-                      <i class="bi bi-person-plus"></i> {{ linkText }}
+                    <a class="nav-link font-weight-bold text2" [routerLink]="linkRoute" routerLinkActive="active">
+                        <i class="bi bi-person-plus"></i> {{ linkText }}
                     </a>
-                  </li>
+                </li>
             </ul>
         </div>
     </div>

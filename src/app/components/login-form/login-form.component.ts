@@ -1,33 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.css'],
 })
 export class LoginFormComponent {
   loginForm!: FormGroup;
-  isTeacher: boolean = false;
-
+  private errorMessage: string = '';
+  private userServices = inject(AuthService);
+  private router = inject(Router);
+  private state: boolean = false;
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-    }, { validator: this.checkPasswords });
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(
+            /^[^<>()\[\]\.,;:\s@'"]+@(([^<>()\[\]\.,;:\s@'"]+\.)+[^<>()\[\]\.,;:\s@'"]{2,}|(\[([0-9]{1,3}\.){3}[0-9]{1,3}\]))$/
+          ),
+        ],
+      ],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
   }
 
-  checkPasswords(group: FormGroup) {
-    const pass = group.get('password')?.value;
-    const confirmPass = group.get('confirmPassword')?.value;
-    return pass === confirmPass ? null : { notSame: true };
-  }
+  async onSubmit() {
+    try {
+      const response = await this.userServices.loginUser(this.loginForm.value);
+      this.state = false;
+      localStorage.setItem('token', response.token);
+      this.router.navigate(['']);
+    } catch (error: any) {
+      this.state = true;
+      if (error.error.fatal) this.errorMessage = error.error.fatal;
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      console.error(error.error.error);
     }
+  }
+  getState(): Boolean {
+    return this.state;
+  }
+  getMessageError(): string {
+    return this.errorMessage;
   }
 }

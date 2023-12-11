@@ -1,0 +1,21 @@
+<div class="size">
+    <h5>Foto de perfil</h5>
+    <div class="flex">
+        <img class="w-35 round" [src]="userProfile.image" alt="">
+        <form class="d-flex flex-column w-100 justify-content-center align-items-center my-3"
+            [formGroup]="profilePicForm" (ngSubmit)="sendPic()">
+            <div class="my-3">
+                <button class="color btn btn-primary px-5 w-100 shadow rounded" (click)="displayInput()"
+                    *ngIf="!this.activateInput">Subir foto</button>
+            </div>
+            <div *ngIf="activateInput" class="d-flex flex-column align-items-center">
+                <label for="image">Introduce la URL de la foto</label>
+                <input type="text" class="form-control mb-3" formControlName="image">
+                <div class="d-flex w-100 justify-content-around">
+                    <input type="submit" value="Actualizar Foto" class="color btn btn-primary py-2">
+                    <button class="d-inline btn btn-danger p-2 fit-content" (click)="cancel()">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<h5>Datos personales</h5>
+<form [formGroup]="profileForm" (ngSubmit)="sendFormData()">
+    <!-- Campo para el nombre -->
+    <div class="mb-3">
+        <input type="text" class="form-control" formControlName="name" placeholder="Nombre">
+        <div>
+            <small class="text-danger" *ngIf="checkInput('name', 'required')">Nombre es requerido. </small>
+            <small class="text-danger" *ngIf="checkInput('name', 'minlength')">Nombre debe tener almenos 2
+                caracteres.</small>
+        </div>
+    </div>
+
+    <!-- Campo para los apellidos -->
+    <div class="mb-3">
+        <input type="text" class="form-control" formControlName="last_name" placeholder="Apellidos">
+        <div>
+            <small class="text-danger" *ngIf="checkInput('last_name', 'required')">Apellido es requerido. </small>
+            <small class=" text-danger" *ngIf="checkInput('last_name', 'minlength')">Apellido debe tener al menos 2
+                caracteres.</small>
+        </div>
+    </div>
+
+
+    <!-- Campo para la fecha de nacimiento -->
+    <div class="mb-3">
+        <input type="date" class="form-control" formControlName="birthday" placeholder="Fecha de Nacimiento">
+        <div>
+            <small class="text-danger" *ngIf="checkInput('birthday', 'required')">La fecha de nacimiento es requerida.
+            </small>
+        </div>
+    </div>
+
+    <!-- Campo para la ciudad -->
+    <div class="mb-3">
+        <input type="text" class="form-control" formControlName="name_province" placeholder="Ciudad">
+        <div>
+            <small class="text-danger" *ngIf="checkInput('name_province', 'required')">La ciudad es requerida. </small>
+        </div>
+    </div>
+
+    <!-- Campo para el número de teléfono -->
+    <div class="mb-3">
+        <input type="tel" class="form-control" formControlName="mobile" placeholder="Número de Teléfono">
+        <div>
+            <small class="text-danger" *ngIf="checkInput('mobile', 'required')">El número de teléfono es requerido.
+            </small>
+            <small class="text-danger" *ngIf="checkInput('mobile', 'pattern')">Formato de teléfono inválido. Debe tener
+                entre 9 y 15 números</small>
+        </div>
+    </div>
+
+    <!-- Campo para el género -->
+    <div class="mb-3">
+        <label class="form-label">Género</label>
+        <select formControlName="gender" class="form-select">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select>
+        <div>
+            <small class="text-danger" *ngIf="checkInput('gender', 'required')">El genero es requerido.
+            </small>
+        </div>
+    </div>
+
+
+    <input type="submit" value="Actualizar" class="shadow rounded color px-4 py-1 mt-3" [disabled]="!profileForm.valid">
+    <div *ngIf="updatedUserError" class="py-2">
+        <p class="text-danger">No se ha podido actualizar el usuario. Inténtalo más tarde.</p>
+    </div>
+    <div *ngIf="updatedUserDone" class="py-2">
+        <p class="text-success">Enhorabuena! Has actualizado correctamente tu perfil.</p>
+    </div>
+</form>

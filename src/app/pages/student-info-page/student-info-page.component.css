@@ -1,0 +1,10 @@
+.info {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 420px;
+    margin-right: 420px;
+    margin-bottom: 200px;
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 60px;
+}

@@ -1,0 +1,19 @@
+h3 {
+    margin-top: 65px;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-bottom: 70px;
+    border-bottom: solid 1px rgb(194, 194, 194);
+    padding-bottom: 8px;
+}
+
+.margin {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 280px;
+}
+
+.card{
+    border: solid 1px rgb(198, 198, 198);
+    border-radius: 20px;
+}

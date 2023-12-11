@@ -1,0 +1,37 @@
+<h5>Sobre mi</h5>
+<form class="flex" [formGroup]="aboutMeForm" (ngSubmit)="sendForm()">
+    <div class="prueba">
+        <div class="mb-3">
+            <label for="about_me" class="form-label">Escribe una breve descripción sobre ti</label>
+            <textarea class="form-control" id="about_me" formControlName="aboutMe" rows="3"></textarea>
+            <div>
+                <small class="text-danger" *ngIf="checkInput('aboutMe', 'required')">El campo es requerido
+                </small>
+                <small class="text-danger" *ngIf="checkInput('aboutMe', 'maxlength')">Cuidado! Te has
+                    pasado de
+                    carácteres. Intenta ser más conciso.
+                </small>
+                <small class=" text-danger" *ngIf="checkInput('aboutMe', 'minlength')">El texto debe tener
+                    mínimo
+                    20 carácteres. Explica un poco más sobre ti.</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="my_interests" class="form-label">Escribe una breve descripción sobre tus
+                intereses y lo que quieres aprender</label>
+            <textarea class="form-control" id="my_interests" formControlName="myInterests" rows="3"></textarea>
+            <div>
+                <small class="text-danger" *ngIf="checkInput('myInterests', 'required')">El campo es requerido
+                </small>
+                <small class="text-danger" *ngIf="checkInput('myInterests', 'maxlength')">Cuidado! Te has
+                    pasado de
+                    carácteres. Intenta ser más conciso.
+                </small>
+                <small class=" text-danger" *ngIf="checkInput('myInterests', 'minlength')">El texto debe tener
+                    mínimo
+                    20 carácteres. Da más información sobre tus intereses.</small>
+            </div>
+        </div>
+        <input type="submit" class="shadow rounded color px-4 py-1 mt-3" value="Guardar" [disabled]="!aboutMeForm.valid">
+    </div>
+</form>

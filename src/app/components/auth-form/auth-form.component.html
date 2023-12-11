@@ -44,10 +44,13 @@
 
             <!-- Campo para la ciudad -->
             <div class="mb-3">
-                <input type="text" class="form-control" formControlName="ciudad" placeholder="Ciudad">
+                <select formControlName="provincia" class="form-select" aria-label="Default select example">
+                    <option value="">Elige una provincia</option>
+                    <option *ngFor="let pro of provinces" [value]="pro.idprovince">{{pro.name_province}} </option>
+                </select>
                 <div
-                    *ngIf="authForm.get('ciudad')?.invalid && (authForm.get('ciudad')?.touched || authForm.get('ciudad')?.dirty)">
-                    <small class="text-danger" *ngIf="authForm.get('ciudad')?.errors?.['required']">La ciudad es
+                    *ngIf="authForm.get('provincia')?.invalid && (authForm.get('provincia')?.touched || authForm.get('provincia')?.dirty)">
+                    <small class="text-danger" *ngIf="authForm.get('provincia')?.errors?.['required']">La ciudad es
                         requerida.</small>
                 </div>
             </div>
@@ -61,6 +64,11 @@
                         teléfono es requerido.</small>
                     <small class="text-danger" *ngIf="authForm.get('telefono')?.errors?.['pattern']">Formato de teléfono
                         inválido.</small>
+                    <small class="text-danger" *ngIf="authForm.get('telefono')?.errors?.['minlength']">El teléfono debe
+                        de contener nueve dígitos.</small>
+                    <small class="text-danger" *ngIf="authForm.get('telefono')?.errors?.['maxlength']">El teléfono no
+                        debe
+                        de contener más de quince dígitos.</small>
                 </div>
             </div>
 
@@ -71,7 +79,7 @@
                     *ngIf="authForm.get('email')?.invalid && (authForm.get('email')?.touched || authForm.get('email')?.dirty)">
                     <small class="text-danger" *ngIf="authForm.get('email')?.errors?.['required']">El email es
                         requerido.</small>
-                    <small class="text-danger" *ngIf="authForm.get('email')?.errors?.['email']">Formato de email
+                    <small class="text-danger" *ngIf="authForm.get('email')?.errors?.['pattern']">Formato de email
                         inválido.</small>
                 </div>
             </div>
@@ -110,16 +118,12 @@
             <div class="mb-3">
                 <label class="form-label">¿Cuál es tu rol?</label>
                 <select formControlName="rol" class="form-select">
-                    <option value="Alumn">Alumno</option>
-                    <option value="Professor">Profesor</option>
+                    <option value="student">Alumno</option>
+                    <option value="teacher">Profesor</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-success">Registrar</button>  
-            <div
-                *ngIf="successRegister">
-                <label class="text-success form-label">Registro exitoso. Por favor, revisa tu email para confirmar tu cuenta.</label>
-            </div>
+            <button type="submit" class="btn btn-success">Registrar</button>
         </form>
     </div>
 </div>

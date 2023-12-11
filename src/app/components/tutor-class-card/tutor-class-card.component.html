@@ -1,0 +1,30 @@
+<div class="flex mb-4 shadow-sm" *ngFor="let student of getStudents()">
+    <div class="item ">
+        <p class="text">Alumno</p>
+        <p>{{student.name}} {{student.last_name}} </p>
+    </div>
+    <div class="item">
+        <p class="text">Asignatura</p>
+        <p>{{student.subject}} </p>
+    </div>
+    <div class="item">
+        <p class="text">Teléfono</p>
+        <p> {{student.mobile}} </p>
+    </div>
+    <div class="item">
+        <p class="text">Día</p>
+        <p>{{student.class_date | date:'dd/M/yyyy'}} </p>
+    </div>
+    <div class="item prueba">
+        <p class="text">Hora</p>
+        <p>{{student.start_time}} </p>
+    </div>
+    <div class="item">
+        <p class="text">Email</p>
+        <p> {{student.email}} </p>
+    </div>
+
+    <div>
+        <button [routerLink]="['/student/info',student.idusers]" routerLinkActive="router-link-active">+ Info</button>
+    </div>
+</div>

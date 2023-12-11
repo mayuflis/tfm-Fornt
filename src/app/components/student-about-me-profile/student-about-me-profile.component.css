@@ -1,0 +1,38 @@
+h5 {
+    margin-top: 45px;
+    margin-bottom: 30px;
+    padding-bottom: 7px;
+    border-bottom: solid 1px rgb(150, 150, 150);
+}
+
+.flex {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 30px;
+}
+
+.btn-styles {
+    background-color: rgb(104, 148, 86);
+    color: white;
+    border: none;
+    border-radius: 6%;
+}
+.form-select {
+    width: 25%;
+}
+
+.form-control {
+    width: 170%;
+}
+
+.form-check {
+    width: 35%;
+    margin: 0;
+    padding-top: 6px;
+}
+
+.color {
+    background-color: rgb(124, 168, 106);
+    color: white;
+    border: solid 1px rgb(125, 168, 106);
+}
